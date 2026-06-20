@@ -1,0 +1,163 @@
+.app {
+  width: min(1500px, calc(100% - 34px));
+  margin: 0 auto;
+  padding: 28px 0 64px;
+}
+
+.hero-pro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.hero-main,
+.command-card,
+.panel,
+.metric-card,
+.freshness-strip,
+.ticker-tabs,
+.section-tabs {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
+.hero-main {
+  padding: 34px;
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text {
+  color: #c9d6ec;
+  line-height: 1.65;
+  max-width: 980px;
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.ticker-tabs,
+.section-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-bottom: 14px;
+}
+
+.ticker-tab,
+.section-tab {
+  box-shadow: none;
+  color: #dce9ff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.58rem 0.82rem;
+}
+
+.ticker-tab.active,
+.section-tab.active {
+  color: #07111f;
+  background: linear-gradient(135deg, var(--green), var(--blue));
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.dashboard-grid.one {
+  grid-template-columns: 1fr;
+}
+
+.analytics-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.analytics-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 1100px) {
+  .app {
+    width: min(100% - 18px, 1500px);
+  }
+
+  .hero-pro,
+  .overview-panel,
+  .dashboard-grid,
+  .analytics-grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quality-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quality-strip .wide-quality {
+    grid-column: 1 / -1;
+  }
+
+  .agent-metrics,
+  .agent-grid,
+  .storage-summary-grid,
+  .storage-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .census-search-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    padding-top: 12px;
+  }
+
+  .hero-main,
+  .command-card,
+  .panel {
+    border-radius: 20px;
+    padding: 18px;
+  }
+
+  .freshness-strip,
+  .metrics-grid,
+  .provider-facts,
+  .quality-strip,
+  .agent-metrics,
+  .agent-grid,
+  .storage-summary-grid,
+  .storage-filters,
+  .comparison-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions,
+  .inline-form,
+  .chat-form,
+  .storage-toolbar,
+  .storage-record-top {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

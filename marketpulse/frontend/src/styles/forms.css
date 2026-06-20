@@ -1,0 +1,115 @@
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 800;
+  color: #06111f;
+  background: linear-gradient(135deg, var(--green), var(--blue));
+  box-shadow: 0 18px 40px rgba(70, 180, 255, 0.16);
+}
+
+button.secondary {
+  background: linear-gradient(135deg, var(--gold), var(--pink));
+}
+
+button.ghost {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+button:disabled {
+  opacity: 0.62;
+  cursor: wait;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: rgba(4, 9, 18, 0.68);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 0.76rem 0.85rem;
+  outline: none;
+}
+
+label {
+  color: var(--muted);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 900;
+}
+
+.command-card {
+  padding: 22px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.inline-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.range-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.range-tabs button {
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(184, 211, 255, 0.12);
+  color: #d9e8ff;
+  box-shadow: none;
+}
+
+.range-tabs button.active {
+  background: linear-gradient(135deg, #7cc7ff, #62ffa8);
+  color: #06111e;
+}
+
+.chat-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.census-search-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) 220px auto;
+  gap: 12px;
+  align-items: end;
+  margin: 18px 0 14px;
+}
+
+.census-search-box {
+  display: grid;
+  gap: 8px;
+}
+
+.featured-query-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.featured-pill {
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+}
