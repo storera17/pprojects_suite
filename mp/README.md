@@ -13,7 +13,7 @@
     Momentum Prodigy (mp)
 </div>
 
-> This is a platform to guide learning and enable better understand, reinforce concepts, and constantly improve
+> This is a platform to guide learning and enable better understand, reinforce concepts, and constantly improve. The original name of this platform was CORTEX. 
 
 # **Architecture**
 
