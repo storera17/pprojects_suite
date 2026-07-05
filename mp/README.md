@@ -9,11 +9,10 @@
             overflow: hidden;
             font-weight: 700;
             border: 5px solid #d4ccc4;"
-     >
     Momentum Prodigy (mp)
 </div>
 
-> This is a platform to guide learning and enable better understand, reinforce concepts, and constantly improve. The original name of this platform was CORTEX. 
+> MomentumProdigy is an offline-first spaced-repetition learning command center for analytics mastery. It combines a locked course structure, Anki-style review scheduling, semantic search, an offline tutor, voice commands, and progress systems in one React/TypeScript app. This public repository is sanitized for GitHub. It ships with synthetic demo course content so the application, tests, and build can be reviewed without publishing private course packets, extracted textbook text, or model weights.
 
 # **Architecture**
 
