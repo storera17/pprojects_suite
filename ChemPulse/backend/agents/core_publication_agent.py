@@ -121,3 +121,9 @@ class DownloadDiagnostics:
     fallback_used: bool = False
     broad_fallback_used: bool = False
     
+class CorePublicationAgent:
+    def __init__(self, client: CoreApiClient, settings: CorePublicationAgentSettings) -> None:
+        self.client = client
+        self.settings = settings
+
+ 
