@@ -6,3 +6,5 @@ from typing import Any, Optional
 from rdkit import Chem
 from rdkit.Chem import AllChem, Descriptors
 from rdkit.Chem.Scaffolds import MurckoScaffold
+
+logger = logging.getLogger(__name__)
