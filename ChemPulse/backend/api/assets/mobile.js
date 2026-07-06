@@ -32,3 +32,9 @@ function renderPublications(items) {
     ? items.slice(0, 12).map((item) => row(item.title, `${item.journal || "Unknown source"} | ${item.authors || "Unknown authors"}`, item.year || item.relevance_level || "new")).join("")
     : `<p class="muted">No publications available yet.</p>`;
 }
+
+function renderScaffolds(items) {
+  $("scaffold-list").innerHTML = items.length
+    ? items.slice(0, 10).map((item) => row(item.name, item.journal_label || "Publication evidence", item.publication_label || "0 pubs")).join("")
+    : `<p class="muted">No publication-evidenced scaffolds yet.</p>`;
+}
