@@ -39,7 +39,6 @@ def run_health(_request: Request) -> Response:
     except Exception as exc:  # noqa: BLE001
         return json_response({"health": "unknown", "error": safe_error(exc)}, status_code=500)
 
-
 def topics_list(_request: Request) -> Response:
     from backend.services import topics_service
 
@@ -48,3 +47,13 @@ def topics_list(_request: Request) -> Response:
         return json_response({"topics": topics_service.list_topics()})
     except Exception as exc:  # noqa: BLE001
         return json_response({"topics": [], "error": safe_error(exc)}, status_code=500)
+
+async def topics_update(request: Request) -> Response:
+    from backend.services import topics_service
+
+    body = await request_payload(request)
+    try:
+        result = topics_service.update_from_command_center(body)
+        return json_response(result, status_code=200 if result.get("ok") else 400)
+    except Exception as exc:  # noqa: BLE001
+        return json_response({"ok": False, "topics": [], "errors": [safe_error(exc)]}, status_code=500)
