@@ -77,3 +77,32 @@ def status_routes() -> list[RouteDefinition]:
         ("/chempulse/api/collection/run.js", run_collection_script, ["GET"]),
         ("/api/collection/run.js", run_collection_script, ["GET"]),
     ]
+    
+def dashboard_routes() -> list[RouteDefinition]:
+    return [
+        ("/api/documents", documents, ["GET"]),
+        ("/api/documents.js", documents_script, ["GET"]),
+        ("/api/journals", journals, ["GET"]),
+        ("/api/journals.js", journals_script, ["GET"]),
+        ("/api/publications", publications, ["GET"]),
+        ("/api/publications.js", publications_script, ["GET"]),
+        ("/api/scaffolds", scaffolds, ["GET"]),
+        ("/api/scaffolds.js", scaffolds_script, ["GET"]),
+        ("/api/galaxy/points", galaxy_points, ["GET"]),
+        ("/api/galaxy/points.js", galaxy_points_script, ["GET"]),
+        ("/api/analytics/top-scaffolds", top_scaffolds, ["GET"]),
+        ("/api/analytics/top-scaffolds.js", top_scaffolds_script, ["GET"]),
+        ("/api/analytics/journal-publications", journal_publications, ["GET"]),
+        ("/api/analytics/journal-publications.js", journal_publications_script, ["GET"]),
+        ("/api/research-pulse", research_pulse, ["GET"]),
+        ("/api/research-pulse.js", research_pulse_script, ["GET"]),
+        ("/api/publication-radar", publication_radar, ["GET"]),
+        ("/api/publication-radar.js", publication_radar_script, ["GET"]),
+        ("/api/manuscript-review", manuscript_review, ["GET"]),
+        ("/api/manuscript-review.js", manuscript_review_script, ["GET"]),
+        ("/api/predictive-lab/status", predictive_lab_status, ["GET"]),
+        ("/api/predictive-lab/status.js", predictive_lab_status_script, ["GET"]),
+        ("/api/dashboard/diagnostics", dashboard_diagnostics, ["GET"]),
+        ("/api/dashboard", dashboard_data, ["GET"]),
+        ("/api/dashboard.js", dashboard_data_script, ["GET"]),
+    ]
