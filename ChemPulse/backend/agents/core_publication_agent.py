@@ -97,7 +97,6 @@ DEFAULT_QUERY = (
     'AND publishedDate>={since})'
 )
 
-
 @dataclass(frozen=True)
 class CorePublicationAgentSettings:
     query: str = DEFAULT_QUERY
@@ -107,7 +106,7 @@ class CorePublicationAgentSettings:
     lookback_days: int = 2
     fallback_lookback_days: int = 90
     fallback_step_days: int = 14
-    empty_result_fallback_query: str = 
+    empty_result_fallback_query: str = FALLBACK_QUERY
     request_interval_seconds: float = 11.0
     base_url: str = "https://api.core.ac.uk/v3"
     sort: str = "recency"
