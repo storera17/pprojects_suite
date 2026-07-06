@@ -24,3 +24,7 @@ class AppConfig:
     @property
     def literature_api_key(self) -> str:
         return get_secret_env(self.literature_api_key_env)
+    
+    @property
+    def literature_api_key_configured(self) -> bool:
+        return is_api_key_configured(self.literature_api_key_env)
