@@ -40,3 +40,6 @@ class AppConfig:
     
 def get_config() -> AppConfig:
     return AppConfig(project_root=project_root(), storage_dir=storage_dir())
+
+def is_api_key_configured(env_name: str = LITERATURE_API_KEY_ENV) -> bool:
+    return bool(get_secret_env(env_name).strip())
