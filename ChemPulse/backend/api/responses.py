@@ -49,3 +49,12 @@ def safe_json_or_error(loader: Callable[[], Any]) -> Response:
             },
             status_code=500,
         )
+
+async def request_payload(request: Request) -> dict[str, Any]:
+    if request.method == "GET":
+        return dict(request.query_params)
+    try:
+        payload = await request.json()
+    except Exception:  # noqa: BLE001
+        payload = {}
+    return payload if isinstance(payload, dict) else {}
