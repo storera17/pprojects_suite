@@ -37,3 +37,6 @@ class AppConfig:
             return configured.rstrip("/")
         backend_port = os.getenv("BACKEND_PORT", "8000").strip() or "8000"
         return f"http://127.0.0.1:{backend_port}"
+    
+def get_config() -> AppConfig:
+    return AppConfig(project_root=project_root(), storage_dir=storage_dir())
