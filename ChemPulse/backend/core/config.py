@@ -28,3 +28,12 @@ class AppConfig:
     @property
     def literature_api_key_configured(self) -> bool:
         return is_api_key_configured(self.literature_api_key_env)
+    
+    
+    @property
+    def api_base_url(self) -> str:
+        configured = os.getenv("CHEMPULSE_API_BASE_URL", "").strip()
+        if configured:
+            return configured.rstrip("/")
+        backend_port = os.getenv("BACKEND_PORT", "8000").strip() or "8000"
+        return f"http://127.0.0.1:{backend_port}"
