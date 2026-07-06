@@ -45,3 +45,5 @@ from backend.api.status import (
     topics_list,
     topics_update,
 )
+
+type RouteDefinition = tuple[str, object, list[str]]
