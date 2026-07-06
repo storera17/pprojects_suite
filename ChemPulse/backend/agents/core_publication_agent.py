@@ -15,8 +15,8 @@ from backend.data.publication_relevance import DEFAULT_MIN_INGESTION_RELEVANCE_S
 from backend.data.scaffold_publication_matcher import default_scaffold_list_path, refresh_scaffold_matches
 from backend.integrations.core_api import CoreApiClient, CoreApiSettings, normalize_core_work
 
-# Fallback Query
-fallback_query = (
+# Queries for Core API
+DEFAULT_FALLBACK_QUERY = (
     ("chemistry" OR 
      "chemical synthesis" OR 
      "catalyst" OR 
@@ -24,8 +24,7 @@ fallback_query = (
      "molecule") AND 
     yearPublished:{year})
 
-# Default Query
-default_query = (
+DEFAULT_QUERY = (
 '(( '
     # General 
     "catalyst" OR "catalysts" OR "catalysis" OR "catalytic" OR
@@ -99,3 +98,20 @@ default_query = (
 )
 
 
+@dataclass(frozen=True)
+class CorePublicationAgentSettings:
+    query: str = DEFAULT_QUERY
+    daily_limit: int = 100
+    page_size: int = 25
+    entity_type: str = "journal-article"
+    lookback_days: int = 2
+    fallback_lookback_days: int = 90
+    fallback_step_days: int = 14
+    empty_result_fallback_query: str = 
+    request_interval_seconds: float = 11.0
+    base_url: str = "https://api.core.ac.uk/v3"
+    sort: str = "recency"
+    max_scan_pages: int = 20
+    min_relevance_score: int = DEFAULT_MIN_INGESTION_RELEVANCE_SCORE
+    min_inserted_success: int = 15
+    cursor_overlap_days: int = 7
