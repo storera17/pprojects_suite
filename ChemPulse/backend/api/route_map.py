@@ -47,3 +47,33 @@ from backend.api.status import (
 )
 
 type RouteDefinition = tuple[str, object, list[str]]
+
+def status_routes() -> list[RouteDefinition]:
+    return [
+        ("/chempulse/api/status", desktop_status, ["GET"]),
+        ("/api/status", desktop_status, ["GET"]),
+        ("/chempulse/api/collection/run", run_collection, ["POST"]),
+        ("/api/collection/run", run_collection, ["POST"]),
+        ("/chempulse/api/topics", topics_list, ["GET"]),
+        ("/api/topics", topics_list, ["GET"]),
+        ("/chempulse/api/topics", topics_update, ["POST"]),
+        ("/api/topics", topics_update, ["POST"]),
+        ("/chempulse/api/health-summary", run_health, ["GET"]),
+        ("/api/health-summary", run_health, ["GET"]),
+        ("/chempulse/api/publications/import", import_publications, ["POST"]),
+        ("/api/publications/import", import_publications, ["POST"]),
+        ("/chempulse/api/mobile/summary", mobile_summary, ["GET"]),
+        ("/api/mobile/summary", mobile_summary, ["GET"]),
+        ("/chempulse/mobile", mobile_app, ["GET"]),
+        ("/mobile", mobile_app, ["GET"]),
+        ("/chempulse/mobile/app.js", mobile_app_script, ["GET"]),
+        ("/mobile/app.js", mobile_app_script, ["GET"]),
+        ("/chempulse/mobile/manifest.webmanifest", mobile_manifest, ["GET"]),
+        ("/mobile/manifest.webmanifest", mobile_manifest, ["GET"]),
+        ("/chempulse/mobile/service-worker.js", mobile_service_worker, ["GET"]),
+        ("/mobile/service-worker.js", mobile_service_worker, ["GET"]),
+        ("/chempulse/api/status.js", desktop_status_script, ["GET"]),
+        ("/api/status.js", desktop_status_script, ["GET"]),
+        ("/chempulse/api/collection/run.js", run_collection_script, ["GET"]),
+        ("/api/collection/run.js", run_collection_script, ["GET"]),
+    ]
