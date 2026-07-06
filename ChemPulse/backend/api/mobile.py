@@ -37,3 +37,5 @@ def mobile_summary(_request: Request) -> Response:
 def mobile_app(_request: Request) -> Response:
     return static_response(read_mobile_asset("mobile.html"), "text/html; charset=utf-8")
 
+def mobile_app_script(_request: Request) -> Response:
+    return static_response(read_mobile_asset("mobile.js"), "application/javascript")
