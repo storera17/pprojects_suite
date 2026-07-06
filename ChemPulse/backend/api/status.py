@@ -12,3 +12,7 @@ from backend.services.scheduled_collection_service import ScheduledCollectionSer
 
 def desktop_status(_request: Request) -> Response:
     return json_response(status_or_error())
+
+def run_collection(_request: Request) -> Response:
+    result = ScheduledCollectionService.trigger_now()
+    return json_response(safe_payload(result), status_code=200 if result.get("status") != "failed" else 503)
