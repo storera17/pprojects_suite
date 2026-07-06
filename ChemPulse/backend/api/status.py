@@ -16,3 +16,7 @@ def desktop_status(_request: Request) -> Response:
 def run_collection(_request: Request) -> Response:
     result = ScheduledCollectionService.trigger_now()
     return json_response(safe_payload(result), status_code=200 if result.get("status") != "failed" else 503)
+
+def desktop_status_script(_request: Request) -> Response:
+    payload = json.dumps(status_or_error(), allow_nan=False)
+    return javascript_response(f"window.ChemPulseAgentStatus&&window.ChemPulseAgentStatus.applyStatus({payload});")
