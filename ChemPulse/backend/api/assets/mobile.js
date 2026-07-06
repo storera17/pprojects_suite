@@ -26,3 +26,9 @@ async function loadSummary() {
 function row(title, meta, badge) {
   return `<article class="row"><div style="flex:1"><strong>${esc(title)}</strong><span>${esc(meta)}</span></div><div class="pill">${esc(badge)}</div></article>`;
 }
+
+function renderPublications(items) {
+  $("publications").innerHTML = items.length
+    ? items.slice(0, 12).map((item) => row(item.title, `${item.journal || "Unknown source"} | ${item.authors || "Unknown authors"}`, item.year || item.relevance_level || "new")).join("")
+    : `<p class="muted">No publications available yet.</p>`;
+}
