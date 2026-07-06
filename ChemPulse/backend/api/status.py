@@ -40,3 +40,11 @@ def run_health(_request: Request) -> Response:
         return json_response({"health": "unknown", "error": safe_error(exc)}, status_code=500)
 
 
+def topics_list(_request: Request) -> Response:
+    from backend.services import topics_service
+
+    try:
+        topics_service.ensure_seeded()
+        return json_response({"topics": topics_service.list_topics()})
+    except Exception as exc:  # noqa: BLE001
+        return json_response({"topics": [], "error": safe_error(exc)}, status_code=500)
