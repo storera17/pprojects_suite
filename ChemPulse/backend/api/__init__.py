@@ -1,5 +1,3 @@
-"""Provide the canonical ChemPulse backend API handler surface."""
-
 from backend.api.chemical_intelligence import (
     mechanism_explain,
     reaction_name_search,
