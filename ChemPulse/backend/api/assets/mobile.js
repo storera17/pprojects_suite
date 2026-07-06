@@ -38,3 +38,26 @@ function renderScaffolds(items) {
     ? items.slice(0, 10).map((item) => row(item.name, item.journal_label || "Publication evidence", item.publication_label || "0 pubs")).join("")
     : `<p class="muted">No publication-evidenced scaffolds yet.</p>`;
 }
+
+async function importLead() {
+  const source = $("lead").value.trim();
+  if (!source) {
+    $("import-status").textContent = "Paste a DOI or article URL first.";
+    return;
+  }
+  $("import-status").textContent = "Importing into ChemPulse...";
+  try {
+    const response = await fetch("/api/publications/import", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({source})
+    });
+    const result = await response.json();
+    if (!response.ok || result.ok === false) throw new Error(result.error || "Import failed");
+    $("import-status").textContent = `Imported ${result.inserted || 0} new / ${result.updated || 0} updated.`;
+    $("lead").value = "";
+    await loadSummary();
+  } catch (error) {
+    $("import-status").textContent = `Import failed: ${error.message}`;
+  }
+}
