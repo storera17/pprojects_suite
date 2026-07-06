@@ -43,3 +43,6 @@ def get_config() -> AppConfig:
 
 def is_api_key_configured(env_name: str = LITERATURE_API_KEY_ENV) -> bool:
     return bool(get_secret_env(env_name).strip())
+
+def get_secret_env(env_name: str, default: str = "") -> str:
+    return get_env_value(env_name, default).strip()
