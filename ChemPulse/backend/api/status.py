@@ -20,3 +20,14 @@ def run_collection(_request: Request) -> Response:
 def desktop_status_script(_request: Request) -> Response:
     payload = json.dumps(status_or_error(), allow_nan=False)
     return javascript_response(f"window.ChemPulseAgentStatus&&window.ChemPulseAgentStatus.applyStatus({payload});")
+
+def run_collection_script(_request: Request) -> Response:
+    result = safe_payload(ScheduledCollectionService.trigger_now())
+    payload = json.dumps(result, allow_nan=False)
+    return javascript_response(
+        "window.ChemPulseAgentStatus&&"
+        f"window.ChemPulseAgentStatus.applyRunResult({payload});"
+        "window.ChemPulseAgentStatus&&"
+        "window.setTimeout(function(){window.ChemPulseAgentStatus.refresh();},1500);"
+    )
+
