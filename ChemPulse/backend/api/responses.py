@@ -5,3 +5,11 @@ import json
 
 from starlette.requests import Request
 from starlette.responses import Response
+
+def json_response(content: Any, status_code: int = 200) -> Response:
+    return Response(
+        json.dumps(content, allow_nan=False),
+        status_code=status_code,
+        media_type="application/json",
+        headers=_cors_headers(),
+    )
