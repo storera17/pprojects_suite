@@ -31,3 +31,21 @@ def static_response(content: str, media_type: str) -> Response:
 
 def static_headers() -> dict[str, str]:
     return _cors_headers()
+
+def safe_json_or_error(loader: Callable[[], Any]) -> Response:
+    try:
+        return json_response(safe_dashboard_payload(loader()))
+    except Exception as exc:  # noqa: BLE001
+        return json_response(
+            {
+                "items": [],
+                "metadata": {
+                    "record_count": 0,
+                    "source": "error",
+                    "last_updated": "",
+                    "empty_state_reason": f"ChemPulse data unavailable: {safe_error(exc)}",
+                    "last_error": safe_error(exc),
+                },
+            },
+            status_code=500,
+        )
