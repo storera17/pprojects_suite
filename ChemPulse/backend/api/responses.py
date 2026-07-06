@@ -78,3 +78,9 @@ def safe_payload(value: Any) -> Any:
             return text.replace("CORE_API_KEY", "literature API key")
         return value
     return str(value)
+
+def safe_dashboard_payload(value: Any) -> Any:
+    return safe_payload(value)
+
+def safe_error(exc: Exception) -> str:
+    return str(exc).replace("CORE_API_KEY", "literature API key")
