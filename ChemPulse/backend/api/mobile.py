@@ -39,3 +39,11 @@ def mobile_app(_request: Request) -> Response:
 
 def mobile_app_script(_request: Request) -> Response:
     return static_response(read_mobile_asset("mobile.js"), "application/javascript")
+
+def mobile_manifest(_request: Request) -> Response:
+    manifest = json.loads(read_mobile_asset("manifest.json"))
+    return Response(json.dumps(manifest, allow_nan=False), media_type="application/manifest+json", headers=static_headers())
+
+
+def mobile_service_worker(_request: Request) -> Response:
+    return static_response(read_mobile_asset("service-worker.js"), "application/javascript")
