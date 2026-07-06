@@ -9,6 +9,11 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+from backend.config import get_config, get_secret_env, is_api_key_configured
+from backend.data.core_publication_repository import CorePublicationRepository
+from backend.data.publication_relevance import DEFAULT_MIN_INGESTION_RELEVANCE_SCORE, is_ingestion_relevant
+from backend.data.scaffold_publication_matcher import default_scaffold_list_path, refresh_scaffold_matches
+from backend.integrations.core_api import CoreApiClient, CoreApiSettings, normalize_core_work
 
 # Fallback Query
 fallback_query = (
