@@ -32,3 +32,8 @@ def mobile_summary(_request: Request) -> Response:
         }
 
     return safe_json_or_error(load)
+
+
+def mobile_app(_request: Request) -> Response:
+    return static_response(read_mobile_asset("mobile.html"), "text/html; charset=utf-8")
+
