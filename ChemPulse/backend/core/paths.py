@@ -6,3 +6,13 @@ from pathlib import Path
 
 def project_root() -> Path:
     return Path(__file__).resolve().parents[2]
+
+def platform_app_data_dir() -> Path:
+    if sys.platform == "darwin":
+        return Path.home() / "Library" / "Application Support" / "ChemPulse"
+    if os.name == "nt":
+        return Path(os.getenv("LOCALAPPDATA", str(project_root()))) / "ChemPulse"
+    xdg_data_home = os.getenv("XDG_DATA_HOME")
+    if xdg_data_home:
+        return Path(xdg_data_home).expanduser() / "ChemPulse"
+    return Path.home() / ".local" / "share" / "ChemPulse"
