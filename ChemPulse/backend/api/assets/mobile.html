@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="ChemPulse">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="manifest" href="/mobile/manifest.webmanifest">
+  <title>ChemPulse Mobile</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-rounded, Avenir Next, Nunito, system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; color: #e6fffb; background:
+      radial-gradient(circle at 10% 0%, rgba(45,212,191,.28), transparent 36%),
+      radial-gradient(circle at 90% 18%, rgba(251,191,36,.18), transparent 30%),
+      linear-gradient(145deg, #07111f 0%, #0b1627 48%, #111827 100%); }
+    main { padding: max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom)); max-width: 720px; margin: auto; }
+    .hero { padding: 1.1rem; border: 1px solid rgba(153,246,228,.18); border-radius: 28px; background: rgba(7,17,31,.66); box-shadow: 0 20px 70px rgba(0,0,0,.28); backdrop-filter: blur(18px); }
+    h1 { margin: .2rem 0; font-size: clamp(2.1rem, 12vw, 4.4rem); letter-spacing: -.07em; line-height: .88; }
+    h2 { margin: 1.2rem 0 .55rem; font-size: 1rem; color: #99f6e4; text-transform: uppercase; letter-spacing: .12em; }
+    p { color: #b6c8d5; line-height: 1.45; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .75rem; margin: 1rem 0; }
+    .card { padding: .92rem; border-radius: 20px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.065); }
+    .value { font-size: 1.85rem; font-weight: 850; letter-spacing: -.05em; }
+    .label { color: #94a3b8; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+    .row { display: flex; gap: .7rem; align-items: flex-start; padding: .85rem; border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.055); border-radius: 18px; margin: .55rem 0; }
+    .row strong { color: white; display: block; line-height: 1.2; }
+    .row span { color: #a8bac7; font-size: .86rem; }
+    .pill { display: inline-block; padding: .2rem .52rem; border-radius: 999px; background: rgba(45,212,191,.15); color: #99f6e4; font-size: .72rem; font-weight: 800; white-space: nowrap; }
+    input, button { width: 100%; border: 0; border-radius: 16px; padding: .9rem 1rem; font: inherit; }
+    input { color: #e6fffb; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); }
+    button { margin-top: .55rem; color: #042f2e; background: linear-gradient(135deg, #5eead4, #fde68a); font-weight: 900; }
+    .muted { color: #8aa0ad; font-size: .86rem; }
+    .status { min-height: 1.2rem; margin-top: .55rem; color: #fef3c7; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="pill" id="connection-pill">Connecting</div>
+      <h1>ChemPulse in your pocket.</h1>
+      <p>Live publication radar, database status, and quick DOI/article import from your local ChemPulse backend.</p>
+      <div class="grid">
+        <div class="card"><div class="value" id="pubs">0</div><div class="label">Publications</div></div>
+        <div class="card"><div class="value" id="sources">0</div><div class="label">Sources</div></div>
+        <div class="card"><div class="value" id="scaffolds">0</div><div class="label">Scaffolds</div></div>
+        <div class="card"><div class="value" id="records">0</div><div class="label">Last Run</div></div>
+      </div>
+      <input id="lead" placeholder="Paste DOI or article URL">
+      <button id="import-button">Import Publication</button>
+      <div class="status" id="import-status"></div>
+    </section>
+    <h2>Publication Radar</h2>
+    <section id="publications"></section>
+    <h2>Scaffolds</h2>
+    <section id="scaffold-list"></section>
+    <p class="muted">Install on iPhone: open this page in Safari, tap Share, then Add to Home Screen.</p>
+  </main>
+  <script src="/mobile/app.js"></script>
+</body>
+</html>
