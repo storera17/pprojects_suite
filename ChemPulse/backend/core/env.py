@@ -24,3 +24,14 @@ def read_project_env(root: Path | None = None) -> dict[str, str]:
             continue
         values[key] = _strip_wrapped_quotes(value.strip())
     return values
+
+def get_env_value(name: str, default: str = "", *, root: Path | None = None) -> str:
+    process_value = os.getenv(name)
+    if process_value:
+        return process_value
+
+    user_value = _windows_user_env(name)
+    if user_value:
+        return user_value
+
+    return read_project_env(root).get(name, default)
