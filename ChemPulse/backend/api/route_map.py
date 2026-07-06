@@ -106,3 +106,14 @@ def dashboard_routes() -> list[RouteDefinition]:
         ("/api/dashboard", dashboard_data, ["GET"]),
         ("/api/dashboard.js", dashboard_data_script, ["GET"]),
     ]
+    
+def chemical_intelligence_routes() -> list[RouteDefinition]:
+    return [
+        ("/api/search/literature", literature_search, ["GET", "POST"]),
+        ("/api/search/structure", structure_search, ["POST"]),
+        ("/api/search/reaction", reaction_search, ["POST"]),
+        ("/api/search/reaction-name", reaction_name_search, ["GET", "POST"]),
+        ("/api/mechanism/explain", mechanism_explain, ["POST"]),
+        ("/api/reports/reaction", reaction_report, ["POST"]),
+    ]
+
