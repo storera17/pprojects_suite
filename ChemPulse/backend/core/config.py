@@ -20,3 +20,7 @@ class AppConfig:
     @property
     def database_path(self) -> Path:
         return self.storage_dir / self.database_filename
+    
+    @property
+    def literature_api_key(self) -> str:
+        return get_secret_env(self.literature_api_key_env)
