@@ -22,3 +22,7 @@ async function loadSummary() {
     $("import-status").textContent = `Could not reach ChemPulse: ${error.message}`;
   }
 }
+
+function row(title, meta, badge) {
+  return `<article class="row"><div style="flex:1"><strong>${esc(title)}</strong><span>${esc(meta)}</span></div><div class="pill">${esc(badge)}</div></article>`;
+}
