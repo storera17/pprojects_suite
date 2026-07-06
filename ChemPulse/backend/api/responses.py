@@ -64,3 +64,17 @@ def safe_int(value: Any, default: int) -> int:
         return int(value)
     except (TypeError, ValueError):
         return default
+
+def safe_payload(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {str(key): safe_payload(item) for key, item in value.items() if "secret" not in str(key).lower()}
+    if isinstance(value, list):
+        return [safe_payload(item) for item in value]
+    if isinstance(value, tuple):
+        return [safe_payload(item) for item in value]
+    if value is None or isinstance(value, (str, int, float, bool)):
+        text = str(value)
+        if "CORE_API_KEY" in text:
+            return text.replace("CORE_API_KEY", "literature API key")
+        return value
+    return str(value)
