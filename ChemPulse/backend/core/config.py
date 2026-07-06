@@ -16,3 +16,7 @@ class AppConfig:
     ollama_base_url: str = "http://localhost:11434"
     ollama_model: str = "llama3.1:8b"
     literature_api_key_env: str = LITERATURE_API_KEY_ENV
+
+    @property
+    def database_path(self) -> Path:
+        return self.storage_dir / self.database_filename
