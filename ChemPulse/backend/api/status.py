@@ -57,3 +57,48 @@ async def topics_update(request: Request) -> Response:
         return json_response(result, status_code=200 if result.get("ok") else 400)
     except Exception as exc:  # noqa: BLE001
         return json_response({"ok": False, "topics": [], "errors": [safe_error(exc)]}, status_code=500)
+
+def status_or_error() -> dict[str, Any]:
+    try:
+        return public_status(AgentStatusService.get_status())
+    except Exception as exc:  # noqa: BLE001
+        return safe_payload(
+            {
+                "last_database_update": "Never",
+                "api_agent_available": False,
+                "api_key_configured": False,
+                "api_key_status": "Unknown",
+                "api_key_display": "Unknown",
+                "agent_wired_to_database": False,
+                "agent_wired_to_app": True,
+                "latest_run_status": "status error",
+                "latest_run_query": "",
+                "latest_run_downloaded_count": 0,
+                "latest_run_inserted_count": 0,
+                "latest_run_updated_count": 0,
+                "latest_run_diagnosis_path": "",
+                "latest_run_reason": "",
+                "last_success_time": "Never",
+                "last_success_records": 0,
+                "last_insufficient_time": "Never",
+                "last_failure_time": "Never",
+                "last_failure_error": "",
+                "latest_records_processed": 0,
+                "backend_reachable": False,
+                "database_reachable": False,
+                "scaffold_database_loaded": False,
+                "chemistry_engine_available": False,
+                "active_api_base_url": "",
+                "last_connection_error": f"ChemPulse status unavailable: {exc}",
+                "desktop_mode": "offline",
+                "scaffold_table_available": False,
+                "literature_table_available": False,
+                "previous_payload_available": False,
+                "previous_payload_updated_at": "",
+                "previous_payload_record_count": 0,
+                "collection_enabled": False,
+                "collection_running": False,
+                "collection_next_run_at": "Never",
+                "collection_last_run_finished_at": "Never",
+            }
+        )
