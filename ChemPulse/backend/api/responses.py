@@ -84,3 +84,13 @@ def safe_dashboard_payload(value: Any) -> Any:
 
 def safe_error(exc: Exception) -> str:
     return str(exc).replace("CORE_API_KEY", "literature API key")
+
+def _cors_headers() -> dict[str, str]:
+    return {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Private-Network": "true",
+        "Cache-Control": "no-store",
+        "Cross-Origin-Resource-Policy": "cross-origin",
+    }
