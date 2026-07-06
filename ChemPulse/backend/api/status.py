@@ -102,3 +102,45 @@ def status_or_error() -> dict[str, Any]:
                 "collection_last_run_finished_at": "Never",
             }
         )
+        
+def public_status(status: dict[str, Any]) -> dict[str, Any]:
+    keys = [
+        "last_database_update",
+        "api_agent_available",
+        "api_key_configured",
+        "api_key_status",
+        "api_key_display",
+        "agent_wired_to_database",
+        "agent_wired_to_app",
+        "latest_run_status",
+        "latest_run_query",
+        "latest_run_downloaded_count",
+        "latest_run_inserted_count",
+        "latest_run_updated_count",
+        "latest_run_diagnosis_path",
+        "latest_run_reason",
+        "last_success_time",
+        "last_success_records",
+        "last_insufficient_time",
+        "last_failure_time",
+        "last_failure_error",
+        "latest_records_processed",
+        "backend_reachable",
+        "database_reachable",
+        "scaffold_database_loaded",
+        "chemistry_engine_available",
+        "active_api_base_url",
+        "last_connection_error",
+        "desktop_mode",
+        "scaffold_table_available",
+        "literature_table_available",
+        "previous_payload_available",
+        "previous_payload_updated_at",
+        "previous_payload_record_count",
+        "collection_enabled",
+        "collection_running",
+        "collection_next_run_at",
+        "collection_last_run_finished_at",
+    ]
+    return safe_payload({key: status.get(key) for key in keys})
+
