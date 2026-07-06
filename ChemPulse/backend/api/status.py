@@ -31,3 +31,12 @@ def run_collection_script(_request: Request) -> Response:
         "window.setTimeout(function(){window.ChemPulseAgentStatus.refresh();},1500);"
     )
 
+def run_health(_request: Request) -> Response:
+    from backend.services.run_health_service import RunHealthService
+
+    try:
+        return json_response(RunHealthService.summary())
+    except Exception as exc:  # noqa: BLE001
+        return json_response({"health": "unknown", "error": safe_error(exc)}, status_code=500)
+
+
