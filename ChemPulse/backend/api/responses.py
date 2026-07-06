@@ -25,3 +25,7 @@ def javascript_response(source: str) -> Response:
             "Cross-Origin-Resource-Policy": "cross-origin",
         },
     )
+    
+def static_response(content: str, media_type: str) -> Response:
+    return Response(content, media_type=media_type, headers=_cors_headers())
+
