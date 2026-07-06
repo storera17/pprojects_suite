@@ -16,3 +16,14 @@ def platform_app_data_dir() -> Path:
     if xdg_data_home:
         return Path(xdg_data_home).expanduser() / "ChemPulse"
     return Path.home() / ".local" / "share" / "ChemPulse"
+
+def storage_dir() -> Path:
+    configured = os.getenv("CHEMPULSE_STORAGE_DIR")
+    if configured:
+        path = Path(configured).expanduser()
+    elif getattr(sys, "frozen", False):
+        path = platform_app_data_dir() / "storage"
+    else:
+        path = project_root() / "backend" / "storage"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
