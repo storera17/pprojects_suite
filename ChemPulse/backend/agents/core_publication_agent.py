@@ -126,4 +126,110 @@ class CorePublicationAgent:
         self.client = client
         self.settings = settings
 
- 
+    def run_once(self) -> dict[str, Any]:
+        run_id = str(uuid.uuid4())
+        initial_since = self._since_date()
+        query = self._build_query(initial_since)
+        reconciled_runs = CorePublicationRepository.reconcile_orphaned_runs()
+        stale_runs = reconciled_runs.get("stale_failed", 0)
+        superseded_runs = reconciled_runs.get("superseded_running", 0) + reconciled_runs.get("superseded_legacy_failures", 0)
+        CorePublicationRepository.start_run(
+            run_id=run_id,
+            query=query,
+            requested_limit=self.settings.daily_limit,
+            page_size=self.settings.page_size,
+            initial_query=query,
+        )
+
+        inserted = 0
+        updated = 0
+        downloaded_count = 0
+        diagnosis_path = ""
+        try:
+            publications, final_query, attempted_queries, diagnostics, frontier = self._download_publications_with_fallback(initial_since)
+            CorePublicationRepository.update_run_query(run_id, final_query)
+            counts = CorePublicationRepository.upsert_publications(publications, final_query)
+            scaffold_matches = _refresh_scaffolds_if_available()
+            downloaded_count = diagnostics.downloaded_count
+            inserted = counts["inserted"]
+            updated = counts["updated"]
+            error_message, diagnosis_path = _collection_outcome(inserted, self.settings.min_inserted_success, diagnostics)
+            status = "insufficient" if error_message else "succeeded"
+            CorePublicationRepository.finish_run(
+                run_id,
+                status,
+                inserted,
+                updated,
+                error_message,
+                downloaded_count=downloaded_count,
+                diagnosis_path=diagnosis_path,
+            )
+            if frontier:
+                self._advance_cursor(frontier, final_query, downloaded_count, status)
+            result = {
+                "run_id": run_id,
+                "status": status,
+                "query": final_query,
+                "initial_query": query,
+                "attempted_queries": attempted_queries,
+                "downloaded": downloaded_count,
+                "inserted": inserted,
+                "updated": updated,
+                "diagnosis_path": diagnosis_path,
+                "inserted_items": counts.get("inserted_items", []),
+                "updated_items": counts.get("updated_items", []),
+                "stale_runs_marked_failed": stale_runs,
+                "orphaned_runs_superseded": superseded_runs,
+                "scaffold_matches": scaffold_matches,
+            }
+            if error_message:
+                result["error"] = error_message
+            result["report_path"] = str(write_run_report(result))
+            return result
+        except Exception as exc:
+            CorePublicationRepository.finish_run(run_id, "failed", inserted, updated, str(exc), downloaded_count=downloaded_count, diagnosis_path=diagnosis_path)
+            failure_result = {
+                "run_id": run_id,
+                "status": "failed",
+                "query": query,
+                "downloaded": downloaded_count,
+                "inserted": inserted,
+                "updated": updated,
+                "diagnosis_path": diagnosis_path,
+                "inserted_items": [],
+                "updated_items": [],
+                "error": str(exc),
+                "stale_runs_marked_failed": stale_runs,
+                "orphaned_runs_superseded": superseded_runs,
+                "scaffold_matches": {},
+            }
+            failure_result["report_path"] = str(write_run_report(failure_result))
+            raise
+        except BaseException as exc:
+            interrupted_error = f"Run was interrupted before completion: {type(exc).__name__}"
+            CorePublicationRepository.finish_run(
+                run_id,
+                "failed",
+                inserted,
+                updated,
+                interrupted_error,
+                downloaded_count=downloaded_count,
+                diagnosis_path=diagnosis_path,
+            )
+            failure_result = {
+                "run_id": run_id,
+                "status": "failed",
+                "query": query,
+                "downloaded": downloaded_count,
+                "inserted": inserted,
+                "updated": updated,
+                "diagnosis_path": diagnosis_path,
+                "inserted_items": [],
+                "updated_items": [],
+                "error": interrupted_error,
+                "stale_runs_marked_failed": stale_runs,
+                "orphaned_runs_superseded": superseded_runs,
+                "scaffold_matches": {},
+            }
+            failure_result["report_path"] = str(write_run_report(failure_result))
+            raise
