@@ -35,3 +35,16 @@ def get_env_value(name: str, default: str = "", *, root: Path | None = None) -> 
         return user_value
 
     return read_project_env(root).get(name, default)
+
+def _windows_user_env(name: str) -> str:
+    if os.name != "nt":
+        return ""
+
+    try:
+        import winreg
+
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as key:
+            value, _ = winreg.QueryValueEx(key, name)
+            return str(value).strip()
+    except OSError:
+        return ""
