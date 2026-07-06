@@ -48,3 +48,8 @@ def _windows_user_env(name: str) -> str:
             return str(value).strip()
     except OSError:
         return ""
+    
+def _strip_wrapped_quotes(value: str) -> str:
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+        return value[1:-1]
+    return value
