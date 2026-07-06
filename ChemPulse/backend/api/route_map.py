@@ -119,3 +119,9 @@ def chemical_intelligence_routes() -> list[RouteDefinition]:
 
 def frontend_dashboard_routes() -> list[RouteDefinition]:
     return [*dashboard_routes(), *[(f"/chempulse{path}", handler, methods) for path, handler, methods in dashboard_routes()]]
+
+def frontend_chemical_intelligence_routes() -> list[RouteDefinition]:
+    return [
+        *chemical_intelligence_routes(),
+        *[(f"/chempulse{path}", handler, methods) for path, handler, methods in chemical_intelligence_routes()],
+    ]
