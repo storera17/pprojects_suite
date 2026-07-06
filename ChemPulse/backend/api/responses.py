@@ -58,3 +58,9 @@ async def request_payload(request: Request) -> dict[str, Any]:
     except Exception:  # noqa: BLE001
         payload = {}
     return payload if isinstance(payload, dict) else {}
+
+def safe_int(value: Any, default: int) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
