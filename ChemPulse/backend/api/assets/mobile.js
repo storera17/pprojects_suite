@@ -61,3 +61,8 @@ async function importLead() {
     $("import-status").textContent = `Import failed: ${error.message}`;
   }
 }
+
+$("import-button").addEventListener("click", importLead);
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("/mobile/service-worker.js").catch(() => {});
+loadSummary();
+setInterval(loadSummary, 30000);
