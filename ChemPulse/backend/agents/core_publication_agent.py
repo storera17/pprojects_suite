@@ -114,3 +114,10 @@ class CorePublicationAgentSettings:
     min_relevance_score: int = DEFAULT_MIN_INGESTION_RELEVANCE_SCORE
     min_inserted_success: int = 15
     cursor_overlap_days: int = 7
+
+class DownloadDiagnostics:
+    downloaded_count: int = 0
+    duplicate_count: int = 0
+    fallback_used: bool = False
+    broad_fallback_used: bool = False
+    
