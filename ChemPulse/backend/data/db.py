@@ -84,3 +84,10 @@ def initialize_schema(db_path: str | Path | None = None) -> Path:
             _db_lock.release()
     return final_path
 
+def table_exists(table_name: str) -> bool:
+    with get_connection(read_only=True) as con:
+        result = con.execute(
+            "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = ?",
+            [table_name],
+        ).fetchone()
+    return bool(result and result[0])
