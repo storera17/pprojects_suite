@@ -63,3 +63,27 @@ class CorePublicationRepository:
                 [_utc_now(), SUPERSEDED_RUN_MESSAGE],
             ).fetchall()
         return len(result)
+
+    @staticmethod
+    def mark_superseded_legacy_failures() -> int:
+        ensure_core_ingestion_schema()
+        with _get_connection_with_retry(read_only=False) as con:
+            result = con.execute(
+                """
+                UPDATE core_ingestion_runs AS run
+                SET
+                    status = 'superseded',
+                    error_message = ?
+                WHERE run.status = 'failed'
+                  AND run.error_message IN (?, ?)
+                  AND EXISTS (
+                    SELECT 1
+                    FROM core_ingestion_runs AS success
+                    WHERE success.status = 'succeeded'
+                      AND success.started_at > run.started_at
+                  )
+                RETURNING run_id
+                """,
+                [SUPERSEDED_RUN_MESSAGE, LEGACY_ORPHANED_RUN_MESSAGE, ORPHANED_RUN_MESSAGE],
+            ).fetchall()
+        return len(result)
