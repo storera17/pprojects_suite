@@ -189,3 +189,22 @@ class ScaffoldRegistry:
             }
             for row in rows
         ]
+
+def _utc_now() -> datetime:
+    return datetime.now(timezone.utc)
+
+def _get_connection_with_retry(read_only: bool = False, attempts: int = 60, delay_seconds: float = 2.0) -> duckdb.DuckDBPyConnection:
+    last_error: duckdb.Error | OSError | None = None
+    for _ in range(attempts):
+        try:
+            return get_connection(read_only=read_only)
+        except (duckdb.Error, OSError) as exc:
+            last_error = exc
+            if not _is_lock_error(exc):
+                raise
+            time.sleep(delay_seconds)
+    raise RuntimeError(f"Timed out waiting for DuckDB database lock: {last_error}")
+
+def _is_lock_error(exc: Exception) -> bool:
+    message = str(exc).lower()
+    return "lock" in message or "being used by another process" in message or "cannot access the file"
