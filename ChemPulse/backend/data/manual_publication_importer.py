@@ -703,3 +703,49 @@ def _readable_title_from_url(url: str) -> str:
     parsed = urlparse(url)
     path = parsed.path.strip("/").replace("-", " ").replace("_", " ")
     return path.title() or parsed.netloc or "External literature lead"
+
+class _PublicationMetadataParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.meta: dict[str, list[str]] = {}
+        self.title_parts: list[str] = []
+        self._in_title = False
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attrs_map = {key.lower(): value or "" for key, value in attrs}
+        if tag.lower() == "title":
+            self._in_title = True
+        if tag.lower() != "meta":
+            return
+        name = (attrs_map.get("name") or attrs_map.get("property") or "").lower()
+        content = attrs_map.get("content", "").strip()
+        if name and content:
+            self.meta.setdefault(name, []).append(content)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() == "title":
+            self._in_title = False
+
+    def handle_data(self, data: str) -> None:
+        if self._in_title and data.strip():
+            self.title_parts.append(data.strip())
+
+    def metadata(self) -> dict[str, Any]:
+        title = self._pick("citation_title", "dc.title", "og:title") or " ".join(self.title_parts)
+        return {
+            "title": title,
+            "doi": self._pick("citation_doi", "dc.identifier", "dc.identifier.doi"),
+            "published_date": self._pick("citation_publication_date", "citation_date", "article:published_time"),
+            "year_published": self._pick("citation_year"),
+            "authors": self.meta.get("citation_author", []),
+            "journal": self._pick("citation_journal_title", "citation_conference_title", "og:site_name"),
+            "abstract": self._pick("description", "dc.description", "og:description"),
+            "topics": self._pick("citation_keywords", "keywords"),
+        }
+
+    def _pick(self, *keys: str) -> str:
+        for key in keys:
+            values = self.meta.get(key)
+            if values:
+                return values[0]
+        return ""
