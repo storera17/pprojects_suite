@@ -30,3 +30,12 @@ def ensure_core_ingestion_schema() -> None:
         con.execute("ALTER TABLE bronze_core_publications ADD COLUMN IF NOT EXISTS file_path VARCHAR")
         con.execute("ALTER TABLE bronze_core_publications ADD COLUMN IF NOT EXISTS duplicate_status VARCHAR")
         con.execute("ALTER TABLE bronze_core_publications ADD COLUMN IF NOT EXISTS run_folder VARCHAR")
+        
+class CorePublicationRepository:
+    @staticmethod
+    def reconcile_orphaned_runs(max_age_hours: float = 6) -> dict[str, int]:
+        return {
+            "superseded_running": CorePublicationRepository.mark_superseded_running_runs(),
+            "superseded_legacy_failures": CorePublicationRepository.mark_superseded_legacy_failures(),
+            "stale_failed": CorePublicationRepository.mark_stale_running_runs_failed(max_age_hours=max_age_hours),
+        }
