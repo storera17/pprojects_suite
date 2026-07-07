@@ -91,3 +91,47 @@ class PayloadRepository:
             ).fetchone()
         return _payload_record(row) if row else empty_payload()
 
+def empty_payload() -> dict[str, Any]:
+    return {
+        "available": False,
+        "payload_id": "",
+        "created_at": "",
+        "updated_at": "",
+        "source": "",
+        "status": "empty",
+        "record_count": 0,
+        "last_error": "",
+        "payload": {},
+        "message": "No previous ChemPulse payload has been saved yet.",
+    }
+
+def _payload_record(row: tuple[Any, ...]) -> dict[str, Any]:
+    payload: dict[str, Any]
+    try:
+        payload = json.loads(row[7] or "{}")
+    except json.JSONDecodeError:
+        payload = {}
+    return {
+        "available": True,
+        "payload_id": row[0],
+        "created_at": _format_dt(row[1]),
+        "updated_at": _format_dt(row[2]),
+        "source": row[3],
+        "status": row[4],
+        "record_count": int(row[5] or 0),
+        "last_error": _redact(str(row[6] or "")),
+        "payload": payload,
+        "message": "",
+    }
+
+def _format_dt(value: Any) -> str:
+    if not value:
+        return ""
+    return value.isoformat() if hasattr(value, "isoformat") else str(value)
+
+def _redact(message: str) -> str:
+    redacted = re.sub(r"CORE_API_KEY\s*=\s*[^,\s;]+", "literature API key [redacted]", message or "")
+    redacted = redacted.replace("CORE_API_KEY", "literature API key")
+    redacted = re.sub(r"sk-[A-Za-z0-9_\-]+", "[redacted]", redacted)
+    redacted = re.sub(r"LSl[A-Za-z0-9_\-]+", "[redacted]", redacted)
+    return redacted
