@@ -42,3 +42,21 @@ class _LockedConnection:
 
     def __getattr__(self, name: str) -> Any:
         return getattr(self._connection, name)
+
+def get_connection(read_only: bool = False) -> _LockedConnection:
+    # DuckDB rejects mixed read-only/read-write connections to the same file
+    # inside one process. ChemPulse has background writes and dashboard reads,
+    # so serialize local and cross-process access and keep all connections on
+    # one configuration.
+    _db_lock.acquire()
+    file_lock: _DatabaseFileLock | None = None
+    try:
+        db_path = get_db_path()
+        file_lock = _DatabaseFileLock(db_path)
+        file_lock.acquire()
+        return _LockedConnection(_connect_with_retry(db_path), file_lock)
+    except Exception:
+        if file_lock:
+            file_lock.release()
+        _db_lock.release()
+        raise
