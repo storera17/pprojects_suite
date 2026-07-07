@@ -1,0 +1,3 @@
+-r base.txt
+pywebview>=5.4
+reflex>=0.5
