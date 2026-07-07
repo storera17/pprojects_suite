@@ -39,3 +39,27 @@ class CorePublicationRepository:
             "superseded_legacy_failures": CorePublicationRepository.mark_superseded_legacy_failures(),
             "stale_failed": CorePublicationRepository.mark_stale_running_runs_failed(max_age_hours=max_age_hours),
         }
+        
+    @staticmethod
+    def mark_superseded_running_runs() -> int:
+        ensure_core_ingestion_schema()
+        with _get_connection_with_retry(read_only=False) as con:
+            result = con.execute(
+                """
+                UPDATE core_ingestion_runs AS run
+                SET
+                    finished_at = ?,
+                    status = 'superseded',
+                    error_message = ?
+                WHERE run.status = 'running'
+                  AND EXISTS (
+                    SELECT 1
+                    FROM core_ingestion_runs AS success
+                    WHERE success.status = 'succeeded'
+                      AND success.started_at > run.started_at
+                  )
+                RETURNING run_id
+                """,
+                [_utc_now(), SUPERSEDED_RUN_MESSAGE],
+            ).fetchall()
+        return len(result)
