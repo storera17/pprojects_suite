@@ -59,5 +59,3 @@ def top10_card(title: str, items, on_select_scaffold=None) -> rx.Component:
         grid_column="span 4",
         min_height="360px",
     )
-
-
