@@ -749,3 +749,57 @@ class _PublicationMetadataParser(HTMLParser):
             if values:
                 return values[0]
         return ""
+
+def _pick(row: dict[str, Any], *keys: str) -> Any:
+    lower_map = {str(key).lower(): value for key, value in row.items()}
+    for key in keys:
+        value = row.get(key)
+        if value not in (None, ""):
+            return value
+        value = lower_map.get(key.lower())
+        if value not in (None, ""):
+            return value
+    return None
+
+def _list_value(value: Any) -> list[str]:
+    if value in (None, ""):
+        return []
+    if isinstance(value, list):
+        return [str(item).strip() for item in value if str(item).strip()]
+    text = str(value)
+    separator = ";" if ";" in text else ","
+    return [item.strip() for item in text.split(separator) if item.strip()]
+
+def _int_value(value: Any) -> int | None:
+    if value in (None, ""):
+        return None
+    try:
+        return int(str(value)[:4])
+    except ValueError:
+        return None
+
+def _format_items(items: list[dict[str, str]], limit: int = 25) -> str:
+    if not items:
+        return "None."
+    lines = []
+    for item in items[:limit]:
+        title = item.get("title", "Untitled")
+        journal = item.get("journal", "Unknown source")
+        year = item.get("year", "n/a")
+        doi = item.get("doi", "")
+        suffix = f" DOI: `{doi}`" if doi else ""
+        lines.append(f"- {title} ({journal}, {year}).{suffix}")
+    if len(items) > limit:
+        lines.append(f"- ...and {len(items) - limit} more.")
+    return "\n".join(lines)
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Import manual publication CSV, JSON, or JSONL files into ChemPulse.")
+    parser.add_argument("path", help="Publication file or folder to import.")
+    parser.add_argument("--no-recursive", action="store_true", help="Only scan the top level when importing a folder.")
+    args = parser.parse_args()
+    result = import_manual_publications(args.path, recursive=not args.no_recursive)
+    print(json.dumps(result.as_dict(), indent=2))
+
+if __name__ == "__main__":
+    main()
