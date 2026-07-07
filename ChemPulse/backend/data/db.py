@@ -126,3 +126,17 @@ def _db_connect_timeout_seconds() -> float:
         return max(float(os.getenv("CHEMPULSE_DB_CONNECT_TIMEOUT", "45")), 1.0)
     except ValueError:
         return 45.0
+
+def is_transient_duckdb_error(exc: Exception) -> bool:
+    message = str(exc).lower()
+    return any(
+        marker in message
+        for marker in (
+            "lock",
+            "being used by another process",
+            "cannot open file",
+            "unique file handle conflict",
+            "already attached",
+            "different configuration than existing connections",
+        )
+    )
