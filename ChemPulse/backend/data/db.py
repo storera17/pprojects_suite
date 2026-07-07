@@ -98,3 +98,8 @@ def available_table_name(*candidates: str) -> str | None:
             return candidate
     return None
 
+def query_records(sql: str, params: Iterable[Any] | None = None) -> list[dict[str, Any]]:
+    with get_connection(read_only=True) as con:
+        cursor = con.execute(sql, list(params or []))
+        columns = [description[0] for description in cursor.description]
+        return [dict(zip(columns, row, strict=False)) for row in cursor.fetchall()]
