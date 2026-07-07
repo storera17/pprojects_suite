@@ -1,0 +1,4 @@
+-r frontend.txt
+-r backend.txt
+pyinstaller>=6.11.0
+pytest>=8.2.0
