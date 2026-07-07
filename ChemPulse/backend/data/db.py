@@ -12,3 +12,6 @@ from backend.config import get_config
 from backend.data.schemas import GOLD_SCHEMA_SQL, REQUIRED_GOLD_TABLES
 
 _db_lock = threading.RLock()
+
+def get_db_path() -> Path:
+    return get_config().database_path
