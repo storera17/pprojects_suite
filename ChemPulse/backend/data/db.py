@@ -91,3 +91,10 @@ def table_exists(table_name: str) -> bool:
             [table_name],
         ).fetchone()
     return bool(result and result[0])
+
+def available_table_name(*candidates: str) -> str | None:
+    for candidate in candidates:
+        if table_exists(candidate):
+            return candidate
+    return None
+
