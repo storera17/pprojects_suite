@@ -60,3 +60,11 @@ def get_connection(read_only: bool = False) -> _LockedConnection:
             file_lock.release()
         _db_lock.release()
         raise
+
+def ensure_database_exists() -> Path:
+    db_path = get_db_path()
+    if db_path.exists() and all(table_exists(table_name) for table_name in REQUIRED_GOLD_TABLES):
+        return db_path
+
+    return initialize_schema(db_path)
+
