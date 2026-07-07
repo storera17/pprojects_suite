@@ -68,3 +68,19 @@ def ensure_database_exists() -> Path:
 
     return initialize_schema(db_path)
 
+def initialize_schema(db_path: str | Path | None = None) -> Path:
+    final_path = Path(db_path) if db_path else get_db_path()
+    final_path.parent.mkdir(parents=True, exist_ok=True)
+    _db_lock.acquire()
+    file_lock = _DatabaseFileLock(final_path)
+    try:
+        file_lock.acquire()
+        with duckdb.connect(str(final_path)) as con:
+            con.execute(GOLD_SCHEMA_SQL)
+    finally:
+        try:
+            file_lock.release()
+        finally:
+            _db_lock.release()
+    return final_path
+
