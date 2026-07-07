@@ -62,3 +62,130 @@ REQUESTED_SCAFFOLD_FAMILIES = [
 
 SCAFFOLD_SEEDS = [*AMINO_ACID_SCAFFOLDS, *REQUESTED_SCAFFOLD_FAMILIES]
 _SCHEMA_SEEDED_PATH: str | None = None
+
+class ScaffoldRegistry:
+    @staticmethod
+    def ensure_schema_and_seed() -> None:
+        global _SCHEMA_SEEDED_PATH
+        db_path = str(get_db_path())
+        if _SCHEMA_SEEDED_PATH == db_path:
+            return
+        with _get_connection_with_retry(read_only=False) as con:
+            con.execute(GOLD_SCHEMA_SQL)
+            existing = con.execute("SELECT COUNT(*) FROM scaffold_entries").fetchone()
+        if existing and int(existing[0] or 0) >= len(SCAFFOLD_SEEDS):
+            _SCHEMA_SEEDED_PATH = db_path
+            return
+        ScaffoldRegistry.upsert_seed_scaffolds()
+        _SCHEMA_SEEDED_PATH = db_path
+
+    @staticmethod
+    def upsert_seed_scaffolds() -> int:
+        rows = []
+        now = _utc_now()
+        for seed in SCAFFOLD_SEEDS:
+            canonical, error = ChemistryEngine.canonicalize_smiles(seed.smiles)
+            if error or canonical is None:
+                raise RuntimeError(f"Seed scaffold {seed.name} has invalid SMILES: {error}")
+            rows.append([seed.name, seed.category, seed.family, canonical, seed.source, seed.status, now, now])
+
+        with _get_connection_with_retry(read_only=False) as con:
+            con.executemany(
+                """
+                INSERT INTO scaffold_entries (
+                    name, category, family, canonical_smiles, source, status, created_at, updated_at
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(name) DO UPDATE SET
+                    category = excluded.category,
+                    family = excluded.family,
+                    canonical_smiles = excluded.canonical_smiles,
+                    source = excluded.source,
+                    status = excluded.status,
+                    updated_at = excluded.updated_at
+                """,
+                rows,
+            )
+        return len(rows)
+
+    @staticmethod
+    def add_scaffold_by_smiles(name: str, category: str, family: str, smiles: str, source: str = "manual") -> dict[str, Any]:
+        cleaned_name = name.strip()
+        if not cleaned_name:
+            return {"ok": False, "error": "Scaffold name is required."}
+
+        canonical, error = ChemistryEngine.canonicalize_smiles(smiles)
+        if error or canonical is None:
+            return {"ok": False, "error": error or "Invalid SMILES."}
+
+        cleaned_category = category.strip() or "Manual scaffold"
+        cleaned_family = family.strip() or cleaned_category
+        now = _utc_now()
+        with _get_connection_with_retry(read_only=False) as con:
+            con.execute(
+                """
+                INSERT INTO scaffold_entries (
+                    name, category, family, canonical_smiles, source, status, created_at, updated_at
+                )
+                VALUES (?, ?, ?, ?, ?, 'active', ?, ?)
+                ON CONFLICT(name) DO UPDATE SET
+                    category = excluded.category,
+                    family = excluded.family,
+                    canonical_smiles = excluded.canonical_smiles,
+                    source = excluded.source,
+                    status = excluded.status,
+                    updated_at = excluded.updated_at
+                """,
+                [cleaned_name, cleaned_category, cleaned_family, canonical, source, now, now],
+            )
+        return {
+            "ok": True,
+            "name": cleaned_name,
+            "category": cleaned_category,
+            "family": cleaned_family,
+            "canonical_smiles": canonical,
+            "source": source,
+            "status": "active",
+        }
+
+    @staticmethod
+    def list_scaffolds(limit: int = 1000, query: str = "") -> list[dict[str, Any]]:
+        ScaffoldRegistry.ensure_schema_and_seed()
+        params: list[Any] = []
+        where_clause = "WHERE status = 'active'"
+        if query.strip():
+            term = f"%{query.strip().lower()}%"
+            where_clause += """
+                AND (
+                    LOWER(name) LIKE ?
+                    OR LOWER(category) LIKE ?
+                    OR LOWER(family) LIKE ?
+                    OR LOWER(canonical_smiles) LIKE ?
+                )
+            """
+            params.extend([term, term, term, term])
+        params.append(limit)
+        with _get_connection_with_retry(read_only=True) as con:
+            rows = con.execute(
+                f"""
+                SELECT name, category, family, canonical_smiles, source, status, created_at, updated_at
+                FROM scaffold_entries
+                {where_clause}
+                ORDER BY category ASC, family ASC, name ASC
+                LIMIT ?
+                """,
+                params,
+            ).fetchall()
+        return [
+            {
+                "name": row[0],
+                "category": row[1],
+                "family": row[2],
+                "canonical_smiles": row[3],
+                "source": row[4],
+                "status": row[5],
+                "created_at": row[6],
+                "updated_at": row[7],
+            }
+            for row in rows
+        ]
