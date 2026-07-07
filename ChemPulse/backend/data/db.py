@@ -140,3 +140,54 @@ def is_transient_duckdb_error(exc: Exception) -> bool:
             "different configuration than existing connections",
         )
     )
+
+class _DatabaseFileLock:
+    def __init__(self, db_path: Path) -> None:
+        self.lock_path = db_path.with_suffix(db_path.suffix + ".lock")
+        self._handle = None
+
+    def acquire(self) -> None:
+        self.lock_path.parent.mkdir(parents=True, exist_ok=True)
+        self._handle = self.lock_path.open("a+b")
+        deadline = time.monotonic() + _db_connect_timeout_seconds()
+        while True:
+            try:
+                _lock_handle(self._handle)
+                return
+            except OSError:
+                if time.monotonic() >= deadline:
+                    self.release()
+                    raise TimeoutError(f"Timed out waiting for ChemPulse database lock: {self.lock_path}")
+                time.sleep(0.25)
+
+    def release(self) -> None:
+        if not self._handle:
+            return
+        try:
+            _unlock_handle(self._handle)
+        finally:
+            self._handle.close()
+            self._handle = None
+
+if os.name == "nt":
+    import msvcrt
+
+    def _lock_handle(handle) -> None:
+        handle.seek(0)
+        msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+
+    def _unlock_handle(handle) -> None:
+        handle.seek(0)
+        try:
+            msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
+        except OSError:
+            pass
+
+else:
+    import fcntl
+
+    def _lock_handle(handle) -> None:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+
+    def _unlock_handle(handle) -> None:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
