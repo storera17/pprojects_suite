@@ -120,3 +120,9 @@ def _connect_with_retry(db_path: Path) -> duckdb.DuckDBPyConnection:
             if time.monotonic() >= deadline:
                 raise
             time.sleep(0.25)
+
+def _db_connect_timeout_seconds() -> float:
+    try:
+        return max(float(os.getenv("CHEMPULSE_DB_CONNECT_TIMEOUT", "45")), 1.0)
+    except ValueError:
+        return 45.0
