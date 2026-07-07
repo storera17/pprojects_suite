@@ -103,3 +103,20 @@ def query_records(sql: str, params: Iterable[Any] | None = None) -> list[dict[st
         cursor = con.execute(sql, list(params or []))
         columns = [description[0] for description in cursor.description]
         return [dict(zip(columns, row, strict=False)) for row in cursor.fetchall()]
+
+def _connect_with_retry(db_path: Path) -> duckdb.DuckDBPyConnection:
+    last_error: Exception | None = None
+    deadline = time.monotonic() + _db_connect_timeout_seconds()
+    while True:
+        try:
+            return duckdb.connect(str(db_path), read_only=False)
+        except duckdb.Error as exc:
+            last_error = exc
+            if not is_transient_duckdb_error(exc) or time.monotonic() >= deadline:
+                raise
+            time.sleep(0.25)
+        except OSError as exc:
+            last_error = exc
+            if time.monotonic() >= deadline:
+                raise
+            time.sleep(0.25)
