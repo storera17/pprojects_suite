@@ -174,4 +174,4 @@ def run_collection_now(state) -> None:
         state.collection_action_status = f"Collection failed: {result.get('error', 'Unknown error')}"
     state._refresh_dashboard_view()
     state.refresh_agent_status()
-    state.persist_current_payload("desktop-manual-collection
+    state.persist_current_payload("desktop-manual-collection")
