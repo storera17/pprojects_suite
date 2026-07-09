@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+from backend.core.palette_catalog import normalize_palette_key
 from frontend.app.factory import create_app
 from backend.core import env as env_module
 from backend.core.config import get_secret_env
 from frontend.ui.pages.chemical_intelligence import chemical_intelligence_page
+from frontend.ui.pages.launcher import launcher_page
 
 
 def test_app_factory_registers_expected_pages_and_routes() -> None:
@@ -14,6 +16,7 @@ def test_app_factory_registers_expected_pages_and_routes() -> None:
     assert "/api/status" in route_paths
     assert "/api/dashboard" in route_paths
     assert "/api/search/literature" in route_paths
+    assert "/api/pricing/compare" in route_paths
     assert "/mobile" in route_paths
 
 
@@ -39,5 +42,22 @@ def test_chemical_intelligence_page_loads_packaged_assets() -> None:
     rendered = str(chemical_intelligence_page().render())
 
     assert "cp-ci-root" in rendered
-    assert "Topic Search" in rendered
+    assert "Source Pricing" in rendered
     assert "window.ChemPulseChemicalIntelligence" in rendered
+
+
+def test_launcher_page_exposes_palette_options() -> None:
+    rendered = str(launcher_page().render())
+
+    assert "Interface Settings" in rendered
+    assert "Default" in rendered
+    assert "Chemical Atlas" in rendered
+    assert "Spectral Darkroom" in rendered
+    assert "Field Notebook" in rendered
+
+
+def test_palette_keys_normalize_to_supported_catalog_entries() -> None:
+    assert normalize_palette_key("default") == "default"
+    assert normalize_palette_key("chemical-atlas") == "chemical-atlas"
+    assert normalize_palette_key("Spectral-Darkroom") == "spectral-darkroom"
+    assert normalize_palette_key("unknown-palette") == "default"
