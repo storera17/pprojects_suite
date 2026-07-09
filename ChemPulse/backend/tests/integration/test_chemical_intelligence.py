@@ -39,6 +39,9 @@ def test_chemical_intelligence_routes_are_registered() -> None:
     assert "/api/search/reaction-name" in route_paths
     assert "/api/mechanism/explain" in route_paths
     assert "/api/reports/reaction" in route_paths
+    assert "/api/pricing/compare" in route_paths
+    assert "/api/pricing/history" in route_paths
+    assert "/api/pricing/watch" in route_paths
     assert "/chempulse/api/search/literature" in route_paths
 
 
@@ -354,6 +357,40 @@ def test_report_generation_includes_matched_literature_citations(tmp_path, monke
     assert "chem-intel-1" in payload["markdown"]
 
 
+def test_pricing_compare_returns_reference_offers_and_provider_metadata(tmp_path, monkeypatch) -> None:
+    monkeypatch.setenv("CHEMPULSE_STORAGE_DIR", str(tmp_path))
+    client = TestClient(app._api)
+
+    response = client.post("/api/pricing/compare", json={"query": "quinoline scaffold", "quantity": 5, "unit": "g", "record_snapshot": True})
+    payload = response.json()
+
+    assert response.status_code == 200
+    assert payload["offers"]
+    assert payload["offers"][0]["compliance_status"] == "reference_demo_data"
+    assert any(provider["provider"] == "licensed_supplier_feed" and not provider["enabled"] for provider in payload["providers"])
+
+
+def test_pricing_watch_and_history_round_trip(tmp_path, monkeypatch) -> None:
+    monkeypatch.setenv("CHEMPULSE_STORAGE_DIR", str(tmp_path))
+    client = TestClient(app._api)
+
+    watch_response = client.post("/api/pricing/watch", json={"query": "benzene", "quantity": 25, "unit": "g"})
+    history_seed_response = client.post("/api/pricing/compare", json={"query": "benzene", "quantity": 25, "unit": "g", "record_snapshot": True})
+    history_response = client.get("/api/pricing/history", params={"query": "benzene"})
+
+    watch_payload = watch_response.json()
+    history_seed_payload = history_seed_response.json()
+    history_payload = history_response.json()
+
+    assert watch_response.status_code == 200
+    assert watch_payload["items"][0]["status"] == "queued_pending_provider_approval"
+    assert history_seed_response.status_code == 200
+    assert history_seed_payload["offers"]
+    assert history_response.status_code == 200
+    assert history_payload["items"]
+    assert history_payload["items"][0]["query"]["normalized_query"] == "benzene"
+
+
 def test_chemical_intelligence_page_mounts() -> None:
     assert "chemical-intelligence" in app._unevaluated_pages
     page = app._unevaluated_pages["chemical-intelligence"]
@@ -390,6 +427,8 @@ def test_reaction_search_page_is_draw_first_with_advanced_fallback() -> None:
     assert "/api/search/reaction-name" in script
     assert "reactionSlots" in script
     assert "molblockFromState(reactionSketch)" in script
+    assert "pricing-compare" in script
+    assert "/api/pricing/history" in script
 
 
 def _seed_chemical_intelligence_records() -> None:
