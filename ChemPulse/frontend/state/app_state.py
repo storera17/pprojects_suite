@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from typing import Any
 
 import plotly.graph_objects as go
@@ -21,12 +22,11 @@ from frontend.state.app_state_defaults import (
     publication_metrics_default,
 )
 
-class AppState(rx.State):
-    #Single dashboard view-model for the ChemPulse desktop experience.
 
-    selected_palette: str = rx.LocalStorage(DEFAULT_PALETTE_KEY,
-                                            name="chempulse.palette",
-                                            sync=True)
+class AppState(rx.State):
+    """Single dashboard view-model for the ChemPulse desktop experience."""
+
+    selected_palette: str = rx.LocalStorage(DEFAULT_PALETTE_KEY, name="chempulse.palette", sync=True)
     loading: bool = False
     search_query: str = ""
     manual_import_path: str = ""
@@ -70,6 +70,9 @@ class AppState(rx.State):
 
     agent_status: dict[str, Any] = agent_status_default()
     previous_payload: dict[str, Any] = previous_payload_default()
+    dashboard_last_updated: str = ""
+    dashboard_data_source: str = "local"
+    dashboard_notice: str = "Waiting for the local dashboard payload."
 
     @rx.event
     def initialize(self):
@@ -158,9 +161,9 @@ class AppState(rx.State):
     @rx.event
     def run_collection_now(self):
         app_state_imports.run_collection_now(self)
-        
+
     @rx.event
-    def set_palette(self, value:str):
+    def set_palette(self, value: str):
         self.selected_palette = normalize_palette_key(value)
 
     @rx.event
@@ -214,25 +217,50 @@ class AppState(rx.State):
         return f"{leader.get('name', 'Unknown')} ({leader.get('count', 0)} records)"
 
     @rx.var
+    def dashboard_last_updated_label(self) -> str:
+        if not self.dashboard_last_updated:
+            return "Awaiting first dashboard refresh"
+        try:
+            timestamp = datetime.fromisoformat(self.dashboard_last_updated.replace("Z", "+00:00"))
+            if timestamp.tzinfo is None:
+                timestamp = timestamp.replace(tzinfo=timezone.utc)
+            return timestamp.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+        except ValueError:
+            return self.dashboard_last_updated
+
+    @rx.var
+    def dashboard_status_tone(self) -> str:
+        return "danger" if "unavailable" in self.dashboard_notice.lower() else "live"
+
+    @rx.var
+    def palette_key(self) -> str:
+        return normalize_palette_key(self.selected_palette)
+
+    @rx.var
+    def palette_class(self) -> str:
+        return f"cp-theme-{self.palette_key}"
+
+    @rx.var
     def galaxy_figure(self) -> go.Figure:
         return ChemicalSpaceService.build_galaxy_figure(
             self.galaxy_points,
+            palette_key=self.palette_key,
             selected_scaffold=self.selected_scaffold,
             selected_cluster_ids=self.selected_cluster_ids,
         )
 
     @rx.var
     def journal_publication_figure(self) -> go.Figure:
-        return DashboardFigureService.journal_publication_figure()
+        return DashboardFigureService.journal_publication_figure(palette_key=self.palette_key)
 
     @rx.var
     def publication_timeline_figure(self) -> go.Figure:
-        return DashboardFigureService.publication_timeline_figure()
+        return DashboardFigureService.publication_timeline_figure(palette_key=self.palette_key)
 
     @rx.var
     def scaffold_publication_figure(self) -> go.Figure:
-        return DashboardFigureService.scaffold_publication_figure()
+        return DashboardFigureService.scaffold_publication_figure(palette_key=self.palette_key)
 
     @rx.var
     def source_diversity_figure(self) -> go.Figure:
-        return DashboardFigureService.source_diversity_figure()
+        return DashboardFigureService.source_diversity_figure(palette_key=self.palette_key)
