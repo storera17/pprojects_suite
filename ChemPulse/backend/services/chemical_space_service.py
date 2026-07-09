@@ -129,7 +129,12 @@ class ChemicalSpaceService:
         return f"${value:,.0f}"
 
     @staticmethod
-    def build_galaxy_figure(points: list[dict[str, Any]], selected_scaffold: str = "", selected_cluster_ids: list[str] | None = None) -> go.Figure:
+    def build_galaxy_figure(
+        points: list[dict[str, Any]],
+        palette_key: str = "default",
+        selected_scaffold: str = "", 
+        selected_cluster_ids: list[str] | None = None) -> go.Figure:
+        theme = palette_chart_theme(palette_key)
         selected_cluster_ids = selected_cluster_ids or []
         if not points:
             fig = go.Figure()
