@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
 import logging
 
 from backend.data.db import ensure_database_exists
@@ -20,6 +21,8 @@ logger = logging.getLogger(__name__)
 def initialize(state) -> None:
     state.loading = True
     state.collection_action_status = ""
+    state.dashboard_notice = "Loading local ChemPulse dashboard data."
+    state.dashboard_data_source = "local"
     try:
         ScheduledCollectionService.register_once()
         state.previous_payload = PayloadService.latest_payload()
@@ -95,9 +98,12 @@ def refresh_dashboard_view(state) -> None:
     try:
         load_dashboard_view(state)
         state.collection_action_status = ""
+        state.dashboard_notice = "Live local dashboard data is synced to the current workspace state."
     except Exception as exc:  # noqa: BLE001
         logger.exception("Dashboard refresh failed")
         state.collection_action_status = f"ChemPulse local data is temporarily unavailable: {exc}"
+        state.dashboard_notice = f"ChemPulse local data is temporarily unavailable: {exc}"
+        state.dashboard_last_updated = datetime.now(timezone.utc).isoformat()
 
 
 def load_dashboard_view(state) -> None:
@@ -144,3 +150,5 @@ def load_dashboard_view(state) -> None:
     state._update_selection_totals()
     refresh_publication_intelligence(state)
     refresh_manuscript_review(state)
+    state.dashboard_last_updated = datetime.now(timezone.utc).isoformat()
+    state.dashboard_data_source = "local duckdb evidence"
