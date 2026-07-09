@@ -7,13 +7,11 @@ from frontend.app.routes import register_api_routes
 from frontend.ui.global_css import GLOBAL_CSS
 from frontend.ui.theme import app_theme
 
-
 APP_STYLE = {
-    "background": "radial-gradient(circle at top left, #0f172a 0%, #09090b 45%, #020617 100%)",
-    "color": "#E5E7EB",
+    "background": "var(--cp-bg-app)",
+    "color": "var(--cp-text)",
     "min_height": "100vh",
 }
-
 
 def create_app() -> rx.App:
     app = rx.App(
