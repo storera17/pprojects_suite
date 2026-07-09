@@ -1,129 +1,305 @@
-<section id="cp-ci-root" class="bento-card" style="padding:1rem;min-height:720px;">
-  <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;">
+<section id="cp-ci-root" class="cp-ci-app">
+  <div class="cp-ci-toolbar">
     <button class="cp-ci-tab active" data-tab="topic">Topic Search</button>
     <button class="cp-ci-tab" data-tab="structure">Structure Search</button>
     <button class="cp-ci-tab" data-tab="reaction">Reaction Search</button>
     <button class="cp-ci-tab" data-tab="mechanism">Mechanism Explanation</button>
     <button class="cp-ci-tab" data-tab="reports">Reports</button>
+    <button class="cp-ci-tab" data-tab="pricing">Source Pricing</button>
   </div>
-  <div class="cp-ci-grid">
-    <div class="cp-ci-pane active" data-pane="topic">
-      <h2>Topic Search</h2>
-      <input id="cp-ci-topic-query" class="cp-ci-input" value="catalytic scaffold esterification" />
-      <button class="cp-ci-action" data-action="topic">Search literature</button>
-      <div id="cp-ci-topic-results" class="cp-ci-results">Ready for a local ChemPulse literature search.</div>
-    </div>
-    <div class="cp-ci-pane" data-pane="structure">
-      <h2>Structure Search</h2>
-      <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.55rem;">
-        <button class="cp-ci-mode active" data-structure-input="draw">Draw Structure</button>
-        <button class="cp-ci-mode" data-structure-input="smiles">Paste SMILES</button>
-        <button class="cp-ci-mode" data-structure-input="molblock">Paste MolBlock</button>
-      </div>
-      <div class="cp-ci-structure-panel active" data-structure-panel="draw">
-        <div class="cp-ci-draw-shell">
-          <div class="cp-ci-draw-toolbar">
-            <button data-sketch-atom="C">C</button><button data-sketch-atom="N">N</button><button data-sketch-atom="O">O</button><button data-sketch-atom="S">S</button><button data-sketch-atom="P">P</button><button data-sketch-atom="F">F</button><button data-sketch-atom="Cl">Cl</button><button data-sketch-atom="Br">Br</button><button data-sketch-atom="I">I</button>
-            <button data-sketch-bond="1">Single</button><button data-sketch-bond="2">Double</button><button data-sketch-bond="3">Triple</button>
-            <button data-sketch-charge="-1">-</button><button data-sketch-charge="0">0</button><button data-sketch-charge="1">+</button>
-            <button data-sketch-ring="cyclohexane">Cyclohexane</button><button data-sketch-ring="benzene">Benzene</button>
-            <button data-sketch-action="undo">Undo</button><button data-sketch-action="clear">Clear</button>
-          </div>
-          <svg id="cp-ci-sketcher" viewBox="0 0 720 330" aria-label="Bond-line molecule drawing editor"></svg>
+
+  <div class="cp-ci-pane active" data-pane="topic">
+    <div class="cp-ci-layout">
+      <div class="cp-ci-panel">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Topic Search</span>
+          <span class="cp-ci-badge">Local literature</span>
         </div>
-        <div class="cp-ci-muted" id="cp-ci-sketch-status">Draw by clicking the canvas. Select an atom, then click empty space to extend a bond.</div>
-        <textarea id="cp-ci-drawn-molblock" class="cp-ci-input" rows="5" readonly></textarea>
+        <label class="cp-ci-muted" for="cp-ci-topic-query">Search Query</label>
+        <input id="cp-ci-topic-query" class="cp-ci-input" value="catalytic scaffold esterification" />
+        <div class="cp-ci-inline-row">
+          <button class="cp-ci-action" data-action="topic">Search literature</button>
+          <button class="cp-ci-ghost" data-export-target="cp-ci-topic-results">Export</button>
+        </div>
+        <label class="cp-ci-muted" for="cp-ci-topic-sort">Sort Results</label>
+        <select id="cp-ci-topic-sort" class="cp-ci-input">
+          <option value="relevance">Relevance</option>
+          <option value="year">Year</option>
+          <option value="title">Title</option>
+        </select>
+        <div id="cp-ci-topic-summary" class="cp-ci-summary">Local evidence summaries, snippets, and scaffold links appear here after a search.</div>
       </div>
-      <div class="cp-ci-structure-panel" data-structure-panel="smiles">
-        <input id="cp-ci-structure-smiles" class="cp-ci-input" value="c1ccccc1" />
+
+      <div class="cp-ci-panel cp-ci-panel-wide">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Literature Results</span>
+          <div class="cp-ci-inline-row">
+            <span class="cp-ci-badge" id="cp-ci-topic-count">0 records</span>
+          </div>
+        </div>
+        <div id="cp-ci-topic-results" class="cp-ci-results">Ready for a local ChemPulse literature search.</div>
       </div>
-      <div class="cp-ci-structure-panel" data-structure-panel="molblock">
-        <textarea id="cp-ci-structure-molblock" class="cp-ci-input" rows="8" placeholder="Paste V2000/V3000 MolBlock here"></textarea>
+
+      <div class="cp-ci-panel">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Report Preview</span>
+          <button class="cp-ci-ghost" data-action="report">Generate</button>
+        </div>
+        <pre id="cp-ci-report-preview" class="cp-ci-results cp-ci-pre">Search or generate a report to see a markdown preview here.</pre>
       </div>
-      <select id="cp-ci-structure-role" class="cp-ci-input"><option>scaffold</option><option>substrate</option><option>product</option><option>catalyst</option><option>intermediate</option><option>byproduct</option></select>
-      <select id="cp-ci-structure-mode" class="cp-ci-input"><option>similarity</option><option>substructure</option><option>exact</option></select>
-      <button class="cp-ci-action" data-action="structure">Search structures</button>
-      <div id="cp-ci-structure-results" class="cp-ci-results">Draw a bond-line structure or paste SMILES/MolBlock. Results will show canonical SMILES, role, match type, and local evidence.</div>
     </div>
-    <div class="cp-ci-pane" data-pane="reaction">
-      <h2>Reaction Search</h2>
-      <div class="cp-ci-muted">Draw a structure, then assign it to a reaction role. Use the name box to triangulate known reactions and aliases.</div>
-      <div class="cp-ci-reaction-layout">
-        <div>
+  </div>
+
+  <div class="cp-ci-pane" data-pane="structure">
+    <div class="cp-ci-layout">
+      <div class="cp-ci-panel">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Structure Input</span>
+          <span class="cp-ci-badge">Sketch / SMILES / MolBlock</span>
+        </div>
+        <div class="cp-ci-inline-row cp-ci-inline-row-wrap">
+          <button class="cp-ci-mode active" data-structure-input="draw">Draw Structure</button>
+          <button class="cp-ci-mode" data-structure-input="smiles">Paste SMILES</button>
+          <button class="cp-ci-mode" data-structure-input="molblock">Paste MolBlock</button>
+        </div>
+        <div class="cp-ci-structure-panel active" data-structure-panel="draw">
           <div class="cp-ci-draw-shell">
             <div class="cp-ci-draw-toolbar">
-              <button data-reaction-atom="C">C</button><button data-reaction-atom="N">N</button><button data-reaction-atom="O">O</button><button data-reaction-atom="S">S</button><button data-reaction-atom="P">P</button><button data-reaction-atom="F">F</button><button data-reaction-atom="Cl">Cl</button><button data-reaction-atom="Br">Br</button><button data-reaction-atom="I">I</button>
-              <button data-reaction-bond="1">Single</button><button data-reaction-bond="2">Double</button><button data-reaction-bond="3">Triple</button>
-              <button data-reaction-charge="-1">-</button><button data-reaction-charge="0">0</button><button data-reaction-charge="1">+</button>
-              <button data-reaction-ring="cyclohexane">Cyclohexane</button><button data-reaction-ring="benzene">Benzene</button>
-              <button data-reaction-sketch-action="undo">Undo</button><button data-reaction-sketch-action="clear">Clear</button>
+              <button data-sketch-atom="C">C</button><button data-sketch-atom="N">N</button><button data-sketch-atom="O">O</button><button data-sketch-atom="S">S</button><button data-sketch-atom="Cl">Cl</button>
+              <button data-sketch-bond="1">Single</button><button data-sketch-bond="2">Double</button><button data-sketch-bond="3">Triple</button>
+              <button data-sketch-charge="-1">-</button><button data-sketch-charge="0">0</button><button data-sketch-charge="1">+</button>
+              <button data-sketch-ring="cyclohexane">Cyclohexane</button><button data-sketch-ring="benzene">Benzene</button>
+              <button data-sketch-action="undo">Undo</button><button data-sketch-action="clear">Clear</button>
             </div>
-            <svg id="cp-ci-reaction-sketcher" viewBox="0 0 720 330" aria-label="Reaction bond-line drawing workspace"></svg>
+            <svg id="cp-ci-sketcher" viewBox="0 0 720 330" aria-label="Bond-line molecule drawing editor"></svg>
           </div>
-          <div class="cp-ci-muted" id="cp-ci-reaction-sketch-status">Draw substrate, product, reagent, catalyst, by-product, or intermediate structures here.</div>
-          <textarea id="cp-ci-reaction-drawn-molblock" class="cp-ci-input" rows="5" readonly></textarea>
+          <div class="cp-ci-muted" id="cp-ci-sketch-status">Draw by clicking the canvas. Select an atom, then click empty space to extend a bond.</div>
+          <textarea id="cp-ci-drawn-molblock" class="cp-ci-input" rows="5" readonly></textarea>
         </div>
-        <div>
-          <label class="cp-ci-muted" for="cp-ci-reaction-name">Search by Reaction Name</label>
-          <input id="cp-ci-reaction-name" class="cp-ci-input" placeholder="Friedel-Crafts acylation, Suzuki coupling, SN2..." value="Suzuki coupling" />
-          <button class="cp-ci-action" data-action="reaction-name">Search reaction names</button>
-          <div class="cp-ci-slot-grid" id="cp-ci-reaction-slots">
-            <button data-reaction-slot="substrate">Add substrate</button>
-            <button data-reaction-slot="product">Add product</button>
-            <button data-reaction-slot="reagent">Add reagent</button>
-            <button data-reaction-slot="catalyst">Add catalyst</button>
-            <button data-reaction-slot="byproduct">Add by-product</button>
-            <button data-reaction-slot="intermediate">Add intermediate</button>
-          </div>
-          <div id="cp-ci-reaction-slot-status" class="cp-ci-results" style="min-height:120px;">No drawn reaction structures assigned yet.</div>
+        <div class="cp-ci-structure-panel" data-structure-panel="smiles">
+          <input id="cp-ci-structure-smiles" class="cp-ci-input" value="c1ccccc1" />
+        </div>
+        <div class="cp-ci-structure-panel" data-structure-panel="molblock">
+          <textarea id="cp-ci-structure-molblock" class="cp-ci-input" rows="8" placeholder="Paste V2000/V3000 MolBlock here"></textarea>
+        </div>
+        <label class="cp-ci-muted" for="cp-ci-structure-role">Role</label>
+        <select id="cp-ci-structure-role" class="cp-ci-input"><option>scaffold</option><option>substrate</option><option>product</option><option>catalyst</option><option>intermediate</option><option>byproduct</option></select>
+        <label class="cp-ci-muted" for="cp-ci-structure-mode">Match Mode</label>
+        <select id="cp-ci-structure-mode" class="cp-ci-input"><option>similarity</option><option>substructure</option><option>exact</option></select>
+        <div class="cp-ci-inline-row">
+          <button class="cp-ci-action" data-action="structure">Search structures</button>
+          <button class="cp-ci-ghost" data-export-target="cp-ci-structure-results">Export</button>
         </div>
       </div>
-      <details class="cp-ci-advanced">
-        <summary>Advanced SMILES/MolBlock fallback</summary>
-        <input id="cp-ci-reaction-substrate" class="cp-ci-input" placeholder="Substrate SMILES" value="CC(=O)O" />
-        <input id="cp-ci-reaction-product" class="cp-ci-input" placeholder="Product SMILES" value="CC(=O)OC" />
-        <input id="cp-ci-reaction-catalyst" class="cp-ci-input" placeholder="Catalyst/reagent SMILES or name" value="O" />
-      </details>
-      <button class="cp-ci-action" data-action="reaction">Rank reaction candidates</button>
-      <button class="cp-ci-action" data-action="mechanism" data-reaction-explain="1">Explain selected/top mechanism</button>
-      <div id="cp-ci-reaction-name-results" class="cp-ci-results">Reaction-name matches will appear here.</div>
-      <div id="cp-ci-reaction-results" class="cp-ci-results">Draw reaction roles or search by name to rank candidate reactions.</div>
+
+      <div class="cp-ci-panel cp-ci-panel-wide">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Literature Results</span>
+          <div class="cp-ci-inline-row">
+            <span class="cp-ci-badge" id="cp-ci-structure-count">0 matches</span>
+          </div>
+        </div>
+        <div id="cp-ci-structure-results" class="cp-ci-results">Draw a bond-line structure or paste SMILES/MolBlock. Results will show canonical SMILES, role, match type, and local evidence.</div>
+      </div>
+
+      <div class="cp-ci-panel">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Mechanism & Report</span>
+          <div class="cp-ci-inline-row">
+            <button class="cp-ci-ghost" data-action="mechanism">Explain</button>
+            <button class="cp-ci-ghost" data-action="report">Report</button>
+          </div>
+        </div>
+        <div id="cp-ci-mechanism-results" class="cp-ci-results">Mechanism output is labeled as inference unless ChemPulse finds direct local evidence.</div>
+        <pre id="cp-ci-report-results" class="cp-ci-results cp-ci-pre">Reports include matched literature, mechanism ranking, citations, confidence, and limitations.</pre>
+      </div>
     </div>
-    <div class="cp-ci-pane" data-pane="mechanism">
-      <h2>Mechanism Explanation</h2>
-      <button class="cp-ci-action" data-action="mechanism">Explain current reaction</button>
-      <div id="cp-ci-mechanism-results" class="cp-ci-results">Mechanism output is labeled as inference unless ChemPulse finds direct local evidence.</div>
+  </div>
+
+  <div class="cp-ci-pane" data-pane="reaction">
+    <div class="cp-ci-layout">
+      <div class="cp-ci-panel">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Reaction Search</span>
+          <span class="cp-ci-badge">Draw first</span>
+        </div>
+        <div class="cp-ci-draw-shell">
+          <div class="cp-ci-draw-toolbar">
+            <button data-reaction-atom="C">C</button><button data-reaction-atom="N">N</button><button data-reaction-atom="O">O</button><button data-reaction-atom="S">S</button><button data-reaction-atom="Cl">Cl</button>
+            <button data-reaction-bond="1">Single</button><button data-reaction-bond="2">Double</button><button data-reaction-bond="3">Triple</button>
+            <button data-reaction-charge="-1">-</button><button data-reaction-charge="0">0</button><button data-reaction-charge="1">+</button>
+            <button data-reaction-ring="cyclohexane">Cyclohexane</button><button data-reaction-ring="benzene">Benzene</button>
+            <button data-reaction-sketch-action="undo">Undo</button><button data-reaction-sketch-action="clear">Clear</button>
+          </div>
+          <svg id="cp-ci-reaction-sketcher" viewBox="0 0 720 330" aria-label="Reaction bond-line drawing workspace"></svg>
+        </div>
+        <div class="cp-ci-muted" id="cp-ci-reaction-sketch-status">Draw substrate, product, reagent, catalyst, by-product, or intermediate structures here.</div>
+        <textarea id="cp-ci-reaction-drawn-molblock" class="cp-ci-input" rows="5" readonly></textarea>
+        <label class="cp-ci-muted" for="cp-ci-reaction-name">Search by Reaction Name</label>
+        <input id="cp-ci-reaction-name" class="cp-ci-input" placeholder="Friedel-Crafts acylation, Suzuki coupling, SN2..." value="Suzuki coupling" />
+        <div class="cp-ci-slot-grid" id="cp-ci-reaction-slots">
+          <button data-reaction-slot="substrate">Add substrate</button>
+          <button data-reaction-slot="product">Add product</button>
+          <button data-reaction-slot="reagent">Add reagent</button>
+          <button data-reaction-slot="catalyst">Add catalyst</button>
+          <button data-reaction-slot="byproduct">Add by-product</button>
+          <button data-reaction-slot="intermediate">Add intermediate</button>
+        </div>
+      </div>
+
+      <div class="cp-ci-panel cp-ci-panel-wide">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Reaction Candidates</span>
+          <div class="cp-ci-inline-row">
+            <button class="cp-ci-ghost" data-action="reaction-name">Search names</button>
+            <button class="cp-ci-action" data-action="reaction">Rank reactions</button>
+          </div>
+        </div>
+        <div id="cp-ci-reaction-slot-status" class="cp-ci-summary">No drawn reaction structures assigned yet.</div>
+        <details class="cp-ci-advanced">
+          <summary>Advanced SMILES/MolBlock fallback</summary>
+          <input id="cp-ci-reaction-substrate" class="cp-ci-input" placeholder="Substrate SMILES" value="CC(=O)O" />
+          <input id="cp-ci-reaction-product" class="cp-ci-input" placeholder="Product SMILES" value="CC(=O)OC" />
+          <input id="cp-ci-reaction-catalyst" class="cp-ci-input" placeholder="Catalyst/reagent SMILES or name" value="O" />
+        </details>
+        <div id="cp-ci-reaction-name-results" class="cp-ci-results">Reaction-name matches will appear here.</div>
+        <div id="cp-ci-reaction-results" class="cp-ci-results">Draw reaction roles or search by name to rank candidate reactions.</div>
+      </div>
+
+      <div class="cp-ci-panel">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Mechanism Explanation</span>
+          <button class="cp-ci-ghost" data-action="mechanism">Explain</button>
+        </div>
+        <div id="cp-ci-reaction-mechanism-results" class="cp-ci-results">Explain the selected or top-ranked mechanism to see stepwise reasoning here.</div>
+      </div>
     </div>
-    <div class="cp-ci-pane" data-pane="reports">
-      <h2>Reports</h2>
-      <button class="cp-ci-action" data-action="report">Generate markdown report</button>
-      <pre id="cp-ci-report-results" class="cp-ci-results" style="white-space:pre-wrap;">Reports include matched literature, mechanism ranking, arrow-pushing steps, citations, confidence, and limitations.</pre>
+  </div>
+
+  <div class="cp-ci-pane" data-pane="mechanism">
+    <div class="cp-ci-layout cp-ci-layout-wide">
+      <div class="cp-ci-panel cp-ci-panel-wide">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Mechanism Explanation</span>
+          <div class="cp-ci-inline-row">
+            <button class="cp-ci-action" data-action="mechanism">Explain current reaction</button>
+            <button class="cp-ci-ghost" data-action="report">Generate report</button>
+          </div>
+        </div>
+        <div id="cp-ci-mechanism-standalone-results" class="cp-ci-results">Mechanism explanations will appear here with evidence, confidence, and warnings.</div>
+      </div>
+      <div class="cp-ci-panel">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Report Preview</span>
+        </div>
+        <pre id="cp-ci-mechanism-report-preview" class="cp-ci-results cp-ci-pre">Mechanism reports are generated from the active reaction context.</pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="cp-ci-pane" data-pane="reports">
+    <div class="cp-ci-layout cp-ci-layout-wide">
+      <div class="cp-ci-panel cp-ci-panel-wide">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Report Preview (Markdown)</span>
+          <div class="cp-ci-inline-row">
+            <button class="cp-ci-action" data-action="report">Generate markdown report</button>
+            <button class="cp-ci-ghost" data-export-target="cp-ci-report-results">Export</button>
+          </div>
+        </div>
+        <pre id="cp-ci-report-workspace" class="cp-ci-results cp-ci-pre">Generate a report from the current structure or reaction workspace to preview it here.</pre>
+      </div>
+      <div class="cp-ci-panel">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Status</span>
+        </div>
+        <div id="cp-ci-report-status" class="cp-ci-summary">Reports show matched literature, mechanism ranking, citation context, confidence, and limitations.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cp-ci-pane" data-pane="pricing">
+    <div class="cp-ci-layout">
+      <div class="cp-ci-panel">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Source Pricing</span>
+          <span class="cp-ci-badge">Compliance-gated</span>
+        </div>
+        <label class="cp-ci-muted" for="cp-ci-pricing-query">Compound or scaffold query</label>
+        <input id="cp-ci-pricing-query" class="cp-ci-input" value="quinoline scaffold" />
+        <label class="cp-ci-muted" for="cp-ci-pricing-quantity">Quantity</label>
+        <input id="cp-ci-pricing-quantity" class="cp-ci-input" value="5" />
+        <label class="cp-ci-muted" for="cp-ci-pricing-unit">Unit</label>
+        <select id="cp-ci-pricing-unit" class="cp-ci-input"><option>g</option><option>mg</option><option>kg</option></select>
+        <label class="cp-ci-muted" for="cp-ci-pricing-region">Region</label>
+        <select id="cp-ci-pricing-region" class="cp-ci-input"><option>US</option><option>EU</option><option>APAC</option></select>
+        <div class="cp-ci-inline-row">
+          <button class="cp-ci-action" data-action="pricing-compare">Compare</button>
+          <button class="cp-ci-ghost" data-action="pricing-watch">Create watch</button>
+        </div>
+        <div id="cp-ci-pricing-watch-status" class="cp-ci-summary">Price watches are queued until a licensed supplier source and storage policy are approved.</div>
+      </div>
+
+      <div class="cp-ci-panel cp-ci-panel-wide">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">Offers</span>
+          <div class="cp-ci-inline-row">
+            <button class="cp-ci-ghost" data-action="pricing-history">Refresh history</button>
+            <button class="cp-ci-ghost" data-export-target="cp-ci-pricing-results">Export</button>
+          </div>
+        </div>
+        <div id="cp-ci-pricing-results" class="cp-ci-results">Compare supplier pricing across enabled feeds. Disabled providers are listed with compliance notes instead of fabricated data.</div>
+      </div>
+
+      <div class="cp-ci-panel">
+        <div class="cp-ci-panel-header">
+          <span class="cp-ci-label">History</span>
+          <span class="cp-ci-badge">Snapshots</span>
+        </div>
+        <div id="cp-ci-pricing-history" class="cp-ci-results">Stored pricing snapshots will appear here after a comparison records history.</div>
+      </div>
     </div>
   </div>
 </section>
 <style>
-  .cp-ci-tab,.cp-ci-action,.cp-ci-mode,.cp-ci-draw-toolbar button,.cp-ci-slot-grid button{border:0;border-radius:8px;padding:.58rem .82rem;font-weight:800;cursor:pointer}
-  .cp-ci-tab,.cp-ci-mode,.cp-ci-draw-toolbar button,.cp-ci-slot-grid button{background:rgba(148,163,184,.14);color:#cbd5e1}
-  .cp-ci-tab.active,.cp-ci-mode.active,.cp-ci-action,.cp-ci-draw-toolbar button.active,.cp-ci-slot-grid button.active{background:#164154;color:#7dd3fc}
-  .cp-ci-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+  .cp-ci-app{display:flex;flex-direction:column;gap:1rem}
+  .cp-ci-toolbar{display:flex;flex-wrap:wrap;gap:.55rem}
+  .cp-ci-tab,.cp-ci-action,.cp-ci-mode,.cp-ci-draw-toolbar button,.cp-ci-slot-grid button,.cp-ci-ghost{border:0;border-radius:12px;padding:.65rem .88rem;font-weight:700;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}
+  .cp-ci-tab,.cp-ci-mode,.cp-ci-draw-toolbar button,.cp-ci-slot-grid button,.cp-ci-ghost{background:var(--cp-bg-panel-soft);color:var(--cp-text-muted);border:1px solid var(--cp-border)}
+  .cp-ci-tab.active,.cp-ci-mode.active,.cp-ci-action,.cp-ci-draw-toolbar button.active,.cp-ci-slot-grid button.active{background:linear-gradient(180deg,var(--cp-bg-elevated),var(--cp-bg-panel));color:var(--cp-text);border:1px solid var(--cp-border-strong)}
+  .cp-ci-ghost{background:var(--cp-bg-panel-soft);color:var(--cp-text-soft)}
+  .cp-ci-layout{display:grid;grid-template-columns:minmax(280px,.82fr) minmax(340px,1.15fr) minmax(280px,.72fr);gap:1rem;align-items:start}
+  .cp-ci-layout-wide{grid-template-columns:minmax(420px,1.35fr) minmax(280px,.65fr)}
   .cp-ci-pane{display:none}
   .cp-ci-pane.active{display:block}
-  .cp-ci-pane h2{font-size:1.15rem;color:white;margin:.2rem 0 .7rem}
-  .cp-ci-input{width:100%;box-sizing:border-box;margin:.3rem 0;padding:.62rem .75rem;border-radius:8px;border:1px solid rgba(148,163,184,.32);background:rgba(255,255,255,.06);color:#e5e7eb}
-  .cp-ci-results{margin-top:.8rem;padding:.8rem;border-radius:8px;background:rgba(2,6,23,.55);border:1px solid rgba(148,163,184,.18);color:#cbd5e1;min-height:170px;overflow:auto}
-  .cp-ci-card{padding:.65rem;border-radius:8px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);margin-bottom:.55rem}
-  .cp-ci-muted{color:#94a3b8;font-size:.88rem}
-  .cp-ci-structure-panel{display:none}.cp-ci-structure-panel.active{display:block}
-  .cp-ci-draw-shell{border-radius:8px;border:1px solid rgba(148,163,184,.22);background:rgba(2,6,23,.45);overflow:hidden}
-  .cp-ci-draw-toolbar{display:flex;flex-wrap:wrap;gap:.35rem;padding:.55rem;border-bottom:1px solid rgba(148,163,184,.18)}
-  .cp-ci-reaction-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:1rem;align-items:start;margin-top:.7rem}
-  .cp-ci-slot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem;margin:.55rem 0}
-  .cp-ci-advanced{margin:.8rem 0;color:#cbd5e1}
-  .cp-ci-advanced summary{cursor:pointer;font-weight:800;color:#7dd3fc}
-  #cp-ci-sketcher,#cp-ci-reaction-sketcher{display:block;width:100%;height:330px;background:#f8fafc;touch-action:none}
+  .cp-ci-panel{background:linear-gradient(180deg,var(--cp-panel-top),var(--cp-panel-bottom));border:1px solid var(--cp-border);border-radius:22px;padding:1rem;box-shadow:var(--cp-shadow)}
+  .cp-ci-panel-wide{min-width:0}
+  .cp-ci-panel-header{display:flex;justify-content:space-between;align-items:center;gap:.75rem;margin-bottom:.85rem}
+  .cp-ci-label{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cp-text-soft);font-weight:700}
+  .cp-ci-badge{display:inline-flex;align-items:center;border-radius:999px;padding:.22rem .58rem;background:var(--cp-live-bg);border:1px solid var(--cp-live-border);color:var(--cp-live-text);font-size:.72rem;font-weight:700}
+  .cp-ci-muted{color:var(--cp-text-muted);font-size:.82rem}
+  .cp-ci-input{width:100%;box-sizing:border-box;margin:.26rem 0 .7rem;padding:.72rem .85rem;border-radius:14px;border:1px solid var(--cp-border);background:var(--cp-bg-input);color:var(--cp-text)}
+  .cp-ci-input:focus{outline:none;border-color:var(--cp-border-strong)}
+  .cp-ci-inline-row{display:flex;align-items:center;gap:.55rem}
+  .cp-ci-inline-row-wrap{flex-wrap:wrap}
+  .cp-ci-results,.cp-ci-summary{margin-top:.2rem;padding:.95rem;border-radius:16px;background:var(--cp-bg-panel-soft);border:1px solid var(--cp-border);color:var(--cp-text-muted);min-height:170px;overflow:auto}
+  .cp-ci-summary{min-height:90px}
+  .cp-ci-pre{white-space:pre-wrap;font-family:Consolas,"SFMono-Regular",monospace}
+  .cp-ci-card{padding:.78rem;border-radius:14px;background:var(--cp-bg-panel-soft);border:1px solid var(--cp-border);margin-bottom:.55rem}
+  .cp-ci-card-title{color:var(--cp-text);font-weight:700;font-size:.95rem}
+  .cp-ci-card-meta{color:var(--cp-text-soft);font-size:.8rem;margin-top:.2rem}
+  .cp-ci-card-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.55rem}
+  .cp-ci-card-tag{padding:.16rem .48rem;border-radius:999px;background:var(--cp-neutral-bg);border:1px solid var(--cp-neutral-border);color:var(--cp-link);font-size:.72rem}
+  .cp-ci-meta{margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--cp-border);color:var(--cp-text-soft);font-size:.74rem}
+  .cp-ci-draw-shell{border-radius:16px;border:1px solid var(--cp-border);background:var(--cp-bg-panel-soft);overflow:hidden}
+  .cp-ci-draw-toolbar{display:flex;flex-wrap:wrap;gap:.35rem;padding:.6rem;border-bottom:1px solid var(--cp-border)}
+  .cp-ci-slot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem;margin:.5rem 0}
+  .cp-ci-advanced{margin:.4rem 0 .7rem;color:var(--cp-text-muted)}
+  .cp-ci-advanced summary{cursor:pointer;font-weight:700;color:var(--cp-link)}
+  .cp-ci-structure-panel{display:none}
+  .cp-ci-structure-panel.active{display:block}
+  #cp-ci-sketcher,#cp-ci-reaction-sketcher{display:block;width:100%;height:330px;background:var(--cp-molecule-canvas);touch-action:none}
   #cp-ci-sketcher text,#cp-ci-reaction-sketcher text{font-family:Arial,sans-serif;font-weight:700;dominant-baseline:central;text-anchor:middle}
-  @media (max-width: 900px){.cp-ci-reaction-layout{grid-template-columns:1fr}.cp-ci-slot-grid{grid-template-columns:1fr}}
+  @media (max-width: 1100px){.cp-ci-layout,.cp-ci-layout-wide{grid-template-columns:1fr}}
+  @media (max-width: 700px){.cp-ci-slot-grid{grid-template-columns:1fr}.cp-ci-panel{padding:.85rem}}
 </style>
-
-
-
