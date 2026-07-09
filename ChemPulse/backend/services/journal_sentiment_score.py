@@ -5,6 +5,7 @@ from typing import Any
 
 import plotly.graph_objects as go
 
+from backend.core.palette_catalog import palette_chart_theme
 from backend.data.core_publication_repository import CorePublicationRepository
 
 
@@ -50,7 +51,8 @@ class JournalSentimentService:
         records = CorePublicationRepository.journal_publication_texts(selected) if selected else []
         points = [_score_record(record) for record in records]
         scores = [point["score"] for point in points]
-        average = round(mean(scores), 3) if scores else 0.0
+        average = round(mean(scores), 
+                        3) if scores else 0.0
         return {
             "selected_journal": selected,
             "journals": journals,
@@ -63,7 +65,9 @@ class JournalSentimentService:
         }
 
     @staticmethod
-    def figure(journal: str = "") -> go.Figure:
+    def figure(journal: str = "",
+               palette_key: str = "default") -> go.Figure:
+        theme = palette_chart_theme(palette_key)
         analysis = JournalSentimentService.analyze(journal)
         points = analysis["points"]
         fig = go.Figure()
@@ -73,22 +77,33 @@ class JournalSentimentService:
                     x=[point["label"] for point in points],
                     y=[point["score"] for point in points],
                     mode="lines+markers",
-                    marker=dict(color="#22D3EE", size=7),
-                    line=dict(color="#86EFAC", width=3),
+                    marker=dict(color=theme["primary"], 
+                                size=7),
+                    line=dict(color=theme["secondary"], 
+                              width=3),
                     customdata=[point["title"] for point in points],
                     hovertemplate="<b>%{customdata}</b><br>Sentiment: %{y}<extra></extra>",
                 )
             )
         fig.update_layout(
-            title=dict(text="Journal sentiment over article batches", font=dict(color="#E2E8F0", size=15)),
-            margin=dict(l=8, r=8, b=36, t=42),
+            title=dict(text="Journal sentiment over article batches", 
+                       font=dict(color=theme["text"], 
+                                 size=15)),
+            margin=dict(l=8, 
+                        r=8, 
+                        b=36, 
+                        t=42),
             paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(15,23,42,0.42)",
-            font=dict(color="#CBD5E1", size=11),
+            plot_bgcolor=theme["plot_bg"],
+            font=dict(color=theme["text"], 
+                      size=11),
             height=390,
         )
-        fig.update_xaxes(title="Article batch", gridcolor="rgba(148,163,184,0.14)")
-        fig.update_yaxes(title="Sentiment score", range=[-1.05, 1.05], gridcolor="rgba(148,163,184,0.14)")
+        fig.update_xaxes(title="Article batch", 
+                         gridcolor=theme["grid"])
+        fig.update_yaxes(title="Sentiment score", 
+                         range=[-1.05, 1.05], 
+                         gridcolor=theme["grid"])
         return fig
 
 
