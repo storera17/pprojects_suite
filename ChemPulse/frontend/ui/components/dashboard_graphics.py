@@ -13,22 +13,31 @@ def dashboard_graphics(
     return rx.box(
         rx.vstack(
             rx.hstack(
-                rx.heading("Publication Analytics", size="6", color="white"),
+                rx.heading("Publication Analytics", 
+                           size="6", 
+                           color="var(--cp-text)"),
                 rx.spacer(),
-                rx.badge("Journal-first scoring", color_scheme="cyan"),
+                rx.badge("Journal-first scoring", 
+                         color_scheme="cyan"),
                 width="100%",
             ),
             rx.grid(
                 rx.foreach(
                     summary_cards,
                     lambda item: rx.box(
-                        rx.text(item["label"], color="#94A3B8", size="2"),
-                        rx.heading(item["value"], color="white", size="5"),
-                        rx.text(item["detail"], color="#64748B", size="1"),
+                        rx.text(item["label"], 
+                                color="var(--cp-text-soft)", 
+                                size="2"),
+                        rx.heading(item["value"], 
+                                   color="var(--cp-text)", 
+                                   size="5"),
+                        rx.text(item["detail"], 
+                                color="var(--cp-text-muted)", 
+                                size="1"),
                         padding="0.75rem",
                         border_radius="8px",
-                        background="rgba(255,255,255,0.05)",
-                        border="1px solid rgba(255,255,255,0.08)",
+                        background="var(--cp-bg-panel-soft)",
+                        border="1px solid var(--cp-border)",
                     ),
                 ),
                 columns="repeat(4, 1fr)",
@@ -55,11 +64,13 @@ def dashboard_graphics(
 
 def _plot(figure) -> rx.Component:
     return rx.box(
-        rx.plotly(data=figure, width="100%", height="100%"),
+        rx.plotly(data=figure, 
+                  width="100%", 
+                  height="100%"),
         height="310px",
         border_radius="8px",
-        background="rgba(15,23,42,0.58)",
-        border="1px solid rgba(148,163,184,0.14)",
+        background="var(--c-plot-bg)",
+        border="1px solid var(--cp-border)",
         overflow="hidden",
     )
 
