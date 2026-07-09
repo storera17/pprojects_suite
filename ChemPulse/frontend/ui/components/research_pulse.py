@@ -7,7 +7,7 @@ def research_pulse_panel(items, on_refresh) -> rx.Component:
     return rx.box(
         rx.vstack(
             rx.hstack(
-                rx.heading("Research Pulse", size="6", color="white"),
+                rx.heading("Research Pulse", size="6", color="var(--cp-text)"),
                 rx.spacer(),
                 rx.button("Refresh", on_click=on_refresh, variant="soft", color_scheme="cyan"),
                 width="100%",
@@ -19,20 +19,20 @@ def research_pulse_panel(items, on_refresh) -> rx.Component:
                     rx.hstack(
                         rx.badge(item["tag"], color_scheme="cyan"),
                         rx.spacer(),
-                        rx.text(item["metric"], color="#86EFAC", weight="bold"),
+                        rx.text(item["metric"], color="var(--cp-success)", weight="bold"),
                         width="100%",
                         align="center",
                     ),
-                    rx.text(item["title"], color="white", weight="bold"),
-                    rx.text(item["body"], color="#CBD5E1"),
+                    rx.text(item["title"], color="var(--cp-text)", weight="bold"),
+                    rx.text(item["body"], color="var(--cp-text-muted)"),
                     padding="0.85rem",
                     border_radius="14px",
-                    background="rgba(255,255,255,0.05)",
-                    border="1px solid rgba(255,255,255,0.08)",
+                    background="var(--cp-bg-panel-soft)",
+                    border="1px solid var(--cp-border)",
                     width="100%",
                 ),
             ),
-            rx.text("Research Pulse is waiting for local scaffold and publication context.", color="#94A3B8", size="2"),
+            rx.text("Research Pulse is waiting for local scaffold and publication context.", color="var(--cp-text-soft)", size="2"),
             spacing="3",
             align="stretch",
         ),
@@ -40,3 +40,5 @@ def research_pulse_panel(items, on_refresh) -> rx.Component:
         grid_column="span 8",
         min_height="280px",
     )
+
+
