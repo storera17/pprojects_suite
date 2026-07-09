@@ -6,6 +6,7 @@ from typing import Any
 
 import plotly.graph_objects as go
 
+from backend.core.palette_catalog import palette_chart_theme
 from backend.data.db import ensure_database_exists
 from backend.data.repository import GoldRepository
 from backend.data.scaffold_registry import ScaffoldRegistry
