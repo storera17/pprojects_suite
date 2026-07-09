@@ -1,3 +1,5 @@
+"""Canonical backend route definitions shared by ASGI and Reflex wiring."""
+
 from __future__ import annotations
 
 from backend.api.chemical_intelligence import (
@@ -7,6 +9,7 @@ from backend.api.chemical_intelligence import (
     reaction_search,
     structure_search,
 )
+from backend.api.pricing import pricing_compare, pricing_history, pricing_watch
 from backend.api.dashboard import (
     dashboard_data,
     dashboard_data_script,
@@ -46,7 +49,9 @@ from backend.api.status import (
     topics_update,
 )
 
+
 type RouteDefinition = tuple[str, object, list[str]]
+
 
 def status_routes() -> list[RouteDefinition]:
     return [
@@ -77,7 +82,8 @@ def status_routes() -> list[RouteDefinition]:
         ("/chempulse/api/collection/run.js", run_collection_script, ["GET"]),
         ("/api/collection/run.js", run_collection_script, ["GET"]),
     ]
-    
+
+
 def dashboard_routes() -> list[RouteDefinition]:
     return [
         ("/api/documents", documents, ["GET"]),
@@ -106,7 +112,8 @@ def dashboard_routes() -> list[RouteDefinition]:
         ("/api/dashboard", dashboard_data, ["GET"]),
         ("/api/dashboard.js", dashboard_data_script, ["GET"]),
     ]
-    
+
+
 def chemical_intelligence_routes() -> list[RouteDefinition]:
     return [
         ("/api/search/literature", literature_search, ["GET", "POST"]),
@@ -115,16 +122,22 @@ def chemical_intelligence_routes() -> list[RouteDefinition]:
         ("/api/search/reaction-name", reaction_name_search, ["GET", "POST"]),
         ("/api/mechanism/explain", mechanism_explain, ["POST"]),
         ("/api/reports/reaction", reaction_report, ["POST"]),
+        ("/api/pricing/compare", pricing_compare, ["POST"]),
+        ("/api/pricing/history", pricing_history, ["GET"]),
+        ("/api/pricing/watch", pricing_watch, ["POST"]),
     ]
+
 
 def frontend_dashboard_routes() -> list[RouteDefinition]:
     return [*dashboard_routes(), *[(f"/chempulse{path}", handler, methods) for path, handler, methods in dashboard_routes()]]
+
 
 def frontend_chemical_intelligence_routes() -> list[RouteDefinition]:
     return [
         *chemical_intelligence_routes(),
         *[(f"/chempulse{path}", handler, methods) for path, handler, methods in chemical_intelligence_routes()],
     ]
+
 
 def all_routes() -> list[RouteDefinition]:
     return [*status_routes(), *frontend_dashboard_routes(), *frontend_chemical_intelligence_routes()]

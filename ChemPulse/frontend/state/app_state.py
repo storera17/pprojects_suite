@@ -5,6 +5,7 @@ from typing import Any
 import plotly.graph_objects as go
 import reflex as rx
 
+from backend.core.palette_catalog import DEFAULT_PALETTE_KEY, normalize_palette_key
 from backend.data.manual_publication_importer import (
     import_manual_publications,
     import_quick_publication_lead,
@@ -20,10 +21,12 @@ from frontend.state.app_state_defaults import (
     publication_metrics_default,
 )
 
-
 class AppState(rx.State):
-    """Single dashboard view-model for the ChemPulse desktop experience."""
+    #Single dashboard view-model for the ChemPulse desktop experience.
 
+    selected_palette: str = rx.LocalStorage(DEFAULT_PALETTE_KEY,
+                                            name="chempulse.palette",
+                                            sync=True)
     loading: bool = False
     search_query: str = ""
     manual_import_path: str = ""
@@ -155,6 +158,10 @@ class AppState(rx.State):
     @rx.event
     def run_collection_now(self):
         app_state_imports.run_collection_now(self)
+        
+    @rx.event
+    def set_palette(self, value:str):
+        self.selected_palette = normalize_palette_key(value)
 
     @rx.event
     def restore_previous_payload(self):
