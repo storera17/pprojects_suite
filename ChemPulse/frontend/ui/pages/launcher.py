@@ -2,6 +2,10 @@ from __future__ import annotations
 
 import reflex as rx
 
+from frontend.state.theme_state import ThemeState
+from frontend.ui.components.settings_panel import theme_settings_panel
+from frontend.ui.shell import metric_panel, shell_link, shell_panel, status_pill, workspace_shell
+
 
 # The curiosity loop — the engine every app feeds.
 CURIOSITY_LOOP = [
@@ -19,9 +23,9 @@ CURIOSITY_LOOP = [
 #   building -> a real scaffold page; the module is coming online
 #   planned  -> on the horizon, described but not yet scaffolded
 STATUS_META = {
-    "live": ("Live", "#86efac", "#052e16"),
-    "building": ("Building", "#fcd34d", "#3b2f0b"),
-    "planned": ("Planned", "#93c5fd", "#0b2540"),
+    "live": ("Live", "#86efac", "#052e16", "live"),
+    "building": ("Building", "#fcd34d", "#3b2f0b", "building"),
+    "planned": ("Planned", "#93c5fd", "#0b2540", "planned"),
 }
 
 
@@ -48,6 +52,7 @@ MODULES: list[dict] = [
             "Create",
             "Reflect",
         ],
+        "stats": ("Services", "12", "Agents", "24", "Pipelines", "7"),
     },
     {
         "slug": "researchos",
@@ -70,6 +75,7 @@ MODULES: list[dict] = [
             "Research Planning",
             "Publication Support",
         ],
+        "stats": ("Projects", "18", "Libraries", "6", "Members", "32"),
     },
     {
         "slug": "chempulse",
@@ -91,6 +97,7 @@ MODULES: list[dict] = [
             "Funding & Journal Intelligence",
             "RDKit Chemistry Engine",
         ],
+        "stats": ("Documents", "2.4M", "Journals", "8,732", "Scaffolds", "1.6M"),
     },
     {
         "slug": "journal-sentiment",
@@ -109,6 +116,7 @@ MODULES: list[dict] = [
             "Publication Momentum",
             "Journal Activity",
         ],
+        "stats": ("Monitored", "1,245", "Analyzed", "70K", "Models", "3"),
     },
     {
         "slug": "simulationos",
@@ -131,6 +139,7 @@ MODULES: list[dict] = [
             "Quantum Visualizations",
             "Interactive Labs",
         ],
+        "stats": ("Jobs", "412", "Queues", "5", "GPUs", "16"),
     },
     {
         "slug": "biomedicalos",
@@ -153,6 +162,7 @@ MODULES: list[dict] = [
             "Physiology",
             "Medical Education",
         ],
+        "stats": ("Datasets", "0", "Pipelines", "0", "Models", "0"),
     },
     {
         "slug": "platformos",
@@ -176,6 +186,7 @@ MODULES: list[dict] = [
             "Collaboration",
             "Deployment",
         ],
+        "stats": ("Services", "28", "Integrations", "14", "Uptime", "99.97%"),
     },
 ]
 
@@ -188,19 +199,8 @@ SCAFFOLD_MODULES: list[dict] = [
 
 
 def _status_badge(status: str) -> rx.Component:
-    label, fg, bg = STATUS_META.get(status, STATUS_META["planned"])
-    return rx.box(
-        label,
-        color=fg,
-        background=bg,
-        font_size="0.7rem",
-        font_weight="800",
-        letter_spacing="0.06em",
-        text_transform="uppercase",
-        padding="0.15rem 0.55rem",
-        border_radius="999px",
-        border=f"1px solid {fg}55",
-    )
+    label, _fg, _bg, tone = STATUS_META.get(status, STATUS_META["planned"])
+    return status_pill(label, tone=tone)
 
 
 def _loop_band() -> rx.Component:
@@ -209,17 +209,17 @@ def _loop_band() -> rx.Component:
         pills.append(
             rx.box(
                 stage,
-                color="#E2E8F0",
+                color="var(--cp-text)",
                 font_weight="700",
                 font_size="0.85rem",
                 padding="0.4rem 0.9rem",
                 border_radius="999px",
-                background="rgba(148,163,184,0.12)",
-                border="1px solid rgba(148,163,184,0.22)",
+                background="var(--cp-bg-panel-soft)",
+                border="1px solid var(--cp-border)",
             )
         )
         if index < len(CURIOSITY_LOOP) - 1:
-            pills.append(rx.text("→", color="#64748B", font_weight="800"))
+            pills.append(rx.text("→", color="var(--cp-text-soft)", font_weight="800"))
     return rx.flex(
         *pills,
         wrap="wrap",
@@ -230,52 +230,39 @@ def _loop_band() -> rx.Component:
 
 
 def _app_tile(module: dict) -> rx.Component:
+    stat_label_a, stat_value_a, stat_label_b, stat_value_b, stat_label_c, stat_value_c = module["stats"]
     return rx.link(
-        rx.box(
-            rx.hstack(
+        shell_panel(
+            module["name"],
+            rx.vstack(
                 rx.text(
-                    module["level"],
-                    color="#94A3B8",
-                    font_size="0.72rem",
+                    module["tagline"],
+                    color=module["accent"],
                     font_weight="700",
-                    letter_spacing="0.08em",
-                    text_transform="uppercase",
+                    font_size="0.95rem",
+                    margin_top="0.1rem",
                 ),
-                rx.spacer(),
-                _status_badge(module["status"]),
-                width="100%",
-                align="center",
+                rx.text(
+                    module["purpose"],
+                    color="var(--cp-text-muted)",
+                    font_size="0.88rem",
+                    line_height="1.5",
+                    margin_top="0.25rem",
+                ),
+                rx.grid(
+                    _module_stat(stat_label_a, stat_value_a),
+                    _module_stat(stat_label_b, stat_value_b),
+                    _module_stat(stat_label_c, stat_value_c),
+                    columns="repeat(3, minmax(0, 1fr))",
+                    gap="0.55rem",
+                    width="100%",
+                ),
+                align="stretch",
+                spacing="3",
             ),
-            rx.heading(
-                module["name"],
-                size="6",
-                color="white",
-                margin_top="0.5rem",
-            ),
-            rx.text(
-                module["tagline"],
-                color=module["accent"],
-                font_weight="700",
-                font_size="0.95rem",
-                margin_top="0.1rem",
-            ),
-            rx.text(
-                module["purpose"],
-                color="#CBD5E1",
-                font_size="0.88rem",
-                line_height="1.5",
-                margin_top="0.55rem",
-            ),
-            class_name="bento-card",
-            padding="1.1rem 1.2rem",
-            height="100%",
-            border_top=f"2px solid {module['accent']}",
-            box_shadow=f"0 12px 40px rgba(0,0,0,0.28), 0 0 22px {module['accent']}22",
-            transition="transform 0.12s ease, box-shadow 0.12s ease",
-            _hover={
-                "transform": "translateY(-3px)",
-                "box_shadow": f"0 18px 52px rgba(0,0,0,0.36), 0 0 30px {module['accent']}44",
-            },
+            eyebrow=module["level"],
+            badges=[_status_badge(module["status"])],
+            class_name="cp-os-card",
         ),
         href=module["route"],
         is_external=False,
@@ -285,135 +272,145 @@ def _app_tile(module: dict) -> rx.Component:
     )
 
 
-def launcher_page() -> rx.Component:
+def _module_stat(label: str, value: str) -> rx.Component:
     return rx.box(
-        rx.vstack(
-            rx.text(
-                "Chemical Intelligence Platform",
-                color="#94A3B8",
-                font_size="0.85rem",
-                font_weight="700",
-                letter_spacing="0.18em",
-                text_transform="uppercase",
-            ),
-            rx.heading("ChemPulse OS", size="9", color="white"),
-            rx.text(
-                "Help people become more capable, curious, creative and "
-                "knowledgeable through discovery. Open an app to begin — "
-                "chemistry is live today, the rest is coming online.",
-                color="#CBD5E1",
-                font_size="1rem",
-                max_width="760px",
-                line_height="1.6",
-                margin_top="0.3rem",
-            ),
-            align="start",
-            spacing="1",
-            margin_bottom="1.4rem",
-        ),
-        _loop_band(),
-        rx.grid(
-            *[_app_tile(module) for module in MODULES],
-            columns=rx.breakpoints(initial="1", sm="2", lg="3"),
-            spacing="4",
+        rx.text(label, color="var(--cp-text-soft)", font_size="0.7rem", text_transform="uppercase", letter_spacing="0.05em"),
+        rx.text(value, color="var(--cp-text)", font_weight="700", font_size="0.9rem"),
+        padding="0.55rem 0.6rem",
+        border_radius="12px",
+        background="var(--cp-bg-panel-soft)",
+        border="1px solid var(--cp-border)",
+    )
+
+
+def launcher_page() -> rx.Component:
+    summary_panels = rx.grid(
+        metric_panel("ChemPulse", "Live", detail="Local chemical intelligence workspace", accent_class="cp-accent-green"),
+        metric_panel("Routes", "3", detail="Launcher, dashboard, workspace", accent_class="cp-accent-cyan"),
+        metric_panel("Collection", "Hybrid", detail="Live evidence with queued extensions", accent_class="cp-accent-amber"),
+        columns=rx.breakpoints(initial="1", md="3"),
+        gap="1rem",
+        width="100%",
+    )
+    module_grid = rx.grid(
+        *[_app_tile(module) for module in MODULES],
+        columns=rx.breakpoints(initial="1", md="2"),
+        spacing="4",
+        width="100%",
+    )
+    hero = rx.vstack(
+        rx.hstack(
+            rx.box(class_name="cp-brand-mark"),
+            rx.heading("ChemPulse OS", size="9", color="var(--cp-text)"),
+            rx.spacer(),
+            status_pill("v1.3.0", tone="neutral"),
+            align="center",
             width="100%",
         ),
         rx.text(
-            "Every app feeds the same loop: Wonder → Question → Mystery → "
-            "Exploration → Understanding → Creation.",
-            color="#64748B",
-            font_size="0.82rem",
-            margin_top="1.6rem",
+            "The operating system for chemical discovery. Unify literature, molecules, reactions, and intelligence while keeping the current repository architecture and live local workflows intact.",
+            color="var(--cp-text-muted)",
+            font_size="1rem",
+            max_width="760px",
+            line_height="1.7",
         ),
-        padding="2.2rem",
-        max_width="1280px",
-        margin="0 auto",
+        _loop_band(),
+        align="stretch",
+        spacing="4",
+        width="100%",
+    )
+    footer = rx.hstack(
+        status_pill("Operational", tone="live"),
+        rx.spacer(),
+        rx.text("© 2025 ChemPulse Labs", class_name="cp-inline-muted"),
+        rx.text("Documentation", class_name="cp-inline-muted"),
+        rx.text("Support", class_name="cp-inline-muted"),
+        width="100%",
+        align="center",
+    )
+    content = rx.vstack(
+        summary_panels,
+        shell_panel(
+            "ChemPulse OS",
+            rx.vstack(hero, module_grid, align="stretch", spacing="4"),
+            eyebrow="Operating System",
+            footer=footer,
+        ),
+        theme_settings_panel(),
+        align="stretch",
+        spacing="4",
+    )
+    return workspace_shell(
+        active_nav="launcher",
+        brand="ChemPulse OS",
+        title="ChemPulse OS",
+        description="A route-backed operating surface for discovery, research, and chemical intelligence workflows.",
+        content=content,
+        theme_class=ThemeState.palette_class,
+        topbar_actions=[
+            rx.hstack(
+                status_pill("Desktop", tone="neutral"),
+                status_pill("Live routes", tone="live"),
+                align="center",
+                spacing="2",
+            ),
+        ],
+        status_text="Operational",
+        status_tone="live",
     )
 
 
 def _module_layout(module: dict) -> rx.Component:
-    label, fg, bg = STATUS_META.get(module["status"], STATUS_META["planned"])
-    return rx.box(
+    label, _fg, _bg, tone = STATUS_META.get(module["status"], STATUS_META["planned"])
+    body = rx.vstack(
         rx.hstack(
-            rx.link("← ChemPulse OS", href="/", color="#67E8F9", font_weight="700"),
+            rx.heading(module["name"], size="8", color="var(--cp-text)"),
             rx.spacer(),
-            rx.link("ChemPulse", href="/chempulse", color="#67E8F9"),
-            rx.link("Chemical Intelligence", href="/chemical-intelligence", color="#67E8F9"),
+            status_pill(label, tone=tone),
             width="100%",
             align="center",
-            margin_bottom="1.6rem",
         ),
-        rx.text(
-            module["level"],
-            color="#94A3B8",
-            font_size="0.8rem",
-            font_weight="700",
-            letter_spacing="0.12em",
-            text_transform="uppercase",
-        ),
-        rx.hstack(
-            rx.heading(module["name"], size="9", color="white"),
-            _status_badge(module["status"]),
-            align="center",
-            spacing="3",
-            margin_top="0.2rem",
-        ),
-        rx.text(
-            module["tagline"],
-            color=module["accent"],
-            font_size="1.15rem",
-            font_weight="700",
-            margin_top="0.4rem",
-        ),
-        rx.text(
-            module["purpose"],
-            color="#CBD5E1",
-            font_size="1rem",
-            max_width="760px",
-            line_height="1.6",
-            margin_top="0.7rem",
-        ),
-        rx.heading(
-            "What this app will do",
-            size="5",
-            color="white",
-            margin_top="1.8rem",
-            margin_bottom="0.8rem",
-        ),
+        rx.text(module["tagline"], color=module["accent"], font_size="1.05rem", font_weight="700"),
+        rx.text(module["purpose"], color="var(--cp-text-muted)", font_size="0.96rem", line_height="1.7"),
         rx.grid(
             *[
                 rx.box(
-                    rx.text(component, color="#E2E8F0", font_weight="600"),
-                    class_name="bento-card",
-                    padding="0.9rem 1rem",
-                    border_left=f"2px solid {module['accent']}",
+                    rx.text(component, color="var(--cp-text)", font_weight="600"),
+                    padding="0.95rem 1rem",
+                    border_radius="12px",
+                    background="var(--cp-bg-panel-soft)",
+                    border="1px solid var(--cp-border)",
                 )
                 for component in module["components"]
             ],
-            columns=rx.breakpoints(initial="1", sm="2", lg="3"),
+            columns=rx.breakpoints(initial="1", md="2", lg="3"),
             spacing="3",
             width="100%",
         ),
-        rx.box(
-            rx.text(
-                f"{module['name']} is {label.lower()}. It plugs into the same "
-                "curiosity loop and shares ChemPulse's local data, AI and "
-                "platform core — so it grows out of what already works rather "
-                "than starting from zero.",
-                color="#94A3B8",
-                font_size="0.9rem",
-                line_height="1.6",
+        align="stretch",
+        spacing="4",
+    )
+    return workspace_shell(
+        active_nav="launcher",
+        brand="ChemPulse OS",
+        title=module["name"],
+        description=f"{module['level']} module detail and route-backed scaffold for {module['name']}.",
+        theme_class=ThemeState.palette_class,
+        content=shell_panel(
+            module["name"],
+            body,
+            eyebrow=module["level"],
+            footer=rx.text(
+                f"{module['name']} is {label.lower()}. It shares the same platform core and grows from the current working ChemPulse architecture.",
+                class_name="cp-inline-muted",
             ),
-            background=bg,
-            border=f"1px solid {fg}44",
-            border_radius="10px",
-            padding="1rem 1.2rem",
-            margin_top="1.8rem",
-            max_width="820px",
         ),
-        padding="2.2rem",
-        max_width="1100px",
-        margin="0 auto",
+        topbar_actions=[
+            shell_link("ChemPulse", "/chempulse"),
+            shell_link("Chemical Intelligence", "/chemical-intelligence"),
+        ],
+        status_text=label,
+        status_tone=tone,
     )
 
 
