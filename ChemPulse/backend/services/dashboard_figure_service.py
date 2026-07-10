@@ -109,7 +109,7 @@ class DashboardFigureService:
         )
         return DashboardFigureService._layout(fig, 
                                               "Source diversity",
-                                              palette_key=palette_key 
+                                              palette_key=palette_key, 
                                              show_axes=False)
 
     @staticmethod
