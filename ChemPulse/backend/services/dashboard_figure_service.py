@@ -110,7 +110,7 @@ class DashboardFigureService:
         return DashboardFigureService._layout(fig, 
                                               "Source diversity",
                                               palette_key=palette_key 
-                                              show_axes=False)
+                                             show_axes=False)
 
     @staticmethod
     def summary_cards() -> list[dict[str, Any]]:
