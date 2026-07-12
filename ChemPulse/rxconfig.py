@@ -7,12 +7,15 @@ _hot_reload_excludes = [
     "logs",
     "build",
     "dist",
-    "Local",
 ]
 
+# Only pass excludes that exist: reflex's get_reload_paths() calls path.samefile(exclude),
+# which raises FileNotFoundError on a missing exclude target and kills the granian backend
+# at boot (the frontend keeps running, so it looks like a silent dead backend). Join with
+# ":" — what reflex splits on; os.pathsep is ";" on Windows and would be read as one path.
 os.environ.setdefault(
     "REFLEX_HOT_RELOAD_EXCLUDE_PATHS",
-    os.pathsep.join(_hot_reload_excludes),
+    ":".join(d for d in _hot_reload_excludes if os.path.isdir(d)),
 )
 
 config = rx.Config(
