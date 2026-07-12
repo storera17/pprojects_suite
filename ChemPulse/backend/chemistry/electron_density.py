@@ -31,3 +31,6 @@ _AUFBAU: list[tuple[int, int, int]] = [
     (7, 1, 6),
 ]
 
+
+# Effective principal quantum number n* per shell (Slater's tabulated values).
+_N_STAR: dict[int, float] = {1: 1.0, 2: 2.0, 3: 3.0, 4: 3.7, 5: 4.0, 6: 4.2, 7: 4.3}
