@@ -128,6 +128,16 @@ def chemical_intelligence_routes() -> list[RouteDefinition]:
     ]
 
 
+def reaction_routes() -> list[RouteDefinition]:
+
+    return [
+        ("/api/reactions", reactions_list, ["GET"]),
+        ("/api/reactions/export", reaction_export, ["POST"]),
+        ("/api/reactions/{reaction_id}", reaction_detail, ["GET"]),
+        ("/api/models/runs", model_runs, ["GET"]),
+        ("/api/models/metrics", model_metrics, ["GET"]),
+    ]
+
 def frontend_dashboard_routes() -> list[RouteDefinition]:
     return [*dashboard_routes(), *[(f"/chempulse{path}", handler, methods) for path, handler, methods in dashboard_routes()]]
 
