@@ -7,3 +7,27 @@ from typing import Any
 import numpy as np
 from rdkit import Chem
 from rdkit.Chem import AllChem, rdMolDescriptors
+
+# Aufbau filling order as (n, l, capacity). Enough to cover the whole periodic table in practice.
+_AUFBAU: list[tuple[int, int, int]] = [
+    (1, 0, 2),
+    (2, 0, 2),
+    (2, 1, 6),
+    (3, 0, 2),
+    (3, 1, 6),
+    (4, 0, 2),
+    (3, 2, 10),
+    (4, 1, 6),
+    (5, 0, 2),
+    (4, 2, 10),
+    (5, 1, 6),
+    (6, 0, 2),
+    (4, 3, 14),
+    (5, 2, 10),
+    (6, 1, 6),
+    (7, 0, 2),
+    (5, 3, 14),
+    (6, 2, 10),
+    (7, 1, 6),
+]
+
