@@ -138,8 +138,20 @@ def reaction_routes() -> list[RouteDefinition]:
         ("/api/models/metrics", model_metrics, ["GET"]),
     ]
 
+
+def frontend_reaction_routes() -> list[RouteDefinition]:
+    return [
+        *reaction_routes(),
+        *[(f"/chempulse{path}",
+           handler,
+           methods) for path, handler, methods in reaction_routes()]
+    ]
+
 def frontend_dashboard_routes() -> list[RouteDefinition]:
-    return [*dashboard_routes(), *[(f"/chempulse{path}", handler, methods) for path, handler, methods in dashboard_routes()]]
+    return [*dashboard_routes(), 
+            *[(f"/chempulse{path}",
+               handler,
+               methods) for path, handler, methods in dashboard_routes()]]
 
 
 def frontend_chemical_intelligence_routes() -> list[RouteDefinition]:
