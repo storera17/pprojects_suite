@@ -37,3 +37,5 @@ _N_STAR: dict[int, float] = {1: 1.0, 2: 2.0, 3: 3.0, 4: 3.7, 5: 4.0, 6: 4.2, 7: 
 
 # Bohr Radius
 _BOHR_TO_ANGSTROM = 0.529177
+
+_EMBED_SEED = 0xF00D  # fixed so conformers (and therefore fields) are deterministic.MBED_SEED = 0xF00D  # fixed so conformers (and therefore fields) are deterministic.
