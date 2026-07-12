@@ -39,3 +39,17 @@ _N_STAR: dict[int, float] = {1: 1.0, 2: 2.0, 3: 3.0, 4: 3.7, 5: 4.0, 6: 4.2, 7: 
 _BOHR_TO_ANGSTROM = 0.529177
 
 _EMBED_SEED = 0xF00D  # fixed so conformers (and therefore fields) are deterministic.MBED_SEED = 0xF00D  # fixed so conformers (and therefore fields) are deterministic.
+
+
+@dataclass
+class Orbital:
+    n: int
+    kind: str  # "sp", "d", or "f"
+    occupancy: int
+    zeff: float
+    r_eff_angstrom: float
+
+    @property
+    def amplitude(self) -> float:
+        n_star = _N_STAR.get(self.n, 4.3)
+        return self.occupancy * self.zeff / n_star
