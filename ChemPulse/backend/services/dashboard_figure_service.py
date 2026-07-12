@@ -109,8 +109,8 @@ class DashboardFigureService:
         )
         return DashboardFigureService._layout(fig, 
                                               "Source diversity",
-                                              palette_key=palette_key 
-                                              show_axes=False)
+                                              palette_key=palette_key, 
+                                             show_axes=False)
 
     @staticmethod
     def summary_cards() -> list[dict[str, Any]]:
@@ -147,6 +147,7 @@ class DashboardFigureService:
                 x_title: str = "",
                 y_title: str = "", 
                 show_axes: bool = True) -> go.Figure:
+        theme = palette_chart_theme(palette_key)
         fig.update_layout(
             title=dict(text=title, 
                        font=dict(color=theme["text"],

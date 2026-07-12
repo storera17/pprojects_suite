@@ -9,12 +9,25 @@ from rdkit.Chem.Scaffolds import MurckoScaffold
 
 logger = logging.getLogger(__name__)
 
-class ChemistryEngine:
-    """Stable domain logic for molecular processing."""
+_MORGAN_GENERATORS: dict[tuple[int, int], Any] = {}
 
+
+def morgan_generator(radius: int = 2, n_bits: int = 2048):
+    key = (radius, n_bits)
+    generator = _MORGAN_GENERATORS.get(key)
+    if generator is None:
+        generator = rdFingerprintGenerator.GetMorganGenerator(radius=radius, fpSize=n_bits)
+        _MORGAN_GENERATORS[key] = generator
+    return generator
+
+
+def morgan_fingerprint(mol: Chem.Mol, radius: int = 2, n_bits: int = 2048):
+    return morgan_generator(radius, n_bits).GetFingerprint(mol)
+
+
+class ChemistryEngine:
     @staticmethod
     def process_smiles(smiles: str) -> Optional[dict[str, Any]]:
-        """Canonicalize, sanitize, and extract basic molecular features."""
         try:
             mol = Chem.MolFromSmiles(smiles)
             if mol is None:
@@ -43,7 +56,6 @@ class ChemistryEngine:
 
     @staticmethod
     def canonicalize_smiles(smiles: str) -> tuple[str | None, str | None]:
-        """Return canonical SMILES or a user-safe validation error."""
         cleaned = smiles.strip()
         if not cleaned:
             return None, "SMILES is required."
