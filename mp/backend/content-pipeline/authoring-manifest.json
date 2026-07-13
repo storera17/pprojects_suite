@@ -1,0 +1,702 @@
+[
+  {
+    "id": "sd-ai-overview",
+    "deckId": "foundations",
+    "title": "AI & Analytics Overview",
+    "status": "done",
+    "sourcePaths": [
+      "isa632/Module 1. AI Overview",
+      "lit-ai"
+    ],
+    "conceptCount": 9,
+    "notes": ""
+  },
+  {
+    "id": "sd-bigdata-overview",
+    "deckId": "foundations",
+    "title": "Big Data Basics",
+    "status": "done",
+    "sourcePaths": [
+      "isa514/Module 1 - Big Data Overview"
+    ],
+    "conceptCount": 3,
+    "notes": ""
+  },
+  {
+    "id": "sd-data-warehousing",
+    "deckId": "tools",
+    "title": "Data Warehousing & ETL",
+    "status": "done",
+    "sourcePaths": [
+      "lit-data-eng"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-modern-data-stack",
+    "deckId": "tools",
+    "title": "Modern Data Stack (Snowflake & dbt)",
+    "status": "done",
+    "sourcePaths": [
+      "lit-data-eng"
+    ],
+    "conceptCount": 4,
+    "notes": ""
+  },
+  {
+    "id": "sd-dax",
+    "deckId": "powerbi",
+    "title": "Data Preparation & DAX",
+    "status": "done",
+    "sourcePaths": [
+      "isa512/ISA 512/Module 1 - Data Preparation using DAX Query Language"
+    ],
+    "conceptCount": 7,
+    "notes": ""
+  },
+  {
+    "id": "sd-powerbi-modeling",
+    "deckId": "powerbi",
+    "title": "Data Modeling using Power BI",
+    "status": "done",
+    "sourcePaths": [
+      "isa512/ISA 512/Module 2 - Data Modeling using Power BI"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-dashboards",
+    "deckId": "powerbi",
+    "title": "Visualization, Dashboards & Storytelling",
+    "status": "done",
+    "sourcePaths": [
+      "isa512/ISA 512/Module 3 - Data Visualization, Dashboards, and Storytelling"
+    ],
+    "conceptCount": 4,
+    "notes": ""
+  },
+  {
+    "id": "sd-python",
+    "deckId": "python-data",
+    "title": "Python Programming",
+    "status": "done",
+    "sourcePaths": [
+      "isa514/Module 2 - Python",
+      "isa514/Module 3 - Python (II)"
+    ],
+    "conceptCount": 6,
+    "notes": ""
+  },
+  {
+    "id": "sd-web-api",
+    "deckId": "python-data",
+    "title": "Data Collection from Web APIs",
+    "status": "done",
+    "sourcePaths": [
+      "isa514/Module 4 - Data Collection from Web API"
+    ],
+    "conceptCount": 4,
+    "notes": ""
+  },
+  {
+    "id": "sd-nosql",
+    "deckId": "python-data",
+    "title": "NoSQL Databases",
+    "status": "done",
+    "sourcePaths": [
+      "isa514/Module 5 - NoSQL Database"
+    ],
+    "conceptCount": 3,
+    "notes": ""
+  },
+  {
+    "id": "sd-data-mining-intro",
+    "deckId": "mining",
+    "title": "Data Mining Overview",
+    "status": "done",
+    "sourcePaths": [
+      "isa514/Module 6 - Data Mining",
+      "isa591/Module 1 - Data Mining Overview",
+      "isa591/Module 0 - Pre-Term Review Material"
+    ],
+    "conceptCount": 6,
+    "notes": ""
+  },
+  {
+    "id": "sd-text-mining",
+    "deckId": "mining",
+    "title": "Text Mining",
+    "status": "done",
+    "sourcePaths": [
+      "isa514/Module 7 - Text Mining"
+    ],
+    "conceptCount": 7,
+    "notes": ""
+  },
+  {
+    "id": "sd-eda",
+    "deckId": "mining",
+    "title": "Exploratory Data Analysis",
+    "status": "done",
+    "sourcePaths": [
+      "isa591/Module 2 - Exploratory Data Analysis"
+    ],
+    "conceptCount": 6,
+    "notes": ""
+  },
+  {
+    "id": "sd-dimension-reduction",
+    "deckId": "mining",
+    "title": "Dimension Reduction",
+    "status": "done",
+    "sourcePaths": [
+      "isa591/Module 3 - Dimension Reduction"
+    ],
+    "conceptCount": 3,
+    "notes": ""
+  },
+  {
+    "id": "sd-model-evaluation",
+    "deckId": "mining",
+    "title": "Evaluating Model Performance",
+    "status": "done",
+    "sourcePaths": [
+      "isa591/Module 4 - Evaluating Model Performance"
+    ],
+    "conceptCount": 6,
+    "notes": ""
+  },
+  {
+    "id": "sd-regularized-regression",
+    "deckId": "mining",
+    "title": "Regularized Regression",
+    "status": "done",
+    "sourcePaths": [
+      "isa591/Module 5 - Regularized Regression"
+    ],
+    "conceptCount": 6,
+    "notes": ""
+  },
+  {
+    "id": "sd-tree-models",
+    "deckId": "mining",
+    "title": "Tree-Based Models",
+    "status": "done",
+    "sourcePaths": [
+      "isa591/Module 6 - Tree-Based Models"
+    ],
+    "conceptCount": 6,
+    "notes": ""
+  },
+  {
+    "id": "sd-logistic-regression",
+    "deckId": "mining",
+    "title": "Logistic Regression",
+    "status": "done",
+    "sourcePaths": [
+      "isa591/Module 7 - Logistic Regression"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-nn-intro",
+    "deckId": "deep-learning",
+    "title": "Neural Networks Introduction",
+    "status": "done",
+    "sourcePaths": [
+      "isa591/Module 8 - Neural Networks"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-matrix-tensor",
+    "deckId": "deep-learning",
+    "title": "Matrix & Tensor Algebra",
+    "status": "done",
+    "sourcePaths": [
+      "isa630/Module 0_ [Matrix-Tensor Algebra]"
+    ],
+    "conceptCount": 7,
+    "notes": ""
+  },
+  {
+    "id": "sd-gradients-regularization",
+    "deckId": "deep-learning",
+    "title": "Gradients & Regularization",
+    "status": "done",
+    "sourcePaths": [
+      "isa630/Module 1_ [Gradients, Regularization]"
+    ],
+    "conceptCount": 6,
+    "notes": ""
+  },
+  {
+    "id": "sd-classification-deep-dive",
+    "deckId": "deep-learning",
+    "title": "Classification Deep Dive",
+    "status": "done",
+    "sourcePaths": [
+      "isa630/Module 2_ [Classification Deep Dive]"
+    ],
+    "conceptCount": 4,
+    "notes": ""
+  },
+  {
+    "id": "sd-feedforward",
+    "deckId": "deep-learning",
+    "title": "Feed-Forward Architectures",
+    "status": "done",
+    "sourcePaths": [
+      "isa630/Module 3_ [Deep Learning_ Feed-Forward Architectures]",
+      "lit-d2l/chapter_multilayer-perceptrons"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-autoencoders",
+    "deckId": "deep-learning",
+    "title": "AutoEncoders",
+    "status": "done",
+    "sourcePaths": [
+      "isa630/Module 4_ [Deep Learning_ AutoEncoders]"
+    ],
+    "conceptCount": 6,
+    "notes": ""
+  },
+  {
+    "id": "sd-cnn",
+    "deckId": "deep-learning",
+    "title": "Convolutional Neural Networks",
+    "status": "done",
+    "sourcePaths": [
+      "isa630/Module 5_ [Convolution Neural Networks]",
+      "lit-d2l/chapter_convolutional-neural-networks",
+      "lit-d2l/chapter_convolutional-modern"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-rnn",
+    "deckId": "deep-learning",
+    "title": "Recurrent Neural Networks",
+    "status": "done",
+    "sourcePaths": [
+      "isa630/Module 6_ [Recurrent Neural Networks]",
+      "lit-d2l/chapter_recurrent-neural-networks",
+      "lit-d2l/chapter_recurrent-modern"
+    ],
+    "conceptCount": 8,
+    "notes": ""
+  },
+  {
+    "id": "sd-svm",
+    "deckId": "deep-learning",
+    "title": "Support Vector Machines",
+    "status": "done",
+    "sourcePaths": [
+      "isa630/Module 7_ [Support Vector Machines]"
+    ],
+    "conceptCount": 4,
+    "notes": ""
+  },
+  {
+    "id": "sd-ensemble-hybrid",
+    "deckId": "deep-learning",
+    "title": "Ensemble & Hybrid Learning",
+    "status": "done",
+    "sourcePaths": [
+      "isa630/Module 8_ [Ensemble-Hybrid Learning]"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-opt-intro",
+    "deckId": "optimization",
+    "title": "Modeling & Optimization Overview",
+    "status": "done",
+    "sourcePaths": [
+      "isa634/Day 1 - 8-26-2025/Handout - Intro"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-complexity",
+    "deckId": "optimization",
+    "title": "Complexity & Algorithm Analysis",
+    "status": "done",
+    "sourcePaths": [
+      "isa634/Day 1 - 8-26-2025/Handout - Complexity",
+      "isa634/8-28-25"
+    ],
+    "conceptCount": 10,
+    "notes": "Pilot subdeck authored from real ISA 634 lecture (Day 1 handout + 8-28-25 student notes). Validated full pipeline: extraction -> taxonomy -> glossary -> generate-course.mjs -> course.json -> dev server -> production build."
+  },
+  {
+    "id": "sd-math-programming",
+    "deckId": "optimization",
+    "title": "Introduction to Mathematical Programming",
+    "status": "done",
+    "sourcePaths": [
+      "isa634/Day 2 - 9-02-2025/Handout - Intro to Mathematical Programming",
+      "isa634/9-2-25"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-lp",
+    "deckId": "optimization",
+    "title": "Linear Programming",
+    "status": "done",
+    "sourcePaths": [
+      "isa634/9-9-25",
+      "isa634/9-11-25",
+      "isa634/Diet problem"
+    ],
+    "conceptCount": 4,
+    "notes": ""
+  },
+  {
+    "id": "sd-transportation-assignment",
+    "deckId": "optimization",
+    "title": "Transportation & Assignment Problems",
+    "status": "done",
+    "sourcePaths": [
+      "isa634/Exam 2/Topic 1. Transportation and Assignment Problems"
+    ],
+    "conceptCount": 2,
+    "notes": ""
+  },
+  {
+    "id": "sd-network-flow",
+    "deckId": "optimization",
+    "title": "Network Flow Problems",
+    "status": "done",
+    "sourcePaths": [
+      "isa634/Exam 2/Topic 2. Network Flow Problems"
+    ],
+    "conceptCount": 2,
+    "notes": "Real source folder (Exam 2/Topic 2) is empty on disk; content actually pulled from isa634/10-9-2025."
+  },
+  {
+    "id": "sd-ip",
+    "deckId": "optimization",
+    "title": "Integer Programming",
+    "status": "done",
+    "sourcePaths": [
+      "isa634/Exam 2/Topic 3. Integer Programming Problems",
+      "isa634/9-23-2025",
+      "isa634/10-9-2025",
+      "isa634/10 21 2025",
+      "isa634/10 28 2025"
+    ],
+    "conceptCount": 3,
+    "notes": ""
+  },
+  {
+    "id": "sd-bigdata-systems",
+    "deckId": "bigdata",
+    "title": "Big Data Systems",
+    "status": "done",
+    "sourcePaths": [
+      "isa514/Module 8 - Big Data Systems"
+    ],
+    "conceptCount": 3,
+    "notes": ""
+  },
+  {
+    "id": "sd-spark",
+    "deckId": "bigdata",
+    "title": "Apache Spark",
+    "status": "done",
+    "sourcePaths": [
+      "isa632/Module 2. Spark"
+    ],
+    "conceptCount": 3,
+    "notes": ""
+  },
+  {
+    "id": "sd-distributed-computing",
+    "deckId": "bigdata",
+    "title": "Distributed Computing on Spark",
+    "status": "done",
+    "sourcePaths": [
+      "isa632/Module 2. Spark/ISA632-M02_Spark_20260127.pdf.txt"
+    ],
+    "conceptCount": 3,
+    "notes": "No \"Module 4. Distributed Computing on Spark\" folder exists on disk; repointed to the relevant DataFrame Operations / Lazy Execution slides within Module 2 Spark lecture (slides 24-28), which cover this topic in practice."
+  },
+  {
+    "id": "sd-ml-at-scale",
+    "deckId": "bigdata",
+    "title": "Machine Learning at Scale",
+    "status": "done",
+    "sourcePaths": [
+      "isa632/Module 5. Machine Learning at Scale"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-recommender-systems",
+    "deckId": "bigdata",
+    "title": "Recommender Systems",
+    "status": "done",
+    "sourcePaths": [
+      "isa632/Module 6. Recommender Systems",
+      "lit-d2l/chapter_recommender-systems"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-experiments-intro",
+    "deckId": "experiments",
+    "title": "Introduction to Experiments & Causality",
+    "status": "done",
+    "sourcePaths": [
+      "isa633/1. Module 1_ Introduction to Experiments and Causality"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-ab-testing",
+    "deckId": "experiments",
+    "title": "A/B Testing",
+    "status": "done",
+    "sourcePaths": [
+      "isa633/2. Module 2_ A-B Testing"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-abn-testing",
+    "deckId": "experiments",
+    "title": "A/B/n Testing",
+    "status": "done",
+    "sourcePaths": [
+      "isa633/3. Module 3_ A-B-n Testing"
+    ],
+    "conceptCount": 3,
+    "notes": ""
+  },
+  {
+    "id": "sd-blocking",
+    "deckId": "experiments",
+    "title": "Blocking",
+    "status": "done",
+    "sourcePaths": [
+      "isa633/4. Module 4_ Blocking"
+    ],
+    "conceptCount": 3,
+    "notes": ""
+  },
+  {
+    "id": "sd-bandits",
+    "deckId": "experiments",
+    "title": "Multi-Armed Bandits",
+    "status": "done",
+    "sourcePaths": [
+      "isa633/6. Module 5_ Multi-arm bandits"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-factorial-designs",
+    "deckId": "experiments",
+    "title": "Factorial & Fractional Factorial Designs",
+    "status": "done",
+    "sourcePaths": [
+      "isa633/7. Module 6_ Factorial and Fractional Factorial Designs"
+    ],
+    "conceptCount": 3,
+    "notes": ""
+  },
+  {
+    "id": "sd-switchback",
+    "deckId": "experiments",
+    "title": "Switchback Experiments",
+    "status": "done",
+    "sourcePaths": [
+      "isa633/8. Module 7_ Switchback Experiments"
+    ],
+    "conceptCount": 4,
+    "notes": ""
+  },
+  {
+    "id": "sd-causal-inference",
+    "deckId": "experiments",
+    "title": "Causal Inference",
+    "status": "done",
+    "sourcePaths": [
+      "isa633/10. Module 8_ Causal Inference"
+    ],
+    "conceptCount": 3,
+    "notes": ""
+  },
+  {
+    "id": "sd-text-mining-spark",
+    "deckId": "genai",
+    "title": "Text Mining on Spark",
+    "status": "done",
+    "sourcePaths": [
+      "isa632/Module 3. Text Mining on Spark"
+    ],
+    "conceptCount": 2,
+    "notes": ""
+  },
+  {
+    "id": "sd-spark-nlp-llm",
+    "deckId": "genai",
+    "title": "Spark NLP & LLMs",
+    "status": "done",
+    "sourcePaths": [
+      "isa632/Module 7. Spark NLP & LLM"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-prompt-rag",
+    "deckId": "genai",
+    "title": "Prompt Engineering & RAG",
+    "status": "done",
+    "sourcePaths": [
+      "isa632/Module 8. GenAI (1) -  Prompt Engineering & RAG"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-genai-eval-deploy",
+    "deckId": "genai",
+    "title": "GenAI Evaluation & Deployment",
+    "status": "done",
+    "sourcePaths": [
+      "isa632/Module 9. GenAI(2) - Evaluation & Deployment"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-agentic-finetuning",
+    "deckId": "genai",
+    "title": "Agentic AI & LLM Fine-Tuning",
+    "status": "done",
+    "sourcePaths": [
+      "isa632/Module 10. GenAI(3) - Agentic AI & LLM Fine-tuning"
+    ],
+    "conceptCount": 6,
+    "notes": ""
+  },
+  {
+    "id": "sd-data-mgmt-intro",
+    "deckId": "databases",
+    "title": "Data Management & DBMS Fundamentals",
+    "status": "done",
+    "sourcePaths": [
+      "its241/Module 1 - Introduction to Data Management/1. Data Management in Organization"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-data-modeling",
+    "deckId": "databases",
+    "title": "Data Modeling & Schema Architecture",
+    "status": "done",
+    "sourcePaths": [
+      "its241/Module 1 - Introduction to Data Management/2. Data Modeling"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-relational-db",
+    "deckId": "databases",
+    "title": "The Relational Database Model",
+    "status": "done",
+    "sourcePaths": [
+      "its241/Module 1 - Introduction to Data Management/3. Relational Databases "
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-erd",
+    "deckId": "databases",
+    "title": "Entity-Relationship Modeling",
+    "status": "done",
+    "sourcePaths": [
+      "its241/Module 1 - Introduction to Data Management/4. Entity Relationship Diagrams"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-normalization",
+    "deckId": "databases",
+    "title": "Normalization",
+    "status": "done",
+    "sourcePaths": [
+      "its241/Module 1 - Introduction to Data Management/5. Normalization"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-bi-datawarehouse",
+    "deckId": "databases",
+    "title": "Business Intelligence & Data Warehouses",
+    "status": "done",
+    "sourcePaths": [
+      "its241/Module 1 - Introduction to Data Management/6. Analytics-Oriented Databases"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-sql-fundamentals",
+    "deckId": "databases",
+    "title": "SQL Fundamentals",
+    "status": "done",
+    "sourcePaths": [
+      "its241/Module 2 - SQL"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-sql-joins-agg",
+    "deckId": "databases",
+    "title": "SQL JOINs & Aggregate Functions",
+    "status": "done",
+    "sourcePaths": [
+      "its241/Module 2 - SQL"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  },
+  {
+    "id": "sd-sql-advanced",
+    "deckId": "databases",
+    "title": "Advanced SQL",
+    "status": "done",
+    "sourcePaths": [
+      "its241/Module 2 - SQL"
+    ],
+    "conceptCount": 5,
+    "notes": ""
+  }
+]
