@@ -6,7 +6,7 @@
 // preserving the relative folder structure (so module/topic grouping survives
 // for the later taxonomy + authoring passes).
 //
-// Run: npm run extract
+// Run from frontend/: npm run extract
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, extname, basename, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -15,10 +15,21 @@ import mammoth from 'mammoth';
 import JSZip from 'jszip';
 import { convert as htmlToText } from 'html-to-text';
 
-const ROOT = '/Users/andystorer/Desktop/Grad School-Miami';
+/**
+ * Root folder for private/local source material.
+ *
+ * The public repository must not assume a contributor has the original
+ * authoring folders. Set MP_SOURCE_ROOT when running the private extraction
+ * workflow, for example:
+ *
+ *   MP_SOURCE_ROOT="/path/to/approved/source-material" npm run extract
+ */
+const ROOT = process.env.MP_SOURCE_ROOT ?? '';
+/** Configuration or lookup table for OUT_ROOT; keeping it named makes future tuning safer. */
 const OUT_ROOT = fileURLToPath(new URL('./extracted/', import.meta.url));
 
-// bucket name -> absolute source directory to walk
+// Bucket name -> source directory to walk. These paths are intentionally
+// expressed relative to MP_SOURCE_ROOT so the public repo is portable.
 const SOURCES = {
   'isa512': `${ROOT}/Classes /Fall 2025/ISA 512`,
   'isa514': `${ROOT}/Classes /Fall 2025/ISA 514`,
@@ -27,7 +38,7 @@ const SOURCES = {
   'isa630': `${ROOT}/Classes /Spring 2026/ISA 630`,
   'isa632': `${ROOT}/Classes /Spring 2026/ISA 632`,
   'isa633': `${ROOT}/Classes /Spring 2026/ISA 633`,
-  'its241': `/Users/andystorer/Desktop/School/Undergrad/Gen Eds/Miami 2025 Summer /ITS 241`,
+  'its241': `${ROOT}/Undergrad/Gen Eds/Miami 2025 Summer /ITS 241`,
   'lit-d2l': `${ROOT}/Literature to Know/DB, BI, & Analytics/ML/d2l-en (1)/pytorch`,
   'lit-data-eng': `${ROOT}/Literature to Know/DB, BI, & Analytics`,
   'lit-ai': `${ROOT}/Literature to Know/AI`,
@@ -45,16 +56,19 @@ const SKIP_DIR_PATTERNS = [
   'venv', '.venv', 'dist', 'build', 'target', 'zips', '.cache',
 ];
 
+/** Configuration or lookup table for SUPPORTED_EXT; keeping it named makes future tuning safer. */
 const SUPPORTED_EXT = new Set(['.pptx', '.pdf', '.ipynb', '.docx', '.rmd', '.html', '.htm', '.txt', '.md']);
 
 const stats = { extracted: 0, skippedExt: 0, skippedDir: 0, failed: 0, bytesOut: 0 };
 const failures = [];
 
+/** Handles the shouldSkipDir step in this module’s workflow. */
 function shouldSkipDir(name, extraPatterns) {
   const lower = name.toLowerCase();
   return SKIP_DIR_PATTERNS.some((p) => lower.includes(p)) || extraPatterns.some((p) => lower.includes(p));
 }
 
+/** Handles the walk step in this module’s workflow. */
 function walk(dir, fileCb, extraSkip = []) {
   let entries;
   try {
@@ -77,6 +91,7 @@ function walk(dir, fileCb, extraSkip = []) {
   }
 }
 
+/** Handles the extractPptx step in this module’s workflow. */
 async function extractPptx(buf) {
   const zip = await JSZip.loadAsync(buf);
   const slideFiles = Object.keys(zip.files)
@@ -96,11 +111,13 @@ async function extractPptx(buf) {
   return parts.join('\n\n');
 }
 
+/** Handles the extractDocx step in this module’s workflow. */
 async function extractDocx(buf) {
   const result = await mammoth.extractRawText({ buffer: buf });
   return result.value;
 }
 
+/** Handles the extractPdf step in this module’s workflow. */
 async function extractPdf(buf) {
   const parser = new PDFParse({ data: buf });
   try {
@@ -111,6 +128,7 @@ async function extractPdf(buf) {
   }
 }
 
+/** Handles the extractIpynb step in this module’s workflow. */
 function extractIpynb(buf) {
   const nb = JSON.parse(buf.toString('utf8'));
   const parts = [];
@@ -131,10 +149,12 @@ function extractIpynb(buf) {
   return parts.join('\n\n');
 }
 
+/** Handles the extractHtml step in this module’s workflow. */
 function extractHtml(buf) {
   return htmlToText(buf.toString('utf8'), { wordwrap: false });
 }
 
+/** Handles the extractFile step in this module’s workflow. */
 async function extractFile(path) {
   const ext = extname(path).toLowerCase();
   const buf = readFileSync(path);
@@ -152,6 +172,7 @@ async function extractFile(path) {
   }
 }
 
+/** Handles the run step in this module’s workflow. */
 async function run() {
   for (const [bucket, srcDir] of Object.entries(SOURCES)) {
     const files = [];
