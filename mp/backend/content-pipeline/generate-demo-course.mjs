@@ -7,6 +7,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { assembleCourse } from './generate-course.mjs';
 import { normalizeGlossary } from './synthesize.mjs';
 
+/** Configuration or lookup table for DEMO_CONTEXTS; keeping it named makes future tuning safer. */
 const DEMO_CONTEXTS = {
   'sd-demo-foundations': {
     domain: 'analytics foundations',
@@ -43,6 +44,7 @@ const DEMO_CONTEXTS = {
   },
 };
 
+/** Configuration or lookup table for DEMO_GLOSSARY; keeping it named makes future tuning safer. */
 const DEMO_GLOSSARY = normalizeGlossary([
   {
     m: ['decision metric'],
@@ -94,6 +96,7 @@ const DEMO_GLOSSARY = normalizeGlossary([
   },
 ]);
 
+/** Configuration or lookup table for DEMO_SKELETON; keeping it named makes future tuning safer. */
 const DEMO_SKELETON = [
   {
     id: 'foundations',

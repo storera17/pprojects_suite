@@ -124,6 +124,7 @@ export function assembleCourse(deckSkeleton, { contexts, entries } = {}) {
   };
 }
 
+/** Builds and writes the production course JSON file used by the frontend. */
 export function generateCourse() {
   return assembleCourse(buildStructure());
 }
