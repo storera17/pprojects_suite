@@ -1,12 +1,14 @@
-//Offline semantic embeddings via hashed word + character-trigram features
-//The Identical algorithm is implemented in backend/src/core/embedding.ts so that
-//query vectors computed in the app live in the same space as the vectors
-//precomputed here. A parity test (tests/embedding-parity.test.ts) keeps 
-//the two implementations in sync.
-import {fnv1a} from '.util.mjs';
+// Offline semantic embeddings via hashed word + character-trigram features.
+// The identical algorithm is implemented in backend/src/core/embedding.ts so that
+// query vectors computed in the app live in the same space as the vectors
+// precomputed here. A parity test (tests/embedding-parity.test.ts) keeps
+// the two implementations in sync.
+import { fnv1a } from './util.mjs';
 
-export const EMBED_DIMS = 192 
+/** Vector size shared by runtime search and the content-generation pipeline. */
+export const EMBED_DIMS = 192;
 
+/** Normalizes text into word and character-trigram features for semantic matching. */
 export function tokenize(text) {
   const t = String(text).toLowerCase().replace(/[^a-z0-9 ]+/g, ' ');
   const words = t.split(/\s+/).filter((w) => w.length > 1);
@@ -47,6 +49,7 @@ export function packVector(v) {
   return Buffer.from(bytes).toString('base64');
 }
 
+/** Computes similarity between two normalized vectors. */
 export function cosine(a, b) {
   let dot = 0;
   for (let i = 0; i < a.length; i++) dot += a[i] * b[i];
