@@ -8,6 +8,7 @@ import { strip } from './synthesize.mjs';
 export function clozeBudget(difficulty) {
   return [0, 8, 14, 22][difficulty] ?? 10;
 }
+/** Chooses a minimum number of cards to generate for a concept. */
 export function minTarget(difficulty) {
   return [0, 5, 6, 8][difficulty] ?? 5;
 }
@@ -36,10 +37,12 @@ export function termRecallCloze(term, sentence) {
   return `{{c1::${term}}} — ${clean}`;
 }
 
+/** Escapes arbitrary text so it can safely be used inside a RegExp. */
 function escapeRe(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+/** Returns the first sentence from source text for concise card prompts. */
 function firstSentence(text) {
   const t = strip(text);
   const m = t.match(/^.*?[.!?](?=\s|$)/);
