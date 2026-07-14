@@ -3,12 +3,15 @@
 // Each region {id,label,x,y,w,h} can be masked for image-occlusion cards.
 
 const W = 720, H = 420;
+/** Configuration or lookup table for FG; keeping it named makes future tuning safer. */
 const FG = '#9be8f7', DIM = '#3a7d96', BG = '#071826', GLOW = '#19b8e0';
 
+/** Handles the esc step in this module’s workflow. */
 function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+/** Handles the nodeSvg step in this module’s workflow. */
 function nodeSvg(n) {
   const lines = String(n.label).split('\n');
   const lh = 15;
@@ -19,6 +22,7 @@ function nodeSvg(n) {
   return `<rect x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" rx="9" fill="${n.fill || 'rgba(20,60,84,0.55)'}" stroke="${n.accent ? '#ffd97a' : GLOW}" stroke-width="1.3"/>${text}`;
 }
 
+/** Handles the edgeSvg step in this module’s workflow. */
 function edgeSvg(e, nodes) {
   const a = nodes.find((n) => n.id === e[0]);
   const b = nodes.find((n) => n.id === e[1]);
@@ -56,6 +60,7 @@ export function composeSvg(spec) {
   );
 }
 
+/** Handles the N step in this module’s workflow. */
 const N = (id, label, x, y, w = 120, h = 44, opts = {}) => ({ id, label, x, y, w, h, ...opts });
 
 // ---------------------------------------------------------------------------
