@@ -1,0 +1,5 @@
+/* ------- responsive ------- */
+@media (max-width: 760px) {
+  .cardface { padding: 22px 18px 18px; }
+  .cloze-text { font-size: 17px; }
+}
