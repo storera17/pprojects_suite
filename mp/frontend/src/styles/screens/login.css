@@ -1,0 +1,12 @@
+/* ------- login ------- */
+.login-wrap { display: flex; align-items: center; justify-content: center; height: 100%; }
+.login {
+  width: 380px; text-align: center; padding: 38px 34px;
+}
+.login .orb {
+  width: 96px; height: 96px; margin: 0 auto 18px; animation: corePulse 3.4s ease-in-out infinite;
+}
+.login h1 { letter-spacing: 8px; font-size: 26px; margin: 0 0 4px; color: var(--accent); }
+.login .tag { color: var(--fg-dim); font-size: 12px; letter-spacing: 2px; margin-bottom: 26px; }
+.login form { display: flex; flex-direction: column; gap: 12px; }
+.login .err { color: var(--red); font-size: 13px; min-height: 18px; }
