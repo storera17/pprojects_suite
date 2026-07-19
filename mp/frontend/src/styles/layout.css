@@ -1,0 +1,39 @@
+/* App chrome: rail, main content area, scanline overlay */
+.app { display: flex; height: 100%; }
+.rail {
+  width: 78px; flex: none; display: flex; flex-direction: column; align-items: center;
+  gap: 6px; padding: 14px 0; border-right: 1px solid var(--panel-border);
+  background: linear-gradient(180deg, rgba(7,24,38,0.9), rgba(4,13,22,0.9));
+  z-index: 5;
+}
+.rail .logo {
+  width: 44px; height: 44px; margin-bottom: 10px;
+  filter: drop-shadow(0 0 8px var(--glow-soft));
+  animation: corePulse 4s ease-in-out infinite;
+}
+.railbtn {
+  width: 56px; padding: 8px 2px; border: none; background: none; color: var(--fg-dim);
+  font-size: 11px; cursor: pointer; border-radius: 10px; display: flex; flex-direction: column;
+  align-items: center; gap: 3px; transition: color .2s, background .2s, box-shadow .2s;
+}
+.railbtn .ic { font-size: 19px; line-height: 1; }
+.railbtn:hover { color: var(--fg); background: rgba(25,184,224,0.08); }
+.railbtn.active {
+  color: var(--accent); background: rgba(25,184,224,0.12);
+  box-shadow: inset 0 0 0 1px var(--panel-border), 0 0 14px rgba(25,184,224,0.12);
+}
+.main { flex: 1; overflow-y: auto; padding: 26px 30px 60px; position: relative; }
+.main::-webkit-scrollbar { width: 8px; }
+.main::-webkit-scrollbar-thumb { background: rgba(72,187,224,0.25); border-radius: 4px; }
+
+.scanline {
+  pointer-events: none; position: fixed; inset: 0; z-index: 2; opacity: 0.05;
+  background: repeating-linear-gradient(0deg, transparent 0 2px, #9be8f7 2px 3px);
+}
+
+@keyframes corePulse { 0%,100% { filter: drop-shadow(0 0 6px var(--glow-soft)); } 50% { filter: drop-shadow(0 0 16px var(--glow)); } }
+
+@media (max-width: 760px) {
+  .rail { width: 64px; }
+  .main { padding: 18px 14px 80px; }
+}
