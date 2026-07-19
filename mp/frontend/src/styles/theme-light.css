@@ -1,0 +1,80 @@
+/* Light / Sun mode — high-contrast palette for outdoor use */
+[data-theme="light"] {
+  --bg0: #e8f1f7;
+  --bg1: #d4e6f1;
+  --bg2: #c0d8ea;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-border: rgba(0, 100, 150, 0.22);
+  --glow: #006fa8;
+  --glow-soft: rgba(0, 111, 168, 0.25);
+  --fg: #0b1f2e;
+  --fg-dim: #3a6278;
+  --accent: #005f8e;
+  --amber: #b36a00;
+  --green: #1a6e3c;
+  --red: #b5001f;
+  --violet: #5b3d99;
+}
+
+[data-theme="light"] body {
+  background:
+    radial-gradient(1100px 600px at 70% -10%, #c8dcea 0%, transparent 60%),
+    radial-gradient(900px 700px at -10% 110%, #cee2ee 0%, transparent 55%),
+    var(--bg0);
+}
+
+[data-theme="light"] .rail {
+  background: linear-gradient(180deg, rgba(210,230,242,0.97), rgba(196,220,235,0.97));
+  border-right-color: rgba(0, 100, 150, 0.18);
+}
+
+[data-theme="light"] .scanline { display: none; }
+
+[data-theme="light"] .panel {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 2px 16px rgba(0, 80, 130, 0.1), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+[data-theme="light"] .cardface {
+  background: linear-gradient(160deg, rgba(255,255,255,0.96), rgba(232,243,250,0.97));
+  box-shadow: 0 6px 28px rgba(0,80,130,0.14), 0 0 0 1px rgba(0,100,150,0.12);
+}
+
+[data-theme="light"] .btn {
+  background: linear-gradient(180deg, rgba(0,111,168,0.12), rgba(0,111,168,0.06));
+}
+[data-theme="light"] .btn.primary {
+  background: linear-gradient(180deg, rgba(0,111,168,0.75), rgba(0,80,130,0.7));
+  color: #fff;
+  border-color: rgba(0, 111, 168, 0.7);
+}
+
+[data-theme="light"] .gradebtn {
+  background: rgba(245, 250, 254, 0.9);
+}
+
+[data-theme="light"] .bar > div {
+  background: linear-gradient(90deg, #005f8e, #0099cc);
+  box-shadow: none;
+}
+
+[data-theme="light"] input[type=text],
+[data-theme="light"] input[type=password],
+[data-theme="light"] textarea {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 100, 150, 0.28);
+}
+
+[data-theme="light"] .toast {
+  background: rgba(240, 248, 255, 0.97);
+  border-color: var(--glow);
+  box-shadow: 0 2px 16px rgba(0,80,130,0.2);
+}
+
+[data-theme="light"] h1.screen-title {
+  text-shadow: none;
+}
+
+[data-theme="light"] .stat .num {
+  text-shadow: none;
+}
