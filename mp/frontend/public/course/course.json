@@ -1,0 +1,2122 @@
+{
+  "meta": {
+    "name": "MomentumProdigy Public Demo Course",
+    "generatedAt": "2026-07-14T19:43:08.015Z",
+    "embedDims": 192,
+    "counts": {
+      "decks": 3,
+      "subdecks": 3,
+      "lessons": 3,
+      "concepts": 6,
+      "cards": 28,
+      "clozeCards": 24,
+      "occlusionCards": 4,
+      "curatedConcepts": 6
+    },
+    "publicDemo": true
+  },
+  "decks": [
+    {
+      "id": "foundations",
+      "title": "Analytics Foundations",
+      "tagline": "Synthetic demo concepts for decision-ready analytics.",
+      "order": 0,
+      "subdeckIds": [
+        "sd-demo-foundations"
+      ],
+      "subdecks": [
+        {
+          "id": "sd-demo-foundations",
+          "deckId": "foundations",
+          "title": "Decision-Ready Analytics",
+          "difficulty": 1,
+          "sourceClass": null,
+          "domain": "analytics foundations",
+          "lessonIds": [
+            "sd-demo-foundations-L1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modeling",
+      "title": "Modeling Workflow",
+      "tagline": "Synthetic demo concepts for model validation and risk.",
+      "order": 1,
+      "subdeckIds": [
+        "sd-demo-modeling"
+      ],
+      "subdecks": [
+        {
+          "id": "sd-demo-modeling",
+          "deckId": "modeling",
+          "title": "Model Validation",
+          "difficulty": 2,
+          "sourceClass": null,
+          "domain": "predictive modeling",
+          "lessonIds": [
+            "sd-demo-modeling-L1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bi",
+      "title": "Business Intelligence",
+      "tagline": "Synthetic demo concepts for trustworthy dashboards.",
+      "order": 2,
+      "subdeckIds": [
+        "sd-demo-bi"
+      ],
+      "subdecks": [
+        {
+          "id": "sd-demo-bi",
+          "deckId": "bi",
+          "title": "Dashboard Trust",
+          "difficulty": 2,
+          "sourceClass": null,
+          "domain": "business intelligence",
+          "lessonIds": [
+            "sd-demo-bi-L1"
+          ]
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "sd-demo-foundations-L1",
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations",
+      "title": "decision metric",
+      "order": 0,
+      "unlockIndex": 0,
+      "conceptIds": [
+        "sd-demo-foundations-0",
+        "sd-demo-foundations-1"
+      ],
+      "cardIds": [
+        "c-sd-demo-foundations-0-0",
+        "c-sd-demo-foundations-0-1",
+        "c-sd-demo-foundations-0-2",
+        "c-sd-demo-foundations-0-3",
+        "c-sd-demo-foundations-1-0",
+        "c-sd-demo-foundations-1-1",
+        "c-sd-demo-foundations-1-2",
+        "c-sd-demo-foundations-1-3"
+      ]
+    },
+    {
+      "id": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling",
+      "title": "validation split",
+      "order": 0,
+      "unlockIndex": 1,
+      "conceptIds": [
+        "sd-demo-modeling-0",
+        "sd-demo-modeling-1"
+      ],
+      "cardIds": [
+        "c-sd-demo-modeling-0-0",
+        "c-sd-demo-modeling-0-1",
+        "c-sd-demo-modeling-0-2",
+        "c-sd-demo-modeling-0-3",
+        "c-sd-demo-modeling-0-4",
+        "c-sd-demo-modeling-0-5",
+        "c-sd-demo-modeling-1-0",
+        "c-sd-demo-modeling-1-1",
+        "c-sd-demo-modeling-1-2",
+        "c-sd-demo-modeling-1-3"
+      ]
+    },
+    {
+      "id": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi",
+      "title": "metric grain",
+      "order": 0,
+      "unlockIndex": 2,
+      "conceptIds": [
+        "sd-demo-bi-0",
+        "sd-demo-bi-1"
+      ],
+      "cardIds": [
+        "c-sd-demo-bi-0-0",
+        "c-sd-demo-bi-0-1",
+        "c-sd-demo-bi-0-2",
+        "c-sd-demo-bi-0-3",
+        "c-sd-demo-bi-1-0",
+        "c-sd-demo-bi-1-1",
+        "c-sd-demo-bi-1-2",
+        "c-sd-demo-bi-1-3",
+        "c-sd-demo-bi-1-4",
+        "c-sd-demo-bi-1-5"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "sd-demo-foundations-0",
+      "term": "decision metric",
+      "displayTerm": "decision metric",
+      "rawTerm": "decision metric",
+      "excelRow": null,
+      "difficulty": 1,
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations",
+      "lessonId": "sd-demo-foundations-L1",
+      "cardIds": [
+        "c-sd-demo-foundations-0-0",
+        "c-sd-demo-foundations-0-1",
+        "c-sd-demo-foundations-0-2",
+        "c-sd-demo-foundations-0-3"
+      ],
+      "mini": {
+        "curated": true,
+        "explanation": "A decision metric is a clearly defined number tied to a specific business choice.",
+        "how": "State the owner, formula, grain, refresh cadence, and action threshold before using it in a review.",
+        "why": "Shared vocabulary lets product, finance, and operations teams make decisions from the same facts.",
+        "workplace": "Weekly qualified-pipeline conversion by segment is used to decide where sales enablement should focus.",
+        "workedExample": "",
+        "keyTerms": [
+          "data provenance"
+        ],
+        "mistakes": [
+          "Reporting a number without saying what decision it is meant to inform.",
+          "Treating a metric movement as causal before checking the business process behind it."
+        ],
+        "related": [
+          "data provenance"
+        ],
+        "sources": [
+          {
+            "title": "MomentumProdigy Synthetic Demo Notes",
+            "kind": "course",
+            "ref": "Demo content only"
+          }
+        ]
+      },
+      "vec": "gICKh4CAh4B5fYdyfZWHh3mDeYCAgIB5h4eRh4qAgIeHgIqAgHKAgIeAXYCAgIB5h0+AgHmAeYB5h4eAgHmOeYd5nIB5lYCKjodreXmAgIBydoprh4eAgHmVgIByeYCAlYCAgIBygIeHgICHfYeHlYCAgICAgICAeXmAh4d5gHmHgI55a4CKgICAgICVcmtygIeAeYB9gICAgICAgIp5ioB5h4eAgHmAgICAa4CAgH15h4CAgICHeWuHgIB5gHKA"
+    },
+    {
+      "id": "sd-demo-foundations-1",
+      "term": "data provenance",
+      "displayTerm": "data provenance",
+      "rawTerm": "data provenance",
+      "excelRow": null,
+      "difficulty": 1,
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations",
+      "lessonId": "sd-demo-foundations-L1",
+      "cardIds": [
+        "c-sd-demo-foundations-1-0",
+        "c-sd-demo-foundations-1-1",
+        "c-sd-demo-foundations-1-2",
+        "c-sd-demo-foundations-1-3"
+      ],
+      "mini": {
+        "curated": true,
+        "explanation": "Data provenance records where a dataset came from and how it was transformed.",
+        "how": "Track source systems, extraction time, transformations, joins, filters, and known exclusions.",
+        "why": "Shared vocabulary lets product, finance, and operations teams make decisions from the same facts.",
+        "workplace": "A dashboard footnote says revenue comes from booked invoices, excludes test accounts, and refreshes nightly.",
+        "workedExample": "",
+        "keyTerms": [
+          "decision metric"
+        ],
+        "mistakes": [
+          "Trusting a polished dashboard without checking whether the data lineage matches the question.",
+          "Treating a metric movement as causal before checking the business process behind it."
+        ],
+        "related": [
+          "decision metric"
+        ],
+        "sources": [
+          {
+            "title": "Internal Demo Analytics Handbook",
+            "kind": "docs",
+            "ref": "Synthetic reference"
+          }
+        ]
+      },
+      "vec": "anmAh4B5h4Bqh4BqloCAgICLeYeHi4CPgHmAgICAgIBngICAh4CHgId5h4CAgHGAcYCAloBjeXl1dYB5cYCAgHxqko+Ah4d5gI+AgICAgIeAgIRxkoCAgICHh4CAeYeAgI95gIBxgICAgICAh4Bxi4CAcYB5cYeAeYCHgICAgICAgJaAkpZ1i3WAh4CAgICAj4uAgHmWh3GAgHl5nYCAeYCAgIB5gId5gICAcZaAgHmAi4eAgICAkoCPgIB8Y4CA"
+    },
+    {
+      "id": "sd-demo-modeling-0",
+      "term": "validation split",
+      "displayTerm": "validation split",
+      "rawTerm": "validation split",
+      "excelRow": null,
+      "difficulty": 2,
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling",
+      "lessonId": "sd-demo-modeling-L1",
+      "cardIds": [
+        "c-sd-demo-modeling-0-0",
+        "c-sd-demo-modeling-0-1",
+        "c-sd-demo-modeling-0-2",
+        "c-sd-demo-modeling-0-3",
+        "c-sd-demo-modeling-0-4",
+        "c-sd-demo-modeling-0-5"
+      ],
+      "mini": {
+        "curated": true,
+        "explanation": "A validation split is a held-out portion of data used to estimate performance before final deployment.",
+        "how": "Separate training and validation records in a way that matches future use, especially for time-based data.",
+        "why": "Model quality depends on trustworthy data, appropriate validation, and clear interpretation.",
+        "workplace": "A churn model trains on January through September and validates on October accounts.",
+        "workedExample": "",
+        "keyTerms": [
+          "feature leakage"
+        ],
+        "mistakes": [
+          "Randomly splitting time-series data in a way that leaks future behavior into training.",
+          "Optimizing validation accuracy while ignoring whether the model can be acted on."
+        ],
+        "related": [
+          "feature leakage"
+        ],
+        "sources": [
+          {
+            "title": "MomentumProdigy Synthetic Modeling Notes",
+            "kind": "course",
+            "ref": "Demo content only"
+          }
+        ]
+      },
+      "vec": "bICHgHmNdo2Ah4CAh4OAgGyKgIB5kYCHh3mAm4eUgICUeYCAh42AbG+AgGyAgHOAgHmAgIeAeZSAh4eAgHOHb4BslIB5gICHfYCAlHmHh4CAgH1zgICAinOHgI15gICNgIB5kYCHgICAeYCNh5SAh3mHgICHeX1zgIeAeWyAeYCAgIBzh5iAc4OAh4B9gICAh4Nzh4Coh4CAeYeHh4CAh4CAgIeAfYeAgICAaG95gICAgIOAh5SHkXl5gIBveYCA"
+    },
+    {
+      "id": "sd-demo-modeling-1",
+      "term": "feature leakage",
+      "displayTerm": "feature leakage",
+      "rawTerm": "feature leakage",
+      "excelRow": null,
+      "difficulty": 2,
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling",
+      "lessonId": "sd-demo-modeling-L1",
+      "cardIds": [
+        "c-sd-demo-modeling-1-0",
+        "c-sd-demo-modeling-1-1",
+        "c-sd-demo-modeling-1-2",
+        "c-sd-demo-modeling-1-3"
+      ],
+      "mini": {
+        "curated": true,
+        "explanation": "Feature leakage happens when a model uses information that would not be available at prediction time.",
+        "how": "Review every feature against the exact moment the prediction would be made in production.",
+        "why": "Model quality depends on trustworthy data, appropriate validation, and clear interpretation.",
+        "workplace": "Using cancellation-date fields to predict cancellation risk creates artificially high validation scores.",
+        "workedExample": "",
+        "keyTerms": [
+          "validation split"
+        ],
+        "mistakes": [
+          "Celebrating high accuracy before auditing whether features are available at scoring time.",
+          "Optimizing validation accuracy while ignoring whether the model can be acted on."
+        ],
+        "related": [
+          "validation split"
+        ],
+        "sources": [
+          {
+            "title": "Internal Demo Model Review Checklist",
+            "kind": "docs",
+            "ref": "Synthetic reference"
+          }
+        ]
+      },
+      "vec": "gICGenCAgINqjYZ6gIqAgHp6eoCAdoCAgICAmoCGgIZ9gICAhoCAinqAgICAc3p6c4aAgICAgIZ2gICAgIB6c4BjrYB6hoB2gICAhoCAhoBzgHOAio2NfW2Tho2AgICAhn1tgG2DgHNzjYCGgH2AeoCAeoCAdoCAhoaAgG1wgIBzgIBthoCAgIZ6c4BzgICGgIBzhm2GjW2AgIaGmoB6c3qDc4aAgI16jXqAgGZ6emaAdoqGgIZzhoB2hoCAeoCK"
+    },
+    {
+      "id": "sd-demo-bi-0",
+      "term": "metric grain",
+      "displayTerm": "metric grain",
+      "rawTerm": "metric grain",
+      "excelRow": null,
+      "difficulty": 2,
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi",
+      "lessonId": "sd-demo-bi-L1",
+      "cardIds": [
+        "c-sd-demo-bi-0-0",
+        "c-sd-demo-bi-0-1",
+        "c-sd-demo-bi-0-2",
+        "c-sd-demo-bi-0-3"
+      ],
+      "mini": {
+        "curated": true,
+        "explanation": "Metric grain is the level at which a metric is counted or aggregated.",
+        "how": "Declare whether each row represents an account, order, user, session, week, or other unit.",
+        "why": "Dashboards become decision systems only when metrics are consistently defined and easy to audit.",
+        "workplace": "Average revenue per account and average revenue per order answer different questions.",
+        "workedExample": "",
+        "keyTerms": [
+          "filter context"
+        ],
+        "mistakes": [
+          "Joining metrics with different grains and accidentally duplicating totals.",
+          "Building attractive charts before agreeing on the metric definition and grain."
+        ],
+        "related": [
+          "filter context"
+        ],
+        "sources": [
+          {
+            "title": "MomentumProdigy Synthetic BI Notes",
+            "kind": "course",
+            "ref": "Demo content only"
+          }
+        ]
+      },
+      "vec": "cYCHgICApYCAj3mAgIeAloB5eYCAgIuHgICAgIuPgICAgICAgGqPh4B5aouAgHmAgICAloBqcYd5cYCAgIB5gHmAh3Fxh4CAj4CAgICAgHmAgI9xgICAgHmagICAcYCAkoCAgIB5gIB5h4Bxh3WAeYCAgGqAgICHgIdmcYCAgIBxh4CAgKGAgICAh2qPaoCAgIBxgIB1eYSAgICAgIB5eYB1gIeAh4CAgICAgICAgIeHgIeAj4CAgGqWi4CWgICA"
+    },
+    {
+      "id": "sd-demo-bi-1",
+      "term": "filter context",
+      "displayTerm": "filter context",
+      "rawTerm": "filter context",
+      "excelRow": null,
+      "difficulty": 2,
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi",
+      "lessonId": "sd-demo-bi-L1",
+      "cardIds": [
+        "c-sd-demo-bi-1-0",
+        "c-sd-demo-bi-1-1",
+        "c-sd-demo-bi-1-2",
+        "c-sd-demo-bi-1-3",
+        "c-sd-demo-bi-1-4",
+        "c-sd-demo-bi-1-5"
+      ],
+      "mini": {
+        "curated": true,
+        "explanation": "Filter context is the set of active filters that determines which records contribute to a result.",
+        "how": "Read slicers, page filters, visual filters, and formula-level filters before interpreting a number.",
+        "why": "Dashboards become decision systems only when metrics are consistently defined and easy to audit.",
+        "workplace": "A conversion rate changes when the dashboard is sliced to enterprise accounts only.",
+        "workedExample": "",
+        "keyTerms": [
+          "metric grain"
+        ],
+        "mistakes": [
+          "Assuming a dashboard total and a filtered visual use the same denominator.",
+          "Building attractive charts before agreeing on the metric definition and grain."
+        ],
+        "related": [
+          "metric grain"
+        ],
+        "sources": [
+          {
+            "title": "Internal Demo Dashboard Standards",
+            "kind": "docs",
+            "ref": "Synthetic reference"
+          }
+        ]
+      },
+      "vec": "gICWeXWEeYCAh4B5eZaAhHmPgICAi4uAgIeAeYt1gHmAeXmAgICAh4CAgICHgICAj3GAj3mAeY9ugICAYnmAgIdih3GAloCAh4B5gHV5gICAgI+Pj4CAgICegIeAcYuAgIB5gICAloCAh4CAeYCAgHmAaoCAgICegICAgHmAgGqegICAgI95eXWAj4CPeYuAj4eAmnl5hHyAgICAj4CAeYCHgIeAh4CAgICAlnmAgIeHgICAgHmPgICHgIB5eYCP"
+    }
+  ],
+  "cards": [
+    {
+      "id": "c-sd-demo-foundations-0-0",
+      "conceptId": "sd-demo-foundations-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 199,
+        "glyph": "✦",
+        "pattern": "grid"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic Demo Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "analytics foundations"
+      ],
+      "kind": "definition",
+      "text": "A {{c1::decision metric}} is a clearly defined number tied to a specific business choice.",
+      "lessonId": "sd-demo-foundations-L1",
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations"
+    },
+    {
+      "id": "c-sd-demo-foundations-0-1",
+      "conceptId": "sd-demo-foundations-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 142,
+        "glyph": "⬡",
+        "pattern": "scan"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic Demo Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "analytics foundations"
+      ],
+      "kind": "definition",
+      "text": "A decision metric is a {{c1::clearly defined number tied to a specific business choice}}.",
+      "lessonId": "sd-demo-foundations-L1",
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations"
+    },
+    {
+      "id": "c-sd-demo-foundations-0-2",
+      "conceptId": "sd-demo-foundations-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 262,
+        "glyph": "⟐",
+        "pattern": "hex"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic Demo Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "analytics foundations"
+      ],
+      "kind": "applied",
+      "text": "Why decision metric matters: {{c1::decision metric}} — Shared vocabulary lets product, finance, and operations teams make decisions from the same facts.",
+      "lessonId": "sd-demo-foundations-L1",
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations"
+    },
+    {
+      "id": "c-sd-demo-foundations-0-3",
+      "conceptId": "sd-demo-foundations-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 187,
+        "glyph": "◉",
+        "pattern": "pulse"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic Demo Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "analytics foundations"
+      ],
+      "kind": "mistake",
+      "text": "Common mistake near “decision metric”: {{c1::Reporting a number without saying what decision it is meant to inform.}}",
+      "lessonId": "sd-demo-foundations-L1",
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations"
+    },
+    {
+      "id": "c-sd-demo-foundations-1-0",
+      "conceptId": "sd-demo-foundations-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 168,
+        "glyph": "⟁",
+        "pattern": "orbit"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Analytics Handbook",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "analytics foundations"
+      ],
+      "kind": "definition",
+      "text": "{{c1::Data provenance}} records where a dataset came from and how it was transformed.",
+      "lessonId": "sd-demo-foundations-L1",
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations"
+    },
+    {
+      "id": "c-sd-demo-foundations-1-1",
+      "conceptId": "sd-demo-foundations-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 38,
+        "glyph": "◉",
+        "pattern": "scan"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Analytics Handbook",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "analytics foundations"
+      ],
+      "kind": "definition",
+      "text": "Data provenance records {{c1::where a dataset came from and how it was transformed}}.",
+      "lessonId": "sd-demo-foundations-L1",
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations"
+    },
+    {
+      "id": "c-sd-demo-foundations-1-2",
+      "conceptId": "sd-demo-foundations-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 305,
+        "glyph": "⌬",
+        "pattern": "rings"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Analytics Handbook",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "analytics foundations"
+      ],
+      "kind": "applied",
+      "text": "Why data provenance matters: {{c1::data provenance}} — Shared vocabulary lets product, finance, and operations teams make decisions from the same facts.",
+      "lessonId": "sd-demo-foundations-L1",
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations"
+    },
+    {
+      "id": "c-sd-demo-foundations-1-3",
+      "conceptId": "sd-demo-foundations-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 210,
+        "glyph": "◬",
+        "pattern": "grid"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Analytics Handbook",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "analytics foundations"
+      ],
+      "kind": "mistake",
+      "text": "Common mistake near “data provenance”: {{c1::Trusting a polished dashboard without checking whether the data lineage matches the question.}}",
+      "lessonId": "sd-demo-foundations-L1",
+      "subdeckId": "sd-demo-foundations",
+      "deckId": "foundations"
+    },
+    {
+      "id": "c-sd-demo-modeling-0-0",
+      "conceptId": "sd-demo-modeling-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 168,
+        "glyph": "✦",
+        "pattern": "hex"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic Modeling Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "predictive modeling"
+      ],
+      "kind": "definition",
+      "text": "A {{c1::validation split}} is a held-out portion of data used to estimate performance before final deployment.",
+      "lessonId": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling"
+    },
+    {
+      "id": "c-sd-demo-modeling-0-1",
+      "conceptId": "sd-demo-modeling-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 38,
+        "glyph": "⌬",
+        "pattern": "rings"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic Modeling Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "predictive modeling"
+      ],
+      "kind": "definition",
+      "text": "A validation split is a {{c1::held-out portion of data used to estimate performance before final deployment}}.",
+      "lessonId": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling"
+    },
+    {
+      "id": "c-sd-demo-modeling-0-2",
+      "conceptId": "sd-demo-modeling-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 305,
+        "glyph": "⟐",
+        "pattern": "grid"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic Modeling Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "predictive modeling"
+      ],
+      "kind": "applied",
+      "text": "Why validation split matters: {{c1::validation split}} — Model quality depends on trustworthy data, appropriate validation, and clear interpretation.",
+      "lessonId": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling"
+    },
+    {
+      "id": "c-sd-demo-modeling-0-3",
+      "conceptId": "sd-demo-modeling-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 210,
+        "glyph": "⬡",
+        "pattern": "pulse"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic Modeling Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "predictive modeling"
+      ],
+      "kind": "mistake",
+      "text": "Common mistake near “validation split”: {{c1::Randomly splitting time-series data in a way that leaks future behavior into training.}}",
+      "lessonId": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling"
+    },
+    {
+      "id": "c-sd-demo-modeling-0-4",
+      "conceptId": "sd-demo-modeling-0",
+      "type": "occlusion",
+      "visual": {
+        "hue": 142,
+        "glyph": "◈",
+        "pattern": "orbit"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic Modeling Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "predictive modeling"
+      ],
+      "kind": "occlusion",
+      "prompt": "Decision Tree Anatomy: identify the masked element.",
+      "occlusion": {
+        "diagramId": "decision-tree",
+        "focusId": "root",
+        "answer": "ROOT split best predictor + cutpoint (max purity gain)"
+      },
+      "lessonId": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling"
+    },
+    {
+      "id": "c-sd-demo-modeling-0-5",
+      "conceptId": "sd-demo-modeling-0",
+      "type": "occlusion",
+      "visual": {
+        "hue": 199,
+        "glyph": "◉",
+        "pattern": "scan"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic Modeling Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "predictive modeling"
+      ],
+      "kind": "occlusion",
+      "prompt": "Decision Tree Anatomy: identify the masked element.",
+      "occlusion": {
+        "diagramId": "decision-tree",
+        "focusId": "int",
+        "answer": "Internal split Income < 50k?"
+      },
+      "lessonId": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling"
+    },
+    {
+      "id": "c-sd-demo-modeling-1-0",
+      "conceptId": "sd-demo-modeling-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 199,
+        "glyph": "◉",
+        "pattern": "orbit"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Model Review Checklist",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "predictive modeling"
+      ],
+      "kind": "definition",
+      "text": "{{c1::Feature leakage}} happens when a model uses information that would not be available at prediction time.",
+      "lessonId": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling"
+    },
+    {
+      "id": "c-sd-demo-modeling-1-1",
+      "conceptId": "sd-demo-modeling-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 142,
+        "glyph": "◈",
+        "pattern": "grid"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Model Review Checklist",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "predictive modeling"
+      ],
+      "kind": "definition",
+      "text": "Feature leakage happens when a model uses {{c1::information that would not be available at prediction time}}.",
+      "lessonId": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling"
+    },
+    {
+      "id": "c-sd-demo-modeling-1-2",
+      "conceptId": "sd-demo-modeling-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 262,
+        "glyph": "◬",
+        "pattern": "scan"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Model Review Checklist",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "predictive modeling"
+      ],
+      "kind": "applied",
+      "text": "Why feature leakage matters: {{c1::feature leakage}} — Model quality depends on trustworthy data, appropriate validation, and clear interpretation.",
+      "lessonId": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling"
+    },
+    {
+      "id": "c-sd-demo-modeling-1-3",
+      "conceptId": "sd-demo-modeling-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 187,
+        "glyph": "⌬",
+        "pattern": "hex"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Model Review Checklist",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "predictive modeling"
+      ],
+      "kind": "mistake",
+      "text": "Common mistake near “feature leakage”: {{c1::Celebrating high accuracy before auditing whether features are available at scoring time.}}",
+      "lessonId": "sd-demo-modeling-L1",
+      "subdeckId": "sd-demo-modeling",
+      "deckId": "modeling"
+    },
+    {
+      "id": "c-sd-demo-bi-0-0",
+      "conceptId": "sd-demo-bi-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 187,
+        "glyph": "⟁",
+        "pattern": "orbit"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic BI Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "business intelligence"
+      ],
+      "kind": "definition",
+      "text": "{{c1::Metric grain}} is the level at which a metric is counted or aggregated.",
+      "lessonId": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi"
+    },
+    {
+      "id": "c-sd-demo-bi-0-1",
+      "conceptId": "sd-demo-bi-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 262,
+        "glyph": "◉",
+        "pattern": "scan"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic BI Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "business intelligence"
+      ],
+      "kind": "definition",
+      "text": "Metric grain is the {{c1::level at which a metric is counted or aggregated}}.",
+      "lessonId": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi"
+    },
+    {
+      "id": "c-sd-demo-bi-0-2",
+      "conceptId": "sd-demo-bi-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 142,
+        "glyph": "⟐",
+        "pattern": "grid"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic BI Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "business intelligence"
+      ],
+      "kind": "applied",
+      "text": "Why metric grain matters: {{c1::metric grain}} — Dashboards become decision systems only when metrics are consistently defined and easy to audit.",
+      "lessonId": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi"
+    },
+    {
+      "id": "c-sd-demo-bi-0-3",
+      "conceptId": "sd-demo-bi-0",
+      "type": "cloze",
+      "visual": {
+        "hue": 199,
+        "glyph": "◈",
+        "pattern": "pulse"
+      },
+      "evidence": [
+        {
+          "title": "MomentumProdigy Synthetic BI Notes",
+          "kind": "course",
+          "ref": "Demo content only"
+        }
+      ],
+      "tags": [
+        "business intelligence"
+      ],
+      "kind": "mistake",
+      "text": "Common mistake near “metric grain”: {{c1::Joining metrics with different grains and accidentally duplicating totals.}}",
+      "lessonId": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi"
+    },
+    {
+      "id": "c-sd-demo-bi-1-0",
+      "conceptId": "sd-demo-bi-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 210,
+        "glyph": "◬",
+        "pattern": "pulse"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Dashboard Standards",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "business intelligence"
+      ],
+      "kind": "definition",
+      "text": "{{c1::Filter context}} is the set of active filters that determines which records contribute to a result.",
+      "lessonId": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi"
+    },
+    {
+      "id": "c-sd-demo-bi-1-1",
+      "conceptId": "sd-demo-bi-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 305,
+        "glyph": "⌬",
+        "pattern": "grid"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Dashboard Standards",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "business intelligence"
+      ],
+      "kind": "definition",
+      "text": "Filter context is the {{c1::set of active filters that determines which records contribute to a result}}.",
+      "lessonId": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi"
+    },
+    {
+      "id": "c-sd-demo-bi-1-2",
+      "conceptId": "sd-demo-bi-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 38,
+        "glyph": "◉",
+        "pattern": "rings"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Dashboard Standards",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "business intelligence"
+      ],
+      "kind": "applied",
+      "text": "Why filter context matters: {{c1::filter context}} — Dashboards become decision systems only when metrics are consistently defined and easy to audit.",
+      "lessonId": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi"
+    },
+    {
+      "id": "c-sd-demo-bi-1-3",
+      "conceptId": "sd-demo-bi-1",
+      "type": "cloze",
+      "visual": {
+        "hue": 168,
+        "glyph": "⟁",
+        "pattern": "hex"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Dashboard Standards",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "business intelligence"
+      ],
+      "kind": "mistake",
+      "text": "Common mistake near “filter context”: {{c1::Assuming a dashboard total and a filtered visual use the same denominator.}}",
+      "lessonId": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi"
+    },
+    {
+      "id": "c-sd-demo-bi-1-4",
+      "conceptId": "sd-demo-bi-1",
+      "type": "occlusion",
+      "visual": {
+        "hue": 262,
+        "glyph": "⟐",
+        "pattern": "pulse"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Dashboard Standards",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "business intelligence"
+      ],
+      "kind": "occlusion",
+      "prompt": "DAX Evaluation Context: identify the masked element.",
+      "occlusion": {
+        "diagramId": "dax-context",
+        "focusId": "calc",
+        "answer": "CALCULATE transforms row context into filter context"
+      },
+      "lessonId": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi"
+    },
+    {
+      "id": "c-sd-demo-bi-1-5",
+      "conceptId": "sd-demo-bi-1",
+      "type": "occlusion",
+      "visual": {
+        "hue": 187,
+        "glyph": "◉",
+        "pattern": "rings"
+      },
+      "evidence": [
+        {
+          "title": "Internal Demo Dashboard Standards",
+          "kind": "docs",
+          "ref": "Synthetic reference"
+        }
+      ],
+      "tags": [
+        "business intelligence"
+      ],
+      "kind": "occlusion",
+      "prompt": "DAX Evaluation Context: identify the masked element.",
+      "occlusion": {
+        "diagramId": "dax-context",
+        "focusId": "filter",
+        "answer": "FILTER CONTEXT from slicers, rows, columns of the report"
+      },
+      "lessonId": "sd-demo-bi-L1",
+      "subdeckId": "sd-demo-bi",
+      "deckId": "bi"
+    }
+  ],
+  "diagrams": {
+    "confusion-matrix": {
+      "id": "confusion-matrix",
+      "title": "Confusion Matrix",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">CONFUSION MATRIX</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><text x=\"325\" y=\"95\" fill=\"#9be8f7\" font-size=\"12\" text-anchor=\"middle\">Predicted +</text><text x=\"495\" y=\"95\" fill=\"#9be8f7\" font-size=\"12\" text-anchor=\"middle\">Predicted −</text><text x=\"215\" y=\"145\" fill=\"#9be8f7\" font-size=\"12\" text-anchor=\"end\">Actual +</text><text x=\"215\" y=\"235\" fill=\"#9be8f7\" font-size=\"12\" text-anchor=\"end\">Actual −</text><rect x=\"250\" y=\"110\" width=\"150\" height=\"70\" rx=\"9\" fill=\"rgba(28,110,80,0.5)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"325\" y=\"137.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">True Positive</text><text x=\"325\" y=\"152.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(hit)</text><rect x=\"420\" y=\"110\" width=\"150\" height=\"70\" rx=\"9\" fill=\"rgba(120,50,50,0.5)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"495\" y=\"137.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">False Positive</text><text x=\"495\" y=\"152.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(Type I error)</text><rect x=\"250\" y=\"200\" width=\"150\" height=\"70\" rx=\"9\" fill=\"rgba(120,50,50,0.5)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"325\" y=\"227.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">False Negative</text><text x=\"325\" y=\"242.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(Type II error)</text><rect x=\"420\" y=\"200\" width=\"150\" height=\"70\" rx=\"9\" fill=\"rgba(28,110,80,0.5)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"495\" y=\"227.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">True Negative</text><text x=\"495\" y=\"242.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(correct reject)</text><rect x=\"80\" y=\"300\" width=\"190\" height=\"52\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"175\" y=\"318.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Sensitivity / Recall</text><text x=\"175\" y=\"333.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">TP ÷ (TP+FN)</text><rect x=\"290\" y=\"300\" width=\"160\" height=\"52\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"370\" y=\"318.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Precision</text><text x=\"370\" y=\"333.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">TP ÷ (TP+FP)</text><rect x=\"470\" y=\"300\" width=\"170\" height=\"52\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"555\" y=\"318.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Specificity</text><text x=\"555\" y=\"333.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">TN ÷ (TN+FP)</text></svg>",
+      "regions": [
+        {
+          "id": "tp",
+          "label": "True Positive (hit)",
+          "x": 250,
+          "y": 110,
+          "w": 150,
+          "h": 70
+        },
+        {
+          "id": "fp",
+          "label": "False Positive (Type I error)",
+          "x": 420,
+          "y": 110,
+          "w": 150,
+          "h": 70
+        },
+        {
+          "id": "fn",
+          "label": "False Negative (Type II error)",
+          "x": 250,
+          "y": 200,
+          "w": 150,
+          "h": 70
+        },
+        {
+          "id": "tn",
+          "label": "True Negative (correct reject)",
+          "x": 420,
+          "y": 200,
+          "w": 150,
+          "h": 70
+        },
+        {
+          "id": "sens",
+          "label": "Sensitivity / Recall TP ÷ (TP+FN)",
+          "x": 80,
+          "y": 300,
+          "w": 190,
+          "h": 52
+        },
+        {
+          "id": "prec",
+          "label": "Precision TP ÷ (TP+FP)",
+          "x": 290,
+          "y": 300,
+          "w": 160,
+          "h": 52
+        },
+        {
+          "id": "spec",
+          "label": "Specificity TN ÷ (TN+FP)",
+          "x": 470,
+          "y": 300,
+          "w": 170,
+          "h": 52
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "nn-architecture": {
+      "id": "nn-architecture",
+      "title": "Neural Network Anatomy",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">NEURAL NETWORK ANATOMY</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"200\" y1=\"182\" x2=\"290\" y2=\"182\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"245\" y=\"176\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">weighted sums</text><line x1=\"450\" y1=\"182\" x2=\"520\" y2=\"182\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"590\" y1=\"214\" x2=\"590\" y2=\"280\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"520\" y1=\"306\" x2=\"420\" y2=\"306\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"470\" y=\"300\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">gradients</text><line x1=\"335\" y1=\"280\" x2=\"370\" y2=\"214\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"70\" y=\"150\" width=\"130\" height=\"64\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"135\" y=\"174.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Input layer</text><text x=\"135\" y=\"189.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(features)</text><rect x=\"290\" y=\"150\" width=\"160\" height=\"64\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"370\" y=\"174.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Hidden layer(s)</text><text x=\"370\" y=\"189.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">weights + activation</text><rect x=\"520\" y=\"150\" width=\"140\" height=\"64\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"590\" y=\"174.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Output layer</text><text x=\"590\" y=\"189.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(prediction)</text><rect x=\"520\" y=\"280\" width=\"140\" height=\"52\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"590\" y=\"298.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Loss function</text><text x=\"590\" y=\"313.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">measures error</text><rect x=\"250\" y=\"280\" width=\"170\" height=\"52\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"335\" y=\"298.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Backpropagation</text><text x=\"335\" y=\"313.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">updates weights</text></svg>",
+      "regions": [
+        {
+          "id": "input",
+          "label": "Input layer (features)",
+          "x": 70,
+          "y": 150,
+          "w": 130,
+          "h": 64
+        },
+        {
+          "id": "hidden",
+          "label": "Hidden layer(s) weights + activation",
+          "x": 290,
+          "y": 150,
+          "w": 160,
+          "h": 64
+        },
+        {
+          "id": "output",
+          "label": "Output layer (prediction)",
+          "x": 520,
+          "y": 150,
+          "w": 140,
+          "h": 64
+        },
+        {
+          "id": "loss",
+          "label": "Loss function measures error",
+          "x": 520,
+          "y": 280,
+          "w": 140,
+          "h": 52
+        },
+        {
+          "id": "back",
+          "label": "Backpropagation updates weights",
+          "x": 250,
+          "y": 280,
+          "w": 170,
+          "h": 52
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "star-schema": {
+      "id": "star-schema",
+      "title": "Star Schema",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">STAR SCHEMA</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"210\" y1=\"103\" x2=\"290\" y2=\"200\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"250\" y=\"145.5\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">1 → many</text><line x1=\"510\" y1=\"103\" x2=\"440\" y2=\"200\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"475\" y=\"145.5\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">1 → many</text><line x1=\"220\" y1=\"303\" x2=\"290\" y2=\"200\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"255\" y=\"245.5\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">1 → many</text><line x1=\"510\" y1=\"303\" x2=\"440\" y2=\"200\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"475\" y=\"245.5\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">1 → many</text><rect x=\"290\" y=\"160\" width=\"150\" height=\"80\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"365\" y=\"192.5\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">FACT Sales</text><text x=\"365\" y=\"207.5\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">keys + measures</text><rect x=\"90\" y=\"80\" width=\"120\" height=\"46\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"150\" y=\"103\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Dim Date</text><rect x=\"510\" y=\"80\" width=\"130\" height=\"46\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"575\" y=\"103\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Dim Product</text><rect x=\"90\" y=\"280\" width=\"130\" height=\"46\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"155\" y=\"303\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Dim Customer</text><rect x=\"510\" y=\"280\" width=\"120\" height=\"46\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"570\" y=\"303\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Dim Store</text></svg>",
+      "regions": [
+        {
+          "id": "fact",
+          "label": "FACT Sales keys + measures",
+          "x": 290,
+          "y": 160,
+          "w": 150,
+          "h": 80
+        },
+        {
+          "id": "dimd",
+          "label": "Dim Date",
+          "x": 90,
+          "y": 80,
+          "w": 120,
+          "h": 46
+        },
+        {
+          "id": "dimp",
+          "label": "Dim Product",
+          "x": 510,
+          "y": 80,
+          "w": 130,
+          "h": 46
+        },
+        {
+          "id": "dimc",
+          "label": "Dim Customer",
+          "x": 90,
+          "y": 280,
+          "w": 130,
+          "h": 46
+        },
+        {
+          "id": "dims",
+          "label": "Dim Store",
+          "x": 510,
+          "y": 280,
+          "w": 120,
+          "h": 46
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "dax-context": {
+      "id": "dax-context",
+      "title": "DAX Evaluation Context",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">DAX EVALUATION CONTEXT</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"450\" y1=\"150\" x2=\"465\" y2=\"290\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"457.5\" y=\"214\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">context transition</text><line x1=\"265\" y1=\"290\" x2=\"270\" y2=\"150\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"267.5\" y=\"214\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">modifies</text><rect x=\"80\" y=\"110\" width=\"190\" height=\"80\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"175\" y=\"135\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">FILTER CONTEXT</text><text x=\"175\" y=\"150\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">from slicers, rows,</text><text x=\"175\" y=\"165\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">columns of the report</text><rect x=\"450\" y=\"110\" width=\"190\" height=\"80\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"545\" y=\"135\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">ROW CONTEXT</text><text x=\"545\" y=\"150\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">from iterators and</text><text x=\"545\" y=\"165\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">calculated columns</text><rect x=\"265\" y=\"250\" width=\"200\" height=\"80\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"365\" y=\"275\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">CALCULATE</text><text x=\"365\" y=\"290\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">transforms row context</text><text x=\"365\" y=\"305\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">into filter context</text></svg>",
+      "regions": [
+        {
+          "id": "filter",
+          "label": "FILTER CONTEXT from slicers, rows, columns of the report",
+          "x": 80,
+          "y": 110,
+          "w": 190,
+          "h": 80
+        },
+        {
+          "id": "row",
+          "label": "ROW CONTEXT from iterators and calculated columns",
+          "x": 450,
+          "y": 110,
+          "w": 190,
+          "h": 80
+        },
+        {
+          "id": "calc",
+          "label": "CALCULATE transforms row context into filter context",
+          "x": 265,
+          "y": 250,
+          "w": 200,
+          "h": 80
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "hadoop-ecosystem": {
+      "id": "hadoop-ecosystem",
+      "title": "Hadoop Ecosystem",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">HADOOP ECOSYSTEM</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"270\" y1=\"146\" x2=\"480\" y2=\"285\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"300\" y1=\"146\" x2=\"260\" y2=\"285\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"450\" y1=\"285\" x2=\"480\" y2=\"285\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"465\" y=\"279\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">allocates</text><line x1=\"470\" y1=\"146\" x2=\"260\" y2=\"285\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"80\" y=\"250\" width=\"180\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"170\" y=\"270\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">HDFS</text><text x=\"170\" y=\"285\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">distributed storage</text><text x=\"170\" y=\"300\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(replicated blocks)</text><rect x=\"290\" y=\"250\" width=\"160\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"370\" y=\"277.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">YARN</text><text x=\"370\" y=\"292.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">resource negotiator</text><rect x=\"480\" y=\"250\" width=\"170\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"565\" y=\"277.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">MapReduce / Spark</text><text x=\"565\" y=\"292.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">distributed compute</text><rect x=\"130\" y=\"120\" width=\"140\" height=\"52\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"200\" y=\"138.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Hive</text><text x=\"200\" y=\"153.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">SQL on Hadoop</text><rect x=\"300\" y=\"120\" width=\"140\" height=\"52\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"370\" y=\"138.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Sqoop</text><text x=\"370\" y=\"153.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">RDBMS ingest</text><rect x=\"470\" y=\"120\" width=\"180\" height=\"52\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"560\" y=\"138.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Name node = metadata</text><text x=\"560\" y=\"153.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Data nodes = blocks</text></svg>",
+      "regions": [
+        {
+          "id": "hdfs",
+          "label": "HDFS distributed storage (replicated blocks)",
+          "x": 80,
+          "y": 250,
+          "w": 180,
+          "h": 70
+        },
+        {
+          "id": "yarn",
+          "label": "YARN resource negotiator",
+          "x": 290,
+          "y": 250,
+          "w": 160,
+          "h": 70
+        },
+        {
+          "id": "mr",
+          "label": "MapReduce / Spark distributed compute",
+          "x": 480,
+          "y": 250,
+          "w": 170,
+          "h": 70
+        },
+        {
+          "id": "hive",
+          "label": "Hive SQL on Hadoop",
+          "x": 130,
+          "y": 120,
+          "w": 140,
+          "h": 52
+        },
+        {
+          "id": "sqoop",
+          "label": "Sqoop RDBMS ingest",
+          "x": 300,
+          "y": 120,
+          "w": 140,
+          "h": 52
+        },
+        {
+          "id": "nn",
+          "label": "Name node = metadata Data nodes = blocks",
+          "x": 470,
+          "y": 120,
+          "w": 180,
+          "h": 52
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "mapreduce-flow": {
+      "id": "mapreduce-flow",
+      "title": "MapReduce Flow",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">MAPREDUCE FLOW</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"200\" y1=\"190\" x2=\"230\" y2=\"190\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"390\" y1=\"190\" x2=\"420\" y2=\"190\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"420\" y1=\"190\" x2=\"220\" y2=\"328\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"220\" y1=\"328\" x2=\"280\" y2=\"328\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"60\" y=\"160\" width=\"140\" height=\"60\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"130\" y=\"182.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Input splits</text><text x=\"130\" y=\"197.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(blocks on HDFS)</text><rect x=\"230\" y=\"160\" width=\"160\" height=\"60\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"310\" y=\"175\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">MAP</text><text x=\"310\" y=\"190\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">key→value pairs</text><text x=\"310\" y=\"205\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">runs where data lives</text><rect x=\"420\" y=\"160\" width=\"160\" height=\"60\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"500\" y=\"175\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">SORT &amp; SHUFFLE</text><text x=\"500\" y=\"190\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">group by key</text><text x=\"500\" y=\"205\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">across the network</text><rect x=\"60\" y=\"300\" width=\"160\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"140\" y=\"320.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">REDUCE</text><text x=\"140\" y=\"335.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">aggregate per key</text><rect x=\"280\" y=\"300\" width=\"150\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"355\" y=\"320.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Output</text><text x=\"355\" y=\"335.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">results to HDFS</text></svg>",
+      "regions": [
+        {
+          "id": "map",
+          "label": "MAP key→value pairs runs where data lives",
+          "x": 230,
+          "y": 160,
+          "w": 160,
+          "h": 60
+        },
+        {
+          "id": "shuf",
+          "label": "SORT & SHUFFLE group by key across the network",
+          "x": 420,
+          "y": 160,
+          "w": 160,
+          "h": 60
+        },
+        {
+          "id": "red",
+          "label": "REDUCE aggregate per key",
+          "x": 60,
+          "y": 300,
+          "w": 160,
+          "h": 56
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "spark-architecture": {
+      "id": "spark-architecture",
+      "title": "Spark Architecture",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">SPARK ARCHITECTURE</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"250\" y1=\"125\" x2=\"210\" y2=\"228\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"360\" y1=\"160\" x2=\"325\" y2=\"220\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"470\" y1=\"125\" x2=\"420\" y2=\"248\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"325\" y1=\"276\" x2=\"360\" y2=\"320\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"420\" y1=\"248\" x2=\"470\" y2=\"352\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"250\" y=\"90\" width=\"220\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"360\" y=\"110\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">DRIVER</text><text x=\"360\" y=\"125\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">plans jobs → stages → tasks</text><text x=\"360\" y=\"140\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(lazy until an action)</text><rect x=\"40\" y=\"200\" width=\"170\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"125\" y=\"220.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Cluster manager</text><text x=\"125\" y=\"235.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">allocates resources</text><rect x=\"250\" y=\"220\" width=\"150\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"325\" y=\"240.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Executor 1</text><text x=\"325\" y=\"255.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">tasks on partitions</text><rect x=\"420\" y=\"220\" width=\"150\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"495\" y=\"240.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Executor 2</text><text x=\"495\" y=\"255.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">tasks on partitions</text><rect x=\"250\" y=\"320\" width=\"220\" height=\"64\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"360\" y=\"337\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">SHUFFLE</text><text x=\"360\" y=\"352\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">wide transformations</text><text x=\"360\" y=\"367\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">move data between stages</text></svg>",
+      "regions": [
+        {
+          "id": "driver",
+          "label": "DRIVER plans jobs → stages → tasks (lazy until an action)",
+          "x": 250,
+          "y": 90,
+          "w": 220,
+          "h": 70
+        },
+        {
+          "id": "cm",
+          "label": "Cluster manager allocates resources",
+          "x": 40,
+          "y": 200,
+          "w": 170,
+          "h": 56
+        },
+        {
+          "id": "e1",
+          "label": "Executor 1 tasks on partitions",
+          "x": 250,
+          "y": 220,
+          "w": 150,
+          "h": 56
+        },
+        {
+          "id": "shuffle",
+          "label": "SHUFFLE wide transformations move data between stages",
+          "x": 250,
+          "y": 320,
+          "w": 220,
+          "h": 64
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "rag-pipeline": {
+      "id": "rag-pipeline",
+      "title": "RAG Pipeline",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">RAG PIPELINE</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"170\" y1=\"148\" x2=\"210\" y2=\"148\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"360\" y1=\"148\" x2=\"400\" y2=\"148\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"170\" y1=\"285\" x2=\"210\" y2=\"288\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"400\" y1=\"148\" x2=\"360\" y2=\"288\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"360\" y1=\"288\" x2=\"420\" y2=\"290\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"390\" y=\"283\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">context + question</text><rect x=\"50\" y=\"120\" width=\"120\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"110\" y=\"140.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Documents</text><text x=\"110\" y=\"155.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">chunked</text><rect x=\"210\" y=\"120\" width=\"150\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"285\" y=\"140.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Embedding model</text><text x=\"285\" y=\"155.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">text → vectors</text><rect x=\"400\" y=\"120\" width=\"150\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"475\" y=\"140.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Vector database</text><text x=\"475\" y=\"155.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">similarity index</text><rect x=\"50\" y=\"260\" width=\"120\" height=\"50\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"110\" y=\"285\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">User question</text><rect x=\"210\" y=\"260\" width=\"150\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"285\" y=\"280.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Retrieve top-k</text><text x=\"285\" y=\"295.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">relevant chunks</text><rect x=\"420\" y=\"260\" width=\"170\" height=\"60\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"505\" y=\"282.5\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">LLM answers</text><text x=\"505\" y=\"297.5\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">grounded in context</text></svg>",
+      "regions": [
+        {
+          "id": "embed",
+          "label": "Embedding model text → vectors",
+          "x": 210,
+          "y": 120,
+          "w": 150,
+          "h": 56
+        },
+        {
+          "id": "vdb",
+          "label": "Vector database similarity index",
+          "x": 400,
+          "y": 120,
+          "w": 150,
+          "h": 56
+        },
+        {
+          "id": "ret",
+          "label": "Retrieve top-k relevant chunks",
+          "x": 210,
+          "y": 260,
+          "w": 150,
+          "h": 56
+        },
+        {
+          "id": "llm",
+          "label": "LLM answers grounded in context",
+          "x": 420,
+          "y": 260,
+          "w": 170,
+          "h": 60
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "transformer": {
+      "id": "transformer",
+      "title": "Transformer Core Ideas",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">TRANSFORMER CORE IDEAS</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"220\" y1=\"135\" x2=\"290\" y2=\"180\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"220\" y1=\"228\" x2=\"290\" y2=\"180\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"480\" y1=\"180\" x2=\"520\" y2=\"138\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"605\" y1=\"166\" x2=\"605\" y2=\"220\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"60\" y=\"110\" width=\"160\" height=\"50\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"140\" y=\"135\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Token embeddings</text><rect x=\"60\" y=\"200\" width=\"160\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"140\" y=\"220.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Positional encoding</text><text x=\"140\" y=\"235.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">injects word order</text><rect x=\"290\" y=\"140\" width=\"190\" height=\"80\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"385\" y=\"165\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">SELF-ATTENTION</text><text x=\"385\" y=\"180\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">every token attends to</text><text x=\"385\" y=\"195\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">every other token</text><rect x=\"520\" y=\"110\" width=\"170\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"605\" y=\"130.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Multi-head attention</text><text x=\"605\" y=\"145.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">parallel attention views</text><rect x=\"520\" y=\"220\" width=\"170\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"605\" y=\"240.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Feed-forward layers</text><text x=\"605\" y=\"255.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">+ residuals, stacked N×</text></svg>",
+      "regions": [
+        {
+          "id": "pos",
+          "label": "Positional encoding injects word order",
+          "x": 60,
+          "y": 200,
+          "w": 160,
+          "h": 56
+        },
+        {
+          "id": "attn",
+          "label": "SELF-ATTENTION every token attends to every other token",
+          "x": 290,
+          "y": 140,
+          "w": 190,
+          "h": 80
+        },
+        {
+          "id": "multi",
+          "label": "Multi-head attention parallel attention views",
+          "x": 520,
+          "y": 110,
+          "w": 170,
+          "h": 56
+        },
+        {
+          "id": "ff",
+          "label": "Feed-forward layers + residuals, stacked N×",
+          "x": 520,
+          "y": 220,
+          "w": 170,
+          "h": 56
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "crisp-dm": {
+      "id": "crisp-dm",
+      "title": "Data Mining Process (CRISP-DM)",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">DATA MINING PROCESS (CRISP-DM)</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"190\" y1=\"128\" x2=\"240\" y2=\"128\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"370\" y1=\"128\" x2=\"420\" y2=\"128\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"485\" y1=\"156\" x2=\"485\" y2=\"230\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"420\" y1=\"256\" x2=\"370\" y2=\"256\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"240\" y1=\"256\" x2=\"190\" y2=\"258\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"240\" y1=\"256\" x2=\"190\" y2=\"128\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"215\" y=\"186\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">iterate</text><rect x=\"60\" y=\"100\" width=\"130\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"125\" y=\"120.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Business</text><text x=\"125\" y=\"135.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">understanding</text><rect x=\"240\" y=\"100\" width=\"130\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"305\" y=\"120.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Data</text><text x=\"305\" y=\"135.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">understanding</text><rect x=\"420\" y=\"100\" width=\"130\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"485\" y=\"120.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Data</text><text x=\"485\" y=\"135.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">preparation</text><rect x=\"420\" y=\"230\" width=\"130\" height=\"52\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"485\" y=\"256\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Modeling</text><rect x=\"240\" y=\"230\" width=\"130\" height=\"52\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"305\" y=\"256\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Evaluation</text><rect x=\"60\" y=\"230\" width=\"130\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"125\" y=\"250.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Deployment</text><text x=\"125\" y=\"265.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">&amp; monitoring</text></svg>",
+      "regions": [
+        {
+          "id": "bu",
+          "label": "Business understanding",
+          "x": 60,
+          "y": 100,
+          "w": 130,
+          "h": 56
+        },
+        {
+          "id": "du",
+          "label": "Data understanding",
+          "x": 240,
+          "y": 100,
+          "w": 130,
+          "h": 56
+        },
+        {
+          "id": "prep",
+          "label": "Data preparation",
+          "x": 420,
+          "y": 100,
+          "w": 130,
+          "h": 56
+        },
+        {
+          "id": "model",
+          "label": "Modeling",
+          "x": 420,
+          "y": 230,
+          "w": 130,
+          "h": 52
+        },
+        {
+          "id": "eval",
+          "label": "Evaluation",
+          "x": 240,
+          "y": 230,
+          "w": 130,
+          "h": 52
+        },
+        {
+          "id": "deploy",
+          "label": "Deployment & monitoring",
+          "x": 60,
+          "y": 230,
+          "w": 130,
+          "h": 56
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "data-partition": {
+      "id": "data-partition",
+      "title": "Data Partitioning",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">DATA PARTITIONING</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"220\" y1=\"145\" x2=\"290\" y2=\"108\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"220\" y1=\"145\" x2=\"290\" y2=\"198\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"220\" y1=\"145\" x2=\"290\" y2=\"302\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"450\" y1=\"198\" x2=\"510\" y2=\"192\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"60\" y=\"120\" width=\"160\" height=\"50\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"140\" y=\"145\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">All labeled data</text><rect x=\"290\" y=\"80\" width=\"160\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"370\" y=\"100.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">TRAINING set</text><text x=\"370\" y=\"115.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">fit the model</text><rect x=\"290\" y=\"170\" width=\"160\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"370\" y=\"190.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">VALIDATION set</text><text x=\"370\" y=\"205.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">tune &amp; compare models</text><rect x=\"290\" y=\"270\" width=\"160\" height=\"64\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"370\" y=\"287\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">TEST set</text><text x=\"370\" y=\"302\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">final honest estimate</text><text x=\"370\" y=\"317\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(touch once)</text><rect x=\"510\" y=\"160\" width=\"180\" height=\"64\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"600\" y=\"184.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Overfitting signal:</text><text x=\"600\" y=\"199.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">training ≫ validation score</text></svg>",
+      "regions": [
+        {
+          "id": "train",
+          "label": "TRAINING set fit the model",
+          "x": 290,
+          "y": 80,
+          "w": 160,
+          "h": 56
+        },
+        {
+          "id": "valid",
+          "label": "VALIDATION set tune & compare models",
+          "x": 290,
+          "y": 170,
+          "w": 160,
+          "h": 56
+        },
+        {
+          "id": "test",
+          "label": "TEST set final honest estimate (touch once)",
+          "x": 290,
+          "y": 270,
+          "w": 160,
+          "h": 64
+        },
+        {
+          "id": "gap",
+          "label": "Overfitting signal: training ≫ validation score",
+          "x": 510,
+          "y": 160,
+          "w": 180,
+          "h": 64
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "roc-lift": {
+      "id": "roc-lift",
+      "title": "ROC Curve & AUC",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">ROC CURVE &amp; AUC</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><g transform=\"translate(110,80)\"><rect x=\"0\" y=\"0\" width=\"260\" height=\"260\" fill=\"rgba(10,40,60,0.45)\" stroke=\"#3a7d96\"/><path d=\"M0,260 C60,80 140,30 260,0\" fill=\"none\" stroke=\"#19b8e0\" stroke-width=\"2.5\"/><line x1=\"0\" y1=\"260\" x2=\"260\" y2=\"0\" stroke=\"#3a7d96\" stroke-dasharray=\"5 4\"/><text x=\"130\" y=\"285\" fill=\"#9be8f7\" font-size=\"11\" text-anchor=\"middle\">False positive rate →</text><text x=\"-14\" y=\"130\" fill=\"#9be8f7\" font-size=\"11\" text-anchor=\"middle\" transform=\"rotate(-90,-14,130)\">True positive rate →</text></g><rect x=\"110\" y=\"90\" width=\"130\" height=\"50\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"175\" y=\"107.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Perfect model</text><text x=\"175\" y=\"122.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(0,1) corner</text><rect x=\"430\" y=\"110\" width=\"200\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"530\" y=\"130.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">AUC = area under curve</text><text x=\"530\" y=\"145.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">1.0 perfect · 0.5 random</text><rect x=\"430\" y=\"290\" width=\"160\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"510\" y=\"310.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Diagonal =</text><text x=\"510\" y=\"325.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">random guessing</text></svg>",
+      "regions": [
+        {
+          "id": "perfect",
+          "label": "Perfect model (0,1) corner",
+          "x": 110,
+          "y": 90,
+          "w": 130,
+          "h": 50
+        },
+        {
+          "id": "auc",
+          "label": "AUC = area under curve 1.0 perfect · 0.5 random",
+          "x": 430,
+          "y": 110,
+          "w": 200,
+          "h": 56
+        },
+        {
+          "id": "diag",
+          "label": "Diagonal = random guessing",
+          "x": 430,
+          "y": 290,
+          "w": 160,
+          "h": 56
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "gradient-descent": {
+      "id": "gradient-descent",
+      "title": "Gradient Descent",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">GRADIENT DESCENT</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><g transform=\"translate(70,90)\"><path d=\"M0,40 C60,180 120,260 170,265 C230,260 300,170 340,30\" fill=\"none\" stroke=\"#19b8e0\" stroke-width=\"2.5\"/><circle cx=\"48\" cy=\"118\" r=\"6\" fill=\"#ffd97a\"/><circle cx=\"92\" cy=\"196\" r=\"6\" fill=\"#ffd97a\"/><circle cx=\"134\" cy=\"244\" r=\"6\" fill=\"#ffd97a\"/><circle cx=\"170\" cy=\"263\" r=\"7\" fill=\"#7dffb0\"/><text x=\"170\" y=\"300\" fill=\"#9be8f7\" font-size=\"11\" text-anchor=\"middle\">loss surface — steps shrink toward the minimum</text></g><rect x=\"460\" y=\"100\" width=\"200\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"560\" y=\"120.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Learning rate</text><text x=\"560\" y=\"135.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">step size of each update</text><rect x=\"460\" y=\"190\" width=\"200\" height=\"66\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"560\" y=\"208\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Gradient</text><text x=\"560\" y=\"223\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">direction of steepest ascent</text><text x=\"560\" y=\"238\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(step the other way)</text><rect x=\"460\" y=\"290\" width=\"200\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"560\" y=\"310.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Minimum of loss</text><text x=\"560\" y=\"325.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">training converges</text></svg>",
+      "regions": [
+        {
+          "id": "lr",
+          "label": "Learning rate step size of each update",
+          "x": 460,
+          "y": 100,
+          "w": 200,
+          "h": 56
+        },
+        {
+          "id": "grad",
+          "label": "Gradient direction of steepest ascent (step the other way)",
+          "x": 460,
+          "y": 190,
+          "w": 200,
+          "h": 66
+        },
+        {
+          "id": "min",
+          "label": "Minimum of loss training converges",
+          "x": 460,
+          "y": 290,
+          "w": 200,
+          "h": 56
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "decision-tree": {
+      "id": "decision-tree",
+      "title": "Decision Tree Anatomy",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">DECISION TREE ANATOMY</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"270\" y1=\"113\" x2=\"260\" y2=\"228\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"265\" y=\"164.5\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">yes</text><line x1=\"460\" y1=\"113\" x2=\"470\" y2=\"255\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"465\" y=\"178\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">no</text><line x1=\"185\" y1=\"256\" x2=\"125\" y2=\"310\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"185\" y1=\"256\" x2=\"295\" y2=\"310\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"270\" y=\"80\" width=\"190\" height=\"66\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"365\" y=\"98\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">ROOT split</text><text x=\"365\" y=\"113\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">best predictor + cutpoint</text><text x=\"365\" y=\"128\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(max purity gain)</text><rect x=\"110\" y=\"200\" width=\"150\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"185\" y=\"220.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Internal split</text><text x=\"185\" y=\"235.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Income &lt; 50k?</text><rect x=\"60\" y=\"310\" width=\"130\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"125\" y=\"330.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">LEAF: predict</text><text x=\"125\" y=\"345.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">\"churn\" (82%)</text><rect x=\"230\" y=\"310\" width=\"130\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"295\" y=\"330.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">LEAF: predict</text><text x=\"295\" y=\"345.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">\"stay\" (74%)</text><rect x=\"470\" y=\"220\" width=\"170\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"555\" y=\"240\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Pruning removes</text><text x=\"555\" y=\"255\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">weak branches to</text><text x=\"555\" y=\"270\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">prevent overfitting</text></svg>",
+      "regions": [
+        {
+          "id": "root",
+          "label": "ROOT split best predictor + cutpoint (max purity gain)",
+          "x": 270,
+          "y": 80,
+          "w": 190,
+          "h": 66
+        },
+        {
+          "id": "int",
+          "label": "Internal split Income < 50k?",
+          "x": 110,
+          "y": 200,
+          "w": 150,
+          "h": 56
+        },
+        {
+          "id": "leafa",
+          "label": "LEAF: predict \"churn\" (82%)",
+          "x": 60,
+          "y": 310,
+          "w": 130,
+          "h": 56
+        },
+        {
+          "id": "prune",
+          "label": "Pruning removes weak branches to prevent overfitting",
+          "x": 470,
+          "y": 220,
+          "w": 170,
+          "h": 70
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "ab-design": {
+      "id": "ab-design",
+      "title": "A/B Test Design",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">A/B TEST DESIGN</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"200\" y1=\"135\" x2=\"240\" y2=\"138\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"400\" y1=\"138\" x2=\"440\" y2=\"138\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"440\" y1=\"138\" x2=\"400\" y2=\"258\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"535\" y1=\"166\" x2=\"540\" y2=\"230\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"320\" y1=\"286\" x2=\"420\" y2=\"330\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"460\" y1=\"258\" x2=\"560\" y2=\"358\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"50\" y=\"110\" width=\"150\" height=\"50\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"125\" y=\"135\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Target population</text><rect x=\"240\" y=\"110\" width=\"160\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"320\" y=\"130.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Random sample</text><text x=\"320\" y=\"145.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(external validity)</text><rect x=\"440\" y=\"110\" width=\"190\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"535\" y=\"130.5\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">RANDOM ASSIGNMENT</text><text x=\"535\" y=\"145.5\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(internal validity)</text><rect x=\"240\" y=\"230\" width=\"160\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"320\" y=\"250.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Control (A)</text><text x=\"320\" y=\"265.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">current experience</text><rect x=\"460\" y=\"230\" width=\"160\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"540\" y=\"250.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Treatment (B)</text><text x=\"540\" y=\"265.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">new experience</text><rect x=\"280\" y=\"330\" width=\"280\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"420\" y=\"350.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Compare KPI → estimate ATE</text><text x=\"420\" y=\"365.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">with interval + significance test</text></svg>",
+      "regions": [
+        {
+          "id": "sample",
+          "label": "Random sample (external validity)",
+          "x": 240,
+          "y": 110,
+          "w": 160,
+          "h": 56
+        },
+        {
+          "id": "rand",
+          "label": "RANDOM ASSIGNMENT (internal validity)",
+          "x": 440,
+          "y": 110,
+          "w": 190,
+          "h": 56
+        },
+        {
+          "id": "a",
+          "label": "Control (A) current experience",
+          "x": 240,
+          "y": 230,
+          "w": 160,
+          "h": 56
+        },
+        {
+          "id": "b",
+          "label": "Treatment (B) new experience",
+          "x": 460,
+          "y": 230,
+          "w": 160,
+          "h": 56
+        },
+        {
+          "id": "kpi",
+          "label": "Compare KPI → estimate ATE with interval + significance test",
+          "x": 280,
+          "y": 330,
+          "w": 280,
+          "h": 56
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "type-errors": {
+      "id": "type-errors",
+      "title": "Type I & II Errors and Power",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">TYPE I &amp; II ERRORS AND POWER</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><text x=\"340\" y=\"95\" fill=\"#9be8f7\" font-size=\"12\" text-anchor=\"middle\">H₀ true</text><text x=\"530\" y=\"95\" fill=\"#9be8f7\" font-size=\"12\" text-anchor=\"middle\">H₀ false</text><text x=\"215\" y=\"150\" fill=\"#9be8f7\" font-size=\"12\" text-anchor=\"end\">Reject H₀</text><text x=\"215\" y=\"250\" fill=\"#9be8f7\" font-size=\"12\" text-anchor=\"end\">Keep H₀</text><rect x=\"250\" y=\"110\" width=\"180\" height=\"76\" rx=\"9\" fill=\"rgba(120,50,50,0.5)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"340\" y=\"133\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">TYPE I error (α)</text><text x=\"340\" y=\"148\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">false alarm: reject a</text><text x=\"340\" y=\"163\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">true null hypothesis</text><rect x=\"450\" y=\"110\" width=\"160\" height=\"76\" rx=\"9\" fill=\"rgba(28,110,80,0.5)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"530\" y=\"140.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Correct</text><text x=\"530\" y=\"155.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(confidence 1−α)</text><rect x=\"250\" y=\"210\" width=\"180\" height=\"76\" rx=\"9\" fill=\"rgba(28,110,80,0.5)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"340\" y=\"233\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Correct = POWER</text><text x=\"340\" y=\"248\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(1−β) detects a</text><text x=\"340\" y=\"263\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">real effect</text><rect x=\"450\" y=\"210\" width=\"160\" height=\"76\" rx=\"9\" fill=\"rgba(120,50,50,0.5)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"530\" y=\"233\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">TYPE II error (β)</text><text x=\"530\" y=\"248\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">miss: fail to reject</text><text x=\"530\" y=\"263\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">a false null</text><rect x=\"250\" y=\"320\" width=\"240\" height=\"50\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"370\" y=\"337.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Power ↑ with sample size,</text><text x=\"370\" y=\"352.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">effect size, and α</text></svg>",
+      "regions": [
+        {
+          "id": "t1",
+          "label": "TYPE I error (α) false alarm: reject a true null hypothesis",
+          "x": 250,
+          "y": 110,
+          "w": 180,
+          "h": 76
+        },
+        {
+          "id": "ok2",
+          "label": "Correct = POWER (1−β) detects a real effect",
+          "x": 250,
+          "y": 210,
+          "w": 180,
+          "h": 76
+        },
+        {
+          "id": "t2",
+          "label": "TYPE II error (β) miss: fail to reject a false null",
+          "x": 450,
+          "y": 210,
+          "w": 160,
+          "h": 76
+        },
+        {
+          "id": "drv",
+          "label": "Power ↑ with sample size, effect size, and α",
+          "x": 250,
+          "y": 320,
+          "w": 240,
+          "h": 50
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "lp-region": {
+      "id": "lp-region",
+      "title": "Linear Programming Geometry",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">LINEAR PROGRAMMING GEOMETRY</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><g transform=\"translate(70,80)\"><polygon points=\"0,280 0,90 90,30 210,120 210,280\" fill=\"rgba(25,120,160,0.25)\" stroke=\"#19b8e0\" stroke-width=\"2\"/><circle cx=\"90\" cy=\"30\" r=\"7\" fill=\"#7dffb0\"/><line x1=\"-10\" y1=\"120\" x2=\"240\" y2=\"40\" stroke=\"#ffd97a\" stroke-dasharray=\"6 4\"/><text x=\"105\" y=\"300\" fill=\"#9be8f7\" font-size=\"11\" text-anchor=\"middle\">constraints bound the polygon · dashed = objective line</text></g><rect x=\"430\" y=\"110\" width=\"190\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"525\" y=\"130\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">FEASIBLE REGION</text><text x=\"525\" y=\"145\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">all points satisfying</text><text x=\"525\" y=\"160\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">every constraint</text><rect x=\"430\" y=\"210\" width=\"190\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"525\" y=\"230\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Optimum at a</text><text x=\"525\" y=\"245\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">CORNER POINT</text><text x=\"525\" y=\"260\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(simplex walks them)</text><rect x=\"430\" y=\"310\" width=\"220\" height=\"66\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"540\" y=\"328\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Shadow price = objective</text><text x=\"540\" y=\"343\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">gain per unit of a</text><text x=\"540\" y=\"358\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">binding constraint</text></svg>",
+      "regions": [
+        {
+          "id": "feas",
+          "label": "FEASIBLE REGION all points satisfying every constraint",
+          "x": 430,
+          "y": 110,
+          "w": 190,
+          "h": 70
+        },
+        {
+          "id": "corner",
+          "label": "Optimum at a CORNER POINT (simplex walks them)",
+          "x": 430,
+          "y": 210,
+          "w": 190,
+          "h": 70
+        },
+        {
+          "id": "shadow",
+          "label": "Shadow price = objective gain per unit of a binding constraint",
+          "x": 430,
+          "y": 310,
+          "w": 220,
+          "h": 66
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "cnn-flow": {
+      "id": "cnn-flow",
+      "title": "CNN Pipeline",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">CNN PIPELINE</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"170\" y1=\"190\" x2=\"210\" y2=\"188\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"390\" y1=\"188\" x2=\"430\" y2=\"188\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"430\" y1=\"188\" x2=\"220\" y2=\"328\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"325\" y=\"252\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">stacked &amp; flattened</text><rect x=\"50\" y=\"160\" width=\"120\" height=\"60\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"110\" y=\"182.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Input image</text><text x=\"110\" y=\"197.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">pixel grid</text><rect x=\"210\" y=\"150\" width=\"180\" height=\"76\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"300\" y=\"173\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">CONVOLUTION</text><text x=\"300\" y=\"188\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">filters detect local</text><text x=\"300\" y=\"203\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">patterns (weight sharing)</text><rect x=\"430\" y=\"150\" width=\"150\" height=\"76\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"505\" y=\"173\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">POOLING</text><text x=\"505\" y=\"188\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">downsample,</text><text x=\"505\" y=\"203\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">keep strongest signal</text><rect x=\"50\" y=\"300\" width=\"170\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"135\" y=\"320.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Dense layers</text><text x=\"135\" y=\"335.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">→ softmax classes</text></svg>",
+      "regions": [
+        {
+          "id": "conv",
+          "label": "CONVOLUTION filters detect local patterns (weight sharing)",
+          "x": 210,
+          "y": 150,
+          "w": 180,
+          "h": 76
+        },
+        {
+          "id": "pool",
+          "label": "POOLING downsample, keep strongest signal",
+          "x": 430,
+          "y": 150,
+          "w": 150,
+          "h": 76
+        },
+        {
+          "id": "dense",
+          "label": "Dense layers → softmax classes",
+          "x": 50,
+          "y": 300,
+          "w": 170,
+          "h": 56
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "rnn-unrolled": {
+      "id": "rnn-unrolled",
+      "title": "RNN Unrolled in Time",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">RNN UNROLLED IN TIME</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><text x=\"165\" y=\"120\" fill=\"#9be8f7\" font-size=\"11\" text-anchor=\"middle\">x₁ ↓</text><text x=\"355\" y=\"120\" fill=\"#9be8f7\" font-size=\"11\" text-anchor=\"middle\">x₂ ↓</text><text x=\"545\" y=\"120\" fill=\"#9be8f7\" font-size=\"11\" text-anchor=\"middle\">x₃ ↓</text><line x1=\"220\" y1=\"188\" x2=\"300\" y2=\"188\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"260\" y=\"182\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">state</text><line x1=\"410\" y1=\"188\" x2=\"490\" y2=\"188\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"450\" y=\"182\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">state</text><rect x=\"110\" y=\"160\" width=\"110\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"165\" y=\"180.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">h₁</text><text x=\"165\" y=\"195.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">hidden state</text><rect x=\"300\" y=\"160\" width=\"110\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"355\" y=\"180.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">h₂</text><text x=\"355\" y=\"195.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">carries memory</text><rect x=\"490\" y=\"160\" width=\"110\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"545\" y=\"180.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">h₃</text><text x=\"545\" y=\"195.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">…through time</text><rect x=\"250\" y=\"300\" width=\"240\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"370\" y=\"320\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">LSTM gates decide what to</text><text x=\"370\" y=\"335\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">keep, forget, and output —</text><text x=\"370\" y=\"350\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">fixing vanishing gradients</text></svg>",
+      "regions": [
+        {
+          "id": "h2",
+          "label": "h₂ carries memory",
+          "x": 300,
+          "y": 160,
+          "w": 110,
+          "h": 56
+        },
+        {
+          "id": "gate",
+          "label": "LSTM gates decide what to keep, forget, and output — fixing vanishing gradients",
+          "x": 250,
+          "y": 300,
+          "w": 240,
+          "h": 70
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "autoencoder": {
+      "id": "autoencoder",
+      "title": "Autoencoder",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">AUTOENCODER</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"240\" y1=\"182\" x2=\"300\" y2=\"182\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"460\" y1=\"182\" x2=\"520\" y2=\"182\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"520\" y1=\"182\" x2=\"490\" y2=\"328\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"90\" y=\"150\" width=\"150\" height=\"64\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"165\" y=\"174.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">ENCODER</text><text x=\"165\" y=\"189.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">compresses input</text><rect x=\"300\" y=\"150\" width=\"160\" height=\"64\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"380\" y=\"174.5\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">BOTTLENECK</text><text x=\"380\" y=\"189.5\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">low-dimensional code</text><rect x=\"520\" y=\"150\" width=\"150\" height=\"64\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"595\" y=\"174.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">DECODER</text><text x=\"595\" y=\"189.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">reconstructs input</text><rect x=\"230\" y=\"300\" width=\"260\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"360\" y=\"320.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Reconstruction error =</text><text x=\"360\" y=\"335.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">training signal &amp; anomaly score</text></svg>",
+      "regions": [
+        {
+          "id": "enc",
+          "label": "ENCODER compresses input",
+          "x": 90,
+          "y": 150,
+          "w": 150,
+          "h": 64
+        },
+        {
+          "id": "code",
+          "label": "BOTTLENECK low-dimensional code",
+          "x": 300,
+          "y": 150,
+          "w": 160,
+          "h": 64
+        },
+        {
+          "id": "dec",
+          "label": "DECODER reconstructs input",
+          "x": 520,
+          "y": 150,
+          "w": 150,
+          "h": 64
+        },
+        {
+          "id": "err",
+          "label": "Reconstruction error = training signal & anomaly score",
+          "x": 230,
+          "y": 300,
+          "w": 260,
+          "h": 56
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "api-flow": {
+      "id": "api-flow",
+      "title": "Web API Request Cycle",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">WEB API REQUEST CYCLE</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"230\" y1=\"165\" x2=\"450\" y2=\"165\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><text x=\"340\" y=\"159\" fill=\"#3a7d96\" font-size=\"10.5\" text-anchor=\"middle\" font-family=\"Segoe UI, sans-serif\">HTTPS request</text><line x1=\"540\" y1=\"200\" x2=\"520\" y2=\"270\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"145\" y1=\"270\" x2=\"145\" y2=\"200\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"60\" y=\"130\" width=\"170\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"145\" y=\"150\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Client (Python)</text><text x=\"145\" y=\"165\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">requests.get(url,</text><text x=\"145\" y=\"180\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">params, headers)</text><rect x=\"60\" y=\"270\" width=\"170\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"145\" y=\"290.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Auth: API key /</text><text x=\"145\" y=\"305.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">token in header</text><rect x=\"450\" y=\"130\" width=\"180\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"540\" y=\"157.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">API server</text><text x=\"540\" y=\"172.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">endpoint routes request</text><rect x=\"400\" y=\"270\" width=\"240\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"520\" y=\"290\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Response: status code</text><text x=\"520\" y=\"305\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">200 OK · 401 auth · 429 rate</text><text x=\"520\" y=\"320\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">+ JSON body to parse</text></svg>",
+      "regions": [
+        {
+          "id": "client",
+          "label": "Client (Python) requests.get(url, params, headers)",
+          "x": 60,
+          "y": 130,
+          "w": 170,
+          "h": 70
+        },
+        {
+          "id": "auth",
+          "label": "Auth: API key / token in header",
+          "x": 60,
+          "y": 270,
+          "w": 170,
+          "h": 56
+        },
+        {
+          "id": "resp",
+          "label": "Response: status code 200 OK · 401 auth · 429 rate + JSON body to parse",
+          "x": 400,
+          "y": 270,
+          "w": 240,
+          "h": 70
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "text-pipeline": {
+      "id": "text-pipeline",
+      "title": "Text Mining Pipeline",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">TEXT MINING PIPELINE</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"160\" y1=\"158\" x2=\"200\" y2=\"158\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"330\" y1=\"158\" x2=\"370\" y2=\"156\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"370\" y1=\"156\" x2=\"400\" y2=\"300\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"400\" y1=\"300\" x2=\"450\" y2=\"300\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"50\" y=\"130\" width=\"110\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"105\" y=\"150.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Raw text</text><text x=\"105\" y=\"165.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">corpus</text><rect x=\"200\" y=\"130\" width=\"130\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"265\" y=\"150.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Tokenize</text><text x=\"265\" y=\"165.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">split into terms</text><rect x=\"370\" y=\"120\" width=\"160\" height=\"72\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"450\" y=\"141\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Normalize</text><text x=\"450\" y=\"156\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">stopwords, stem/</text><text x=\"450\" y=\"171\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">lemmatize, lowercase</text><rect x=\"200\" y=\"270\" width=\"200\" height=\"60\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"300\" y=\"292.5\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">TF-IDF weighting</text><text x=\"300\" y=\"307.5\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">frequent here, rare overall</text><rect x=\"450\" y=\"270\" width=\"190\" height=\"60\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"545\" y=\"292.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Document-term matrix</text><text x=\"545\" y=\"307.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">→ classify / cluster</text></svg>",
+      "regions": [
+        {
+          "id": "tok",
+          "label": "Tokenize split into terms",
+          "x": 200,
+          "y": 130,
+          "w": 130,
+          "h": 56
+        },
+        {
+          "id": "norm",
+          "label": "Normalize stopwords, stem/ lemmatize, lowercase",
+          "x": 370,
+          "y": 120,
+          "w": 160,
+          "h": 72
+        },
+        {
+          "id": "tfidf",
+          "label": "TF-IDF weighting frequent here, rare overall",
+          "x": 200,
+          "y": 270,
+          "w": 200,
+          "h": 60
+        },
+        {
+          "id": "dtm",
+          "label": "Document-term matrix → classify / cluster",
+          "x": 450,
+          "y": 270,
+          "w": 190,
+          "h": 60
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "causal-toolbox": {
+      "id": "causal-toolbox",
+      "title": "Causal Inference Designs",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">CAUSAL INFERENCE DESIGNS</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"190\" y1=\"235\" x2=\"240\" y2=\"112\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"295\" y1=\"200\" x2=\"355\" y2=\"144\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"475\" y1=\"200\" x2=\"355\" y2=\"144\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"230\" y1=\"310\" x2=\"295\" y2=\"270\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"400\" y1=\"335\" x2=\"370\" y2=\"235\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"240\" y=\"80\" width=\"230\" height=\"64\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"355\" y=\"97\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">COUNTERFACTUAL</text><text x=\"355\" y=\"112\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">what would have happened</text><text x=\"355\" y=\"127\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">without treatment</text><rect x=\"40\" y=\"200\" width=\"150\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"115\" y=\"220\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Regression</text><text x=\"115\" y=\"235\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">discontinuity:</text><text x=\"115\" y=\"250\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">compare near cutoff</text><rect x=\"220\" y=\"200\" width=\"150\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"295\" y=\"220\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Diff-in-diff:</text><text x=\"295\" y=\"235\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">treated vs control,</text><text x=\"295\" y=\"250\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">before vs after</text><rect x=\"400\" y=\"200\" width=\"150\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"475\" y=\"220\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Instrumental</text><text x=\"475\" y=\"235\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">variables: nature</text><text x=\"475\" y=\"250\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">randomizes for you</text><rect x=\"130\" y=\"310\" width=\"200\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"230\" y=\"330.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Propensity matching:</text><text x=\"230\" y=\"345.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">compare statistical twins</text><rect x=\"400\" y=\"300\" width=\"180\" height=\"70\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"490\" y=\"320\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Synthetic control:</text><text x=\"490\" y=\"335\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">weighted blend mimics</text><text x=\"490\" y=\"350\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">the treated unit</text></svg>",
+      "regions": [
+        {
+          "id": "cf",
+          "label": "COUNTERFACTUAL what would have happened without treatment",
+          "x": 240,
+          "y": 80,
+          "w": 230,
+          "h": 64
+        },
+        {
+          "id": "rd",
+          "label": "Regression discontinuity: compare near cutoff",
+          "x": 40,
+          "y": 200,
+          "w": 150,
+          "h": 70
+        },
+        {
+          "id": "did",
+          "label": "Diff-in-diff: treated vs control, before vs after",
+          "x": 220,
+          "y": 200,
+          "w": 150,
+          "h": 70
+        },
+        {
+          "id": "iv",
+          "label": "Instrumental variables: nature randomizes for you",
+          "x": 400,
+          "y": 200,
+          "w": 150,
+          "h": 70
+        },
+        {
+          "id": "psm",
+          "label": "Propensity matching: compare statistical twins",
+          "x": 130,
+          "y": 310,
+          "w": 200,
+          "h": 56
+        },
+        {
+          "id": "sc",
+          "label": "Synthetic control: weighted blend mimics the treated unit",
+          "x": 400,
+          "y": 300,
+          "w": 180,
+          "h": 70
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    },
+    "bandit-loop": {
+      "id": "bandit-loop",
+      "title": "Multi-Armed Bandit Loop",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 420\" font-family=\"Segoe UI, sans-serif\"><defs><marker id=\"arr\" viewBox=\"0 0 8 8\" refX=\"7\" refY=\"4\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0L8,4L0,8z\" fill=\"#3a7d96\"/></marker><radialGradient id=\"bgg\" cx=\"50%\" cy=\"40%\" r=\"80%\"><stop offset=\"0%\" stop-color=\"#0b2538\"/><stop offset=\"100%\" stop-color=\"#071826\"/></radialGradient></defs><rect width=\"720\" height=\"420\" fill=\"url(#bgg)\" rx=\"12\"/><text x=\"360\" y=\"28\" fill=\"#9be8f7\" font-size=\"16\" text-anchor=\"middle\" letter-spacing=\"2\">MULTI-ARMED BANDIT LOOP</text><line x1=\"40\" y1=\"40\" x2=\"680\" y2=\"40\" stroke=\"#3a7d96\" stroke-width=\"0.7\" opacity=\"0.6\"/><line x1=\"260\" y1=\"150\" x2=\"330\" y2=\"148\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"430\" y1=\"186\" x2=\"420\" y2=\"250\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"330\" y1=\"278\" x2=\"260\" y2=\"280\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><line x1=\"170\" y1=\"250\" x2=\"170\" y2=\"180\" stroke=\"#3a7d96\" stroke-width=\"1.4\" marker-end=\"url(#arr)\"/><rect x=\"80\" y=\"120\" width=\"180\" height=\"60\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"170\" y=\"142.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Belief per arm</text><text x=\"170\" y=\"157.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(posterior / estimate)</text><rect x=\"330\" y=\"110\" width=\"200\" height=\"76\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#ffd97a\" stroke-width=\"1.3\"/><text x=\"430\" y=\"133\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">CHOOSE arm:</text><text x=\"430\" y=\"148\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">explore vs exploit</text><text x=\"430\" y=\"163\" fill=\"#ffd97a\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(ε-greedy, UCB, Thompson)</text><rect x=\"330\" y=\"250\" width=\"180\" height=\"56\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"420\" y=\"270.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Observe reward</text><text x=\"420\" y=\"285.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">(click, conversion)</text><rect x=\"80\" y=\"250\" width=\"180\" height=\"60\" rx=\"9\" fill=\"rgba(20,60,84,0.55)\" stroke=\"#19b8e0\" stroke-width=\"1.3\"/><text x=\"170\" y=\"272.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">Update belief</text><text x=\"170\" y=\"287.5\" fill=\"#9be8f7\" font-size=\"12.5\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-family=\"Segoe UI, sans-serif\">shift traffic to winners</text></svg>",
+      "regions": [
+        {
+          "id": "choose",
+          "label": "CHOOSE arm: explore vs exploit (ε-greedy, UCB, Thompson)",
+          "x": 330,
+          "y": 110,
+          "w": 200,
+          "h": 76
+        },
+        {
+          "id": "reward",
+          "label": "Observe reward (click, conversion)",
+          "x": 330,
+          "y": 250,
+          "w": 180,
+          "h": 56
+        },
+        {
+          "id": "update",
+          "label": "Update belief shift traffic to winners",
+          "x": 80,
+          "y": 250,
+          "w": 180,
+          "h": 60
+        }
+      ],
+      "viewBox": "0 0 720 420"
+    }
+  }
+}
