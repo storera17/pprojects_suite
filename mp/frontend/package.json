@@ -1,0 +1,42 @@
+{
+  "name": "momentumprodigy",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MomentumProdigy — an offline-first mastery-learning command center.",
+  "type": "module",
+  "scripts": {
+    "extract": "node ../backend/content-pipeline/extract-sources.mjs",
+    "generate": "node ../backend/content-pipeline/generate-demo-course.mjs",
+    "generate:demo": "node ../backend/content-pipeline/generate-demo-course.mjs",
+    "generate:worksheets": "node ../backend/content-pipeline/generate-worksheets.mjs",
+    "generate:full": "node ../backend/content-pipeline/generate-course.mjs",
+    "dev": "vite",
+    "build": "npm run generate:demo && npm run generate:worksheets && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "tauri": "tauri",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build",
+    "ios:add": "npx cap add ios",
+    "ios:sync": "npm run build && npx cap sync ios",
+    "ios:open": "npx cap open ios"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^6.0.2",
+    "html-to-text": "^10.0.0",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.12.0",
+    "pdf-parse": "^2.4.5",
+    "typescript": "^5.7.2",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.8"
+  }
+}
