@@ -1,3 +1,5 @@
+import type { CapacitorConfig } from '@capacitor/cli';
+
 // Native iPhone packaging. `npm run ios:add && npm run ios:sync && npm run ios:open`
 // produces a real Xcode project wrapping the offline dist/ bundle.
 const config: CapacitorConfig = {
