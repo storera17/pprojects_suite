@@ -1,0 +1,59 @@
+/* ------- review ------- */
+.review-stage { max-width: 860px; margin: 0 auto; }
+.qmeta { display: flex; justify-content: space-between; align-items: center; color: var(--fg-dim); font-size: 12px; margin-bottom: 14px; letter-spacing: 1px; }
+.card3d { perspective: 1400px; }
+.cardface {
+  position: relative; border-radius: 18px; padding: 30px 34px 24px; min-height: 240px;
+  border: 1px solid var(--card-border, var(--panel-border));
+  background:
+    linear-gradient(160deg, rgba(13,38,56,0.85), rgba(5,15,26,0.92));
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 30px var(--card-glow, rgba(25,184,224,0.10)), inset 0 1px 0 rgba(155,232,247,0.06);
+  animation: cardIn .4s cubic-bezier(.22,1,.36,1) both;
+  overflow: hidden;
+}
+@keyframes cardIn { from { opacity: 0; transform: rotateX(8deg) translateY(16px); } to { opacity: 1; transform: none; } }
+.cardface.revealed { animation: cardFlip .45s cubic-bezier(.22,1,.36,1) both; }
+@keyframes cardFlip { 0% { transform: rotateX(70deg); opacity: .2; } 100% { transform: rotateX(0); opacity: 1; } }
+.cardface .corner { position: absolute; font-size: 18px; opacity: .7; }
+.cardface .corner.tl { top: 12px; left: 16px; }
+.cardface .corner.br { bottom: 10px; right: 16px; }
+.cardface .pattern { position: absolute; inset: 0; opacity: .07; pointer-events: none; }
+.card-kind { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--card-accent, var(--accent)); margin-bottom: 14px; }
+.cloze-text { font-size: 19px; line-height: 1.65; }
+.cloze-text .blank {
+  display: inline-block; min-width: 70px; text-align: center; border-bottom: 2px solid var(--card-accent, var(--accent));
+  color: var(--card-accent, var(--accent)); padding: 0 6px; margin: 0 2px;
+  animation: blankPulse 2.2s ease-in-out infinite;
+}
+@keyframes blankPulse { 0%,100% { opacity: .75; } 50% { opacity: 1; text-shadow: 0 0 12px var(--card-glow, var(--glow-soft)); } }
+.cloze-text .answer {
+  color: var(--green); font-weight: 600; border-bottom: 2px solid rgba(125,255,176,0.5);
+  padding: 0 4px; animation: answerIn .5s ease both; text-shadow: 0 0 14px rgba(125,255,176,0.35);
+}
+@keyframes answerIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.occ-wrap svg { width: 100%; height: auto; border-radius: 12px; }
+.evidence { margin-top: 18px; border-top: 1px solid rgba(72,187,224,0.14); padding-top: 10px; }
+.evidence summary { cursor: pointer; color: var(--fg-dim); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+.evidence ul { margin: 8px 0 0; padding-left: 18px; }
+.evidence li { font-size: 12.5px; color: var(--fg-dim); margin-bottom: 4px; line-height: 1.45; }
+.evidence li b { color: var(--fg); font-weight: 500; }
+.answer-row { display: flex; gap: 10px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
+.gradebtn {
+  min-width: 108px; padding: 12px 10px; border-radius: 12px; cursor: pointer; border: 1px solid;
+  background: rgba(4,16,28,0.6); color: var(--fg); font-size: 14px; font-weight: 600;
+  display: flex; flex-direction: column; gap: 3px; align-items: center;
+  transition: transform .1s, box-shadow .2s;
+}
+.gradebtn small { font-weight: 400; font-size: 11px; color: var(--fg-dim); }
+.gradebtn:active { transform: scale(.95); }
+.gradebtn.again { border-color: rgba(255,125,138,0.5); } .gradebtn.again:hover { box-shadow: 0 0 16px rgba(255,125,138,0.3); }
+.gradebtn.hard  { border-color: rgba(255,217,122,0.5); } .gradebtn.hard:hover  { box-shadow: 0 0 16px rgba(255,217,122,0.3); }
+.gradebtn.good  { border-color: rgba(125,249,255,0.5); } .gradebtn.good:hover  { box-shadow: 0 0 16px rgba(125,249,255,0.3); }
+.gradebtn.easy  { border-color: rgba(125,255,176,0.5); } .gradebtn.easy:hover  { box-shadow: 0 0 16px rgba(125,255,176,0.3); }
+.tutor-panel {
+  margin-top: 16px; padding: 14px 16px; border-radius: 12px; font-size: 14px; line-height: 1.6;
+  background: rgba(25,184,224,0.07); border: 1px solid var(--panel-border); white-space: pre-wrap;
+  animation: panelIn .3s ease both;
+}
+.done-burst { text-align: center; padding: 60px 0; animation: panelIn .5s ease both; }
+.done-burst .big { font-size: 42px; }
