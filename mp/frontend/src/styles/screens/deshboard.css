@@ -1,0 +1,21 @@
+/* ------- dashboard ------- */
+.dash-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 18px; flex-wrap: wrap; gap: 12px; }
+.ring { position: relative; width: 124px; height: 124px; }
+.ring svg { transform: rotate(-90deg); }
+.ring .val { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ring .val b { font-size: 22px; color: var(--accent); }
+.ring .val span { font-size: 10px; color: var(--fg-dim); letter-spacing: 1px; }
+.upbar { display: flex; align-items: flex-end; gap: 6px; height: 70px; padding-top: 8px; }
+.upbar .b { flex: 1; background: linear-gradient(180deg, var(--accent), #0e7d9e); border-radius: 3px 3px 0 0; min-height: 2px; opacity: .85; animation: growUp .6s ease both; }
+@keyframes growUp { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+.upbar-lbls { display: flex; gap: 6px; }
+.upbar-lbls span { flex: 1; text-align: center; font-size: 9px; color: var(--fg-dim); }
+.weak-item { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(72,187,224,0.08); font-size: 13px; }
+.weak-item:last-child { border-bottom: none; }
+.weak-item .pct { color: var(--red); font-weight: 600; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge {
+  border: 1px solid var(--panel-border); border-radius: 10px; padding: 7px 10px; font-size: 12px;
+  display: flex; gap: 7px; align-items: center; color: var(--fg-dim);
+}
+.badge.earned { color: var(--amber); border-color: rgba(255,217,122,0.45); box-shadow: 0 0 12px rgba(255,217,122,0.12); }
