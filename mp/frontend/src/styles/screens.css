@@ -1,0 +1,14 @@
+/*
+ * Screen stylesheet manifest.
+ *
+ * This file intentionally contains only imports so the app entry point can load
+ * one stable stylesheet while each screen keeps its own focused CSS module.
+ */
+@import './screens/login.css';
+@import './screens/dashboard.css';
+@import './screens/skill-tree.css';
+@import './screens/review.css';
+@import './screens/tutor-chat.css';
+@import './screens/library.css';
+@import './screens/search.css';
+@import './screens/responsive.css';
