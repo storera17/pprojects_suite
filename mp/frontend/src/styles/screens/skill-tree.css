@@ -1,0 +1,7 @@
+/* ------- skill tree ------- */
+.tree-wrap { overflow-x: auto; padding-bottom: 20px; }
+.tree-svg text { font-family: inherit; }
+.tree-node { cursor: pointer; transition: filter .2s; }
+.tree-node:hover { filter: brightness(1.4); }
+.tree-node.locked { cursor: default; opacity: .45; }
+@keyframes nodeUnlock { 0% { r: 6; } 50% { r: 13; } 100% { r: 9; } }
