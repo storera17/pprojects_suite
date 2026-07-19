@@ -1,0 +1,10 @@
+/* ------- tutor chat ------- */
+.chat { display: flex; flex-direction: column; height: calc(100vh - 170px); max-width: 860px; margin: 0 auto; }
+.chat-log { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 8px 4px 16px; }
+.msg { max-width: 78%; padding: 11px 15px; border-radius: 14px; font-size: 14.5px; line-height: 1.6; white-space: pre-wrap; animation: panelIn .25s ease both; }
+.msg.user { align-self: flex-end; background: rgba(25,184,224,0.16); border: 1px solid var(--panel-border); border-bottom-right-radius: 4px; }
+.msg.tutor { align-self: flex-start; background: rgba(13,38,56,0.7); border: 1px solid rgba(180,138,255,0.25); border-bottom-left-radius: 4px; }
+.msg.tutor::before { content: '◉ MOMENTUMPRODIGY'; display: block; font-size: 10px; letter-spacing: 2px; color: var(--violet); margin-bottom: 5px; }
+.chat-input { display: flex; gap: 10px; padding-top: 12px; }
+.micbtn { width: 46px; flex: none; border-radius: 50%; font-size: 17px; }
+.micbtn.live { border-color: var(--red); color: var(--red); animation: blankPulse 1s ease-in-out infinite; box-shadow: 0 0 18px rgba(255,125,138,0.35); }
